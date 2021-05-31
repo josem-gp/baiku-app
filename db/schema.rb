@@ -10,10 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_055125) do
+ActiveRecord::Schema.define(version: 2021_05_31_072420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "parkings", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "price"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "user_id", null: false
+    t.bigint "review_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["review_id"], name: "index_replies_on_review_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "rating"
+    t.integer "votes"
+    t.bigint "user_id", null: false
+    t.bigint "parking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parking_id"], name: "index_reviews_on_parking_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "user_parkings", force: :cascade do |t|
+    t.datetime "date"
+    t.bigint "user_id", null: false
+    t.bigint "parking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parking_id"], name: "index_user_parkings_on_parking_id"
+    t.index ["user_id"], name: "index_user_parkings_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +66,17 @@ ActiveRecord::Schema.define(version: 2021_05_31_055125) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.bigint "parking_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["parking_id"], name: "index_users_on_parking_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "replies", "reviews"
+  add_foreign_key "replies", "users"
+  add_foreign_key "reviews", "parkings"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "user_parkings", "parkings"
+  add_foreign_key "user_parkings", "users"
 end
