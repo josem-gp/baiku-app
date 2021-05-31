@@ -1,5 +1,3 @@
-require "open-uri"
-
 puts "Clearing all db"
 Parking.destroy_all
 
@@ -12,9 +10,13 @@ description = ['Free for members', 'Free for customers', 'Quiet area near the a 
 # image = %w[]
 
 puts "Creating parking"
-parking = 
-Parking.new(name: name, address: address, description: description, price: rand(0..1))
-parking.save!
+
+name.each_with_index do |nam,idx|
+
+  parking = Parking.new(name: nam, address: address[idx], description: description[idx], price: rand(0..1))
+  parking.save!
+
+end
 
 puts "Created #{Parking.count} parkings!"
 puts "Done!"
