@@ -9,6 +9,7 @@
     "bootstrap": "4.6",
     "jquery": "^3.6.0",
     "mapbox-gl": "^2.3.0",
+    "owl.carousel": "^2.3.4",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
   },
