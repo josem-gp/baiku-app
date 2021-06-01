@@ -1,14 +1,19 @@
 <%= render 'shared/banner', parking: @parking.name, img_path: cl_image_path(@parking.photos.first.key) %>
-<div>
+<div class='container card mt-5'>
   <p><%= "Name: #{@parking.name}" %></p>
   <p><%= "Address: #{@parking.address}" %></p>
   <p><%= "Price: #{@parking.price}" %></p>
   <p><%= "Average rating: *****" %></p>
 </div>
-<div class="container">
-  <% @reviews.each do |review| %>
-    <p><%= "Name: #{review.user.name}" %></p>
-    <p><%= "Comment: #{review.comment}" %></p>
-    <p><%= "Rating: #{review.rating}" %></p>
-  <% end %>
+<div>
+  <div class ='container mt-5'>
+    <h1>REVIEWS</h1>
+  </div>
+  <div class='container card'>
+    <% @reviews.each do |review| %>
+      <p><%= "Name: #{review.user.name}" %></p>
+      <p><%= "Comment: #{review.comment}" %></p>
+      <p><%= "Rating: #{review.rating}" %></p>
+    <% end %>
+  </div>
 </div>

@@ -16,5 +16,4 @@ class ParkingsController < ApplicationController
     authorize @parking
     @reviews = @parking.reviews
   end
-
 end
