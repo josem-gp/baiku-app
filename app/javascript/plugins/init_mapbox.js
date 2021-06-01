@@ -34,7 +34,6 @@ let geolocate = new mapboxgl.GeolocateControl({
   trackUserLocation: true
 });
 
-console.log(geolocate);
 // Add geolocate control button to the map.
 map.addControl(geolocate);
 
