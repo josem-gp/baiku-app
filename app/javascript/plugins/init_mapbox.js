@@ -100,14 +100,14 @@ const getRoute = (end) => {
       });
     }
     // get the sidebar and add the instructions
-    var instructions = document.getElementById('instructions');
-    var steps = data.legs[0].steps;
+    // var instructions = document.getElementById('instructions');
+    // var steps = data.legs[0].steps;
 
-    var tripInstructions = [];
-    for (var i = 0; i < steps.length; i++) {
-      tripInstructions.push('<br><li>' + steps[i].maneuver.instruction) + '</li>';
-      instructions.innerHTML = '<br><span class="duration">Trip duration: ' + Math.floor(data.duration / 60) + ' min 🚴 </span>' + tripInstructions;
-    }
+    // var tripInstructions = [];
+    // for (var i = 0; i < steps.length; i++) {
+    //   tripInstructions.push('<br><li>' + steps[i].maneuver.instruction) + '</li>';
+    //   instructions.innerHTML = '<br><span class="duration">Trip duration: ' + Math.floor(data.duration / 60) + ' min 🚴 </span>' + tripInstructions;
+    // }
   };
   req.send();
 }
