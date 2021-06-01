@@ -3,10 +3,11 @@ class ParkingsController < ApplicationController
   def index
     @parkings = policy_scope(Parking)
     authorize @parkings
-    @markers = @parkings.geocoded.map do |flat|
+    @markers = @parkings.geocoded.map do |parking|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: parking.latitude,
+        lng: parking.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { parking: parking })
       }
     end
   end
