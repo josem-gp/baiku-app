@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authorize_user
 
   def edit
-    @parking = Parking.find(1)
+    @parking = Parking.find(35)
   end
 
   def update
