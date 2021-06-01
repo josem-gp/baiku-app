@@ -1,7 +1,9 @@
 require "open-uri"
 
-puts "Clearing all db"
+puts "Clearing database..."
 Parking.destroy_all
+Review.destroy_all
+User.destroy_all
 
 name = ['Impact HUB Tokyo', 'Maruetsu Meguro', 'Riverside Earth Training Center', 'Switch Coffee Tokyo',
         'JR Tokyumeguro Bldg', 'Otori-jinja Shrine', 'Meguro Tokyu Store', 'Family Mart Otori-jinja',
@@ -35,4 +37,34 @@ name.each_with_index do |nam,idx|
 end
 
 puts "Created #{Parking.count} parkings!"
+
+puts "Creating some users..."
+
+user = User.new(email: 'lenatheboss@hotmail.com', password: '1234567', name: 'Lena')
+user.save!
+
+user = User.new(email: 'jose@hotmail.com', password: '1234567', name: 'Jose')
+user.save!
+
+user = User.new(email: 'allan@hotmail.com', password: '1234567', name: 'Allan')
+user.save!
+
+puts "Created #{User.count} users!"
+
+puts "Creating some reviews..."
+
+review_1 = Review.new(comment: "Great place! Very quiet and had no issues", rating: rand(4..5))
+review_2 = Review.new(comment: "Good. No problems. Strange people nearby though. I might try and look for a better place.", rating: rand(2..3))
+review_3 = Review.new(comment: "Terrible place! Someone stole my bicycle seat. NOT recommended.", rating: 1)
+reviews = [review_1, review_2, review_3]
+
+20.times do
+  review = reviews.sample.dup
+  review.user = User.all.sample
+  review.parking = Parking.all.sample
+  review.save!
+end
+
+
+puts "Created #{Review.count} reviews!"
 puts "Done!"
