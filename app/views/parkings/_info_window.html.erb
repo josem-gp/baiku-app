@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="card-info">
+    <%#= cl_image_tag(parking.photos.first.key, width: 184, height: 184, crop: :fill, class: "info-window-image") %>
+    <h5><%= parking.name %></h5>
+    <p><%= parking.address %></p>
+    <%= link_to 'View', parking_path(parking.id), class: 'btn-yellow' %>
+  </div>
+</div>
