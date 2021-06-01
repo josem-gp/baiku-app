@@ -20,12 +20,12 @@ const initMapbox = () => {
       zoom: 12
     });
 
-    // initialize the map canvas to interact with later
+// initialize the map canvas to interact with later
 var canvas = map.getCanvasContainer();
+
 
 // initialize a start corrdinate
 let start = [];
-
 // Add geolocate control to the map.
 let geolocate = new mapboxgl.GeolocateControl({
   positionOptions: {
@@ -33,7 +33,6 @@ let geolocate = new mapboxgl.GeolocateControl({
   },
   trackUserLocation: true
 });
-
 // Add geolocate control button to the map.
 map.addControl(geolocate);
 
@@ -45,6 +44,37 @@ geolocate.on('geolocate', function (position) {
   console.log('Your current position:', start);
   initRoute(start);
 });
+
+const initRoute = (start_pos) => {
+  // make an initial directions request that
+  // starts and ends at the same location
+  getRoute(start_pos);
+
+  // Add starting point to the map
+  map.addLayer({
+    id: 'point',
+    type: 'circle',
+    source: {
+      type: 'geojson',
+      data: {
+        type: 'FeatureCollection',
+        features: [{
+          type: 'Feature',
+          properties: {},
+          geometry: {
+            type: 'Point',
+            coordinates: start
+          }
+        }
+        ]
+      }
+    },
+    paint: {
+      'circle-radius': 10,
+      'circle-color': '#3887be'
+    }
+  });
+};
 
 // create a function to make a directions request
 const getRoute = (end) => {
@@ -112,36 +142,7 @@ const getRoute = (end) => {
   req.send();
 }
 
-const initRoute = (start_pos) => {
-  // make an initial directions request that
-  // starts and ends at the same location
-  getRoute(start_pos);
 
-  // Add starting point to the map
-  map.addLayer({
-    id: 'point',
-    type: 'circle',
-    source: {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: [{
-          type: 'Feature',
-          properties: {},
-          geometry: {
-            type: 'Point',
-            coordinates: start
-          }
-        }
-        ]
-      }
-    },
-    paint: {
-      'circle-radius': 10,
-      'circle-color': '#3887be'
-    }
-  });
-};
 
 map.on('click', function(e) {
   var coordsObj = e.lngLat;
@@ -190,17 +191,16 @@ map.on('click', function(e) {
   getRoute(coords);
 });
 
-    const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+const markers = JSON.parse(mapElement.dataset.markers);
+markers.forEach((marker) => {
+  const popup = new mapboxgl.Popup().setHTML(marker.info_window);
 
-      new mapboxgl.Marker()
-      .setLngLat([marker.lng, marker.lat])
-      .setPopup(popup)
-      .addTo(map);
-    });
-    addMapToMarkers(map, markers);
+  new mapboxgl.Marker()
+  .setLngLat([marker.lng, marker.lat])
+  .setPopup(popup)
+  .addTo(map);
+});
+addMapToMarkers(map, markers);
   }
 };
-
 export { initMapbox };

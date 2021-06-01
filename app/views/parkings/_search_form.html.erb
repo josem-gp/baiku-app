@@ -1,0 +1,10 @@
+<div class="banner-search">
+  <%= form_tag parkings_path, class: "d-flex", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Location"
+      %>
+    <%= submit_tag "find", class: "btn btn-primary" %>
+  <% end %>
+</div>
