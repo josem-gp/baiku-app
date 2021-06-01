@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :reviews, only: :update do
     resources :replies, only: :create
   end
-  resources :users, only: :update do
+  resources :users, only: [:edit, :update] do
     member do
       get :profile
     end
