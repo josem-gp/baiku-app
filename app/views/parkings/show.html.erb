@@ -1,19 +1,14 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
-  </div>
-</div>
+<%= render 'shared/banner', parking: @parking.name, img_path: cl_image_path(@parking.photos.first.key) %>
 <div>
-  <%= @parking.image_url %>
-  <%= "Name: #{@parking.name}" %>
-  <%= "Address: #{@parking.address}" %>
-  <%= "Price: #{@parking.price}" %>
-  <%= "Average rating:" %>
+  <p><%= "Name: #{@parking.name}" %></p>
+  <p><%= "Address: #{@parking.address}" %></p>
+  <p><%= "Price: #{@parking.price}" %></p>
+  <p><%= "Average rating: *****" %></p>
 </div>
-<% @reviews.each do |review| %>
-  <%= "Name: #{review.user.name}" %>
-  <%= "Comment: #{review.comment}" %>
-  <%= "Rating: #{review.rating}" %>
-<% end %>
+<div class="container">
+  <% @reviews.each do |review| %>
+    <p><%= "Name: #{review.user.name}" %></p>
+    <p><%= "Comment: #{review.comment}" %></p>
+    <p><%= "Rating: #{review.rating}" %></p>
+  <% end %>
+</div>
