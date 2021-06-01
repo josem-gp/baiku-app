@@ -1,4 +1,12 @@
+<div>
+  <%= @parking.image %>
+  <%= "Name:" @parking.name %>
+  <%= "Address:" @parking.address %>
+  <%= "Price:" @parking.price %>
+  <%= "Average rating:" %>
+</div>
 <% @reviews.each do |review| %>
-  <%=  %>
+  <%= "Name:" ${review.user.name} %>
   <%= "Comment:" ${review.comment} %>
   <%= "Rating:" ${review.rating} %>
+<% end %>
