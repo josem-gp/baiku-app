@@ -2,6 +2,7 @@
   <div class=" " id="map"
      style="width: 100%; height: 760px;"
      data-markers="<%= @markers.to_json %>"
+
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     <div class="card">
       <% @parkings.each do |parking| %>
@@ -9,3 +10,5 @@
     </div>
   </div>
 </div>
+
+<script src="../../javascript/index.js"></script>
