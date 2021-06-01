@@ -10,4 +10,9 @@ class Parking < ApplicationRecord
   validates :address, presence: true
   validates :description, length: { minimum: 10 }, presence: true
   enum price: [:free, :paid]
+
+  def average_review_score
+    reviews.average(:rating).to_f.round(1)
+  end
+
 end
