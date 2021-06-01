@@ -1,7 +1,7 @@
 class ParkingsController < ApplicationController
 
   def show
-    @parking = Parking.new(params[:id])
+    @parking = Parking.find(params[:id])
     authorize @parking
   end
 
