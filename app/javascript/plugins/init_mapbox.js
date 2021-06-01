@@ -52,7 +52,7 @@ const initMapbox = () => {
         console.log('Your current position:', start);
         const distanceToDestination = distance(start, end)
         console.log(distanceToDestination)
-        if (distanceToDestination < 0.1) {
+        if (distanceToDestination < 0.05) {
           console.log('Arrived at destination')
         }
         initRoute(start);
