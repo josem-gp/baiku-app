@@ -1,7 +1,10 @@
-.navbar-baiku {
+.navbar-lewagon {
   justify-content: space-between;
   background: black;
   display: flex;
+  height: 6vh;
+  position: sticky;
+  bottom: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -16,6 +19,7 @@
   color: white;
 }
 
-.nav-item {
+.nav-link {
   color: white;
 }
+
