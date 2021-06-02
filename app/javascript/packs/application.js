@@ -33,4 +33,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
   initCarousel();
+  console.log('hi');
 });
