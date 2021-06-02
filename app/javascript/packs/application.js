@@ -28,10 +28,11 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
 import { initCarousel } from '../plugins/init_carousel';
+import { markerId } from '../plugins/init_pinIt';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
   initCarousel();
-  console.log('hi');
+  markerId();
 });

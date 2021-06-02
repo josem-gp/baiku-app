@@ -1,15 +1,9 @@
 class UsersController < ApplicationController
   before_action :authorize_user
 
-  def edit
-    @parking = Parking.find(35)
-  end
-
   def update
     if @user.update(user_params)
-      redirect_to edit_user_path
-    else
-      render :edit
+      redirect_to parkings_path
     end
   end
 

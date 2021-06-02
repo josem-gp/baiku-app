@@ -52,7 +52,7 @@ const initMapbox = () => {
         const longitude = position.coords.longitude;
         start = [longitude, latitude];
         const distanceToDestination = distance(start, end);
-        if (distanceToDestination < 0.05) {
+        if (distanceToDestination < 10) {
           initSweetAlert(getId());
         }
         initRoute(start);
