@@ -1,6 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import distance from '@turf/distance'
+import distance from '@turf/distance';
+import { initSweetAlert } from '../plugins/init_sweetalert';
 
 
 const initMapbox = () => {
@@ -49,11 +50,10 @@ const initMapbox = () => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         start = [longitude, latitude];
-        console.log('Your current position:', start);
         const distanceToDestination = distance(start, end)
         console.log(distanceToDestination)
-        if (distanceToDestination < 0.05) {
-          console.log('Arrived at destination')
+        if (distanceToDestination < 0.001) {
+          initSweetAlert();
         }
         initRoute(start);
       });
