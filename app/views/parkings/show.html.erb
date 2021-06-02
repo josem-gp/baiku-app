@@ -6,7 +6,7 @@
   <p><%= "User reviews: #{@parking.average_review_score} out of 5" %></p>
 </div>
 <div class="container mt-5 d-flex justify-content-center w-auto">
-  <%= link_to "Directions", parkings_path, class: 'btn btn-warning btn-direction' %>
+  <%= link_to "Directions", parkings_path(to_parking: @parking.id), class: 'btn btn-warning btn-direction' %>
 </div>
 <div>
   <div class ='container mt-5'>

@@ -28,7 +28,7 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
 import { initCarousel } from '../plugins/init_carousel';
-import { markerSync } from "../components/markerSync";
+import { directionSync } from "../components/directionSync";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
