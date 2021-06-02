@@ -12,8 +12,10 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= render 'shared/navbar' %>
+    <div class="content">
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    </div>
+    <%= render 'shared/navbar', class: 'footer' %>
   </body>
 </html>
