@@ -3,11 +3,6 @@ import Swal from 'sweetalert2'
 const initSweetAlert = (id) => {
   Swal.fire({
     title: 'You have arrived!',
-    html:
-    `<form action="/user/" method="patch">
-      <input type="hidden" id="fname" name="fname" value="${id}"><br><br>
-      <input type="submit" value="Submit">
-    </form>`,
     text: 'Remember where you parked?',
     showCloseButton: true,
     showCancelButton: true,
@@ -15,7 +10,13 @@ const initSweetAlert = (id) => {
     cancelButtonText: 'No, thanks!',
     confirmButtonText: 'Yes, pin location',
     confirmButtonColor: '#FAD02C',
-  });
+  }).then((result) => {
+  if (result.isConfirmed) {
+    document.querySelector('.simple_form').submit();
+  } else if (result.isDenied) {
+    Swal.fire('Changes are not saved', '', 'info')
+  }
+});
 }
 
 export { initSweetAlert }
