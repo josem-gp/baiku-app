@@ -31,6 +31,7 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Add
+gem "algoliasearch-rails"
 gem 'devise'
 gem 'geocoder'
 gem 'pundit'
