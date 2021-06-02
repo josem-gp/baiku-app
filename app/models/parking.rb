@@ -22,4 +22,12 @@ class Parking < ApplicationRecord
     reviews.average(:rating).to_f.round(1)
   end
 
+  def free_or_paid
+    if price == 'free'
+      'Free'
+    else
+      'Payment required'
+    end
+  end
+
 end

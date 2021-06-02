@@ -1,7 +1,5 @@
-<% total = 0 %>
 <div class='container card mt-3 pt-3'>
-  <p><%= "Name: #{review.user.name}" %></p>
-  <p><%= "Comment: #{review.comment}" %></p>
-  <p><%= "Rating: #{review.rating}" %></p>
-  <% total += review.rating %>
+  <p><%= "Reviewed by #{review.user.name}" %></p>
+  <p><em><%= review.comment %></em></p>
+  <p><i class="fas fa-star"></i><%= "#{review.rating} out of 5" %></p>
 </div>
