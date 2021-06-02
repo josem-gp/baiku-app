@@ -4,7 +4,7 @@ import 'owl.carousel';
 const initCarousel = () => {
   $('.owl-carousel').owlCarousel({
     // stagePadding: 8,
-    loop: true,
+    loop: false,
     margin: 10,
     responsive:{
       0:{
