@@ -1,6 +1,7 @@
-.navbar-lewagon {
+.navbar-baiku {
   justify-content: space-between;
-  background: white;
+  background: black;
+  display: flex;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,12 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-logo {
+  color: white;
+}
+
+.nav-item {
+  color: white;
 }
