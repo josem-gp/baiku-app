@@ -1,16 +1,21 @@
-<%= render 'shared/banner', parking: @parking.name, img_path: cl_image_path(@parking.photos.first.key) %>
-<div class='container card mt-5'>
-  <p><%= "Name: #{@parking.name}" %></p>
-  <p><%= "Address: #{@parking.address}" %></p>
-  <p><%= "Price: #{@parking.price}" %></p>
-  <p><%= "User reviews: #{@parking.average_review_score} out of 5" %></p>
+<%= render 'shared/banner', img_path: cl_image_path(@parking.photos.first.key) %>
+<div class='container card border-0'>
+  <div class="card-info">
+    <h4><%= @parking.name %></h4>
+    <p><i class="fas fa-map-marked-alt"></i><%= @parking.address %></p>
+    <p><i class="fas fa-hand-holding-usd"></i><%= @parking.price %></p>
+    <p><i class="fas fa-star"></i><%= "#{@parking.average_review_score} out of 5" %></p>
+  </div>
 </div>
 <div class="container mt-5 d-flex justify-content-center w-auto">
-  <%= link_to "Directions", parkings_path(to_parking: @parking.id), class: 'btn btn-warning btn-direction' %>
+  <%= link_to "Show directions", parkings_path(to_parking: @parking.id), class: 'btn btn-warning btn-yellow' %>
+</div>
+<div class="container mt-5 d-flex justify-content-center w-auto">
+  <%= link_to "Write a review", parkings_path(to_parking: @parking.id), class: 'btn btn-warning btn-yellow' %>
 </div>
 <div>
   <div class ='container mt-5'>
-    <h1><%= "#{@reviews.count} Reviews" %></h1>
+    <h4><%= "#{@reviews.count} Reviews" %></h4>
   </div>
   <div>
     <%= render @reviews %>
