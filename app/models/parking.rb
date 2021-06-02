@@ -11,6 +11,13 @@ class Parking < ApplicationRecord
   validates :description, length: { minimum: 10 }, presence: true
   enum price: [:free, :paid]
 
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_address,
+  against: [ :name, :address ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   def average_review_score
     reviews.average(:rating).to_f.round(1)
   end
