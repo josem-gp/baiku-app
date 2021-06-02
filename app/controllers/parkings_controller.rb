@@ -7,7 +7,8 @@ class ParkingsController < ApplicationController
       {
         lat: parking.latitude,
         lng: parking.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { parking: parking })
+        info_window: render_to_string(partial: "info_window", locals: { parking: parking }),
+        marker: render_to_string(partial: "marker", locals: { parking: parking })
       }
     end
   end

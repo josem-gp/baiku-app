@@ -1,14 +1,8 @@
-<p><%= @user.parking_id %></p>
-
-<p>Where to pin: <%= @parking.name %><%= @parking.id %> </p>
-
 <div>
   <%= simple_form_for @user do |f| %>
     <%= f.input :parking_id, as: :hidden, input_html: { value: @parking.id } %>
-    <%= f.submit "Pin" %>
   <% end %>
   <%= simple_form_for @user do |f| %>
     <%= f.input :parking_id, as: :hidden, input_html: { value: nil } %>
-    <%= f.submit "UnPin" %>
   <% end %>
 </div>
