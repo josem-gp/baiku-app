@@ -5,6 +5,9 @@
   <p><%= "Price: #{@parking.price}" %></p>
   <p><%= "Average rating: #{@parking.average_review_score} stars" %></p>
 </div>
+<div class="container mt-5 d-flex justify-content-center w-auto">
+  <%= link_to "Directions", parkings_path, class: 'btn btn-primary' %>
+</div>
 <div>
   <div class ='container mt-5'>
     <h1><%= "#{@reviews.count} Reviews" %></h1>
