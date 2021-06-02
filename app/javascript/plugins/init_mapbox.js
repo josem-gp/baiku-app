@@ -1,7 +1,8 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import distance from '@turf/distance';
-import { initSweetAlert } from '../plugins/init_sweetalert';
+import { initSweetAlert } from './init_sweetalert';
+import { getId } from './init_getId';
 
 
 const initMapbox = () => {
@@ -50,10 +51,9 @@ const initMapbox = () => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         start = [longitude, latitude];
-        const distanceToDestination = distance(start, end)
-        console.log(distanceToDestination)
-        if (distanceToDestination < 0.001) {
-          initSweetAlert();
+        const distanceToDestination = distance(start, end);
+        if (distanceToDestination < 0.05) {
+          initSweetAlert(getId());
         }
         initRoute(start);
       });
@@ -202,8 +202,10 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+      const markerHtml = document.createElement('div')
+      markerHtml.innerHTML = marker.marker
 
-      new mapboxgl.Marker()
+      new mapboxgl.Marker(markerHtml)
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)
       .addTo(map);
