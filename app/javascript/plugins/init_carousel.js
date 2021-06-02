@@ -2,7 +2,8 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 
 const initCarousel = () => {
-  $('.owl-carousel').owlCarousel({
+  const owl = $('.owl-carousel')
+  owl.owlCarousel({
     // stagePadding: 8,
     loop: false,
     margin: 10,
@@ -18,6 +19,10 @@ const initCarousel = () => {
       }
      },
    })
+  owl.on('changed.owl.carousel', function(event) {
+    const card = document.querySelectorAll('.card')[event.item.index]
+    document.getElementById(`marker-studio-${card.dataset.id}`).click();
+  })
 }
 
 export { initCarousel };
