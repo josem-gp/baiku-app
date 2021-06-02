@@ -13,9 +13,15 @@
   </div>
   <div class="owl-carousel">
     <% @parkings.each do |parking| %>
-      <div class="card">
-        <%= cl_image_tag(parking.photos.first.key, width: 120, height: 120, crop: :fill) %>
-        <%= parking.name %>
+      <div class="card flex-row">
+        <div class="card-image">
+          <%= cl_image_tag(parking.photos.first.key, width: 120, height: 120, crop: :fill) %>
+        </div>
+        <div class="card-details flex-grow-1 pl-3">
+          <p class="m-0 font-weight-bold my-2"><%= parking.name %></p>
+          <p class="m-0"><i class="fas fa-map-marked-alt"></i> <%= parking.address %></p>
+          <p class="m-0" id="distance"><i class="fas fa-directions"></i></p>
+        </div>
       </div>
     <% end %>
   </div>
