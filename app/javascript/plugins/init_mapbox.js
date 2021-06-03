@@ -1,7 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import distance from '@turf/distance';
-import { initRoute } from './init_createRoute';
+import { initRoute } from './init_route';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -18,8 +18,8 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10',
-      center: [139.6925947, 35.6324644], // starting position
-      zoom: 12
+      center: [139.7081321, 35.6336481], // starting position
+      zoom: 22
     });
 
     initRoute(map);
