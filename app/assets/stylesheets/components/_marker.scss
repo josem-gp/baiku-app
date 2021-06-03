@@ -8,3 +8,22 @@
   font-size: 28px;
   color: $green;
 }
+
+.animate {
+  animation: updown 2s ease-out infinite;
+}
+
+
+@keyframes updown {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(50%);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
