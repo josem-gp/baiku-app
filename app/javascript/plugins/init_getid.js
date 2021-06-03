@@ -1,4 +1,4 @@
-const getId = () => {
+const initGetId = () => {
   console.log('Hi');
   document.querySelectorAll('.marker').forEach((marker) => {
     marker.addEventListener('click', (event) => {
@@ -8,4 +8,4 @@ const getId = () => {
   })
 }
 
-export { getId };
+export { initGetId };

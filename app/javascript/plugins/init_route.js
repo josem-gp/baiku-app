@@ -1,7 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 import distance from '@turf/distance';
 import { initSweetAlert } from './init_sweetalert';
-import { getId } from './init_getId';
+import { initGetId } from './init_getid';
 
 const renderRoute = (start, end, map) => {
   var url = 'https://api.mapbox.com/directions/v5/mapbox/cycling/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?steps=true&geometries=geojson&access_token=' + mapboxgl.accessToken;
@@ -63,7 +63,7 @@ const renderRoute = (start, end, map) => {
 };
 
 const arrivalNotification = () => {
-  initSweetAlert(getId());
+  initSweetAlert(initGetId());
 }
 
 const createRoute = (start, destination, map) => {
