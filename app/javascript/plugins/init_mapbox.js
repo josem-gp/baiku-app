@@ -1,8 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import distance from '@turf/distance';
-import { initSweetAlert } from './init_sweetalert';
-import { getId } from './init_getId';
 import { initRoute } from './init_createRoute';
 
 const initMapbox = () => {
