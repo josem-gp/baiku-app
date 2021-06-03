@@ -133,33 +133,34 @@ const initRoute = (map) => {
   const destination = JSON.parse(mapElement.dataset.destination);
   console.log(destination);
 
-  // define starting point
-  // initialize the map canvas to interact with later
-  // const geolocObject = geolocateStart(map);
-  // // Geolocate your position and initialize the route rendering
-  // geolocObject.on('geolocate', function (position) {
-  //   const latitude = position.coords.latitude;
-  //   const longitude = position.coords.longitude;
-  //   const start = [longitude, latitude];
-  //   createRoute(start, destination, map);
-  // });
+  define starting point
+  initialize the map canvas to interact with later
+  const geolocObject = geolocateStart(map);
+  // Geolocate your position and initialize the route rendering
+  geolocObject.on('geolocate', function (position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    const start = [longitude, latitude];
+    createRoute(start, destination, map);
+  });
 
   // simulate geoloc
   let start = [139.7081321, 35.6336481];
   renderRoute(start, start, map);
 
-  let counter = 0
-  const simulationCoords = [[139.7085, 35.6329933],[139.7085335,35.6328196],[139.7086486, 35.6323355],[139.7086486, 35.6323355],[139.7095947, 35.6318514], [139.7108253, 35.6315044], [139.7112196, 35.6312581], [139.711439, 35.63086635]]
-  setInterval( () => {
-    start = simulationCoords[counter];
-    renderRoute(start, destination, map);
-    const distanceToDestination = distance(start, destination);
-    console.log(distanceToDestination);
-    if (distanceToDestination < 0.005) {
-      arrivalNotification();
-    }
-    counter += 1
-  }, 1500);
-}
+//   let counter = 0
+//   const simulationCoords = [[139.7085, 35.6329933],[139.7085335,35.6328196],[139.7086486, 35.6323355],[139.7086486, 35.6323355],[139.7095947, 35.6318514], [139.7108253, 35.6315044], [139.7112196, 35.6312581], [139.711439, 35.63086635]]
+//   setInterval( () => {
+//     start = simulationCoords[counter];
+//     renderRoute(start, destination, map);
+//     const distanceToDestination = distance(start, destination);
+//     console.log(distanceToDestination);
+//     if (distanceToDestination < 0.005) {
+//       arrivalNotification();
+//       clearInterval();
+//     }
+//     counter += 1
+//   }, 1500);
+// }
 
 export { initRoute };

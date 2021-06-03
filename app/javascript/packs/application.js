@@ -37,4 +37,5 @@ document.addEventListener('turbolinks:load', () => {
   initCarousel();
   directionSync();
   markerId();
+  console.log(5);
 });
