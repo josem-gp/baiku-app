@@ -109,57 +109,56 @@ const createRoute = (start, destination, map) => {
   }
 }
 
-const geolocateStart = (map) => {
-  var canvas = map.getCanvasContainer();
-  // initialize a start corrdinate
-  let start = [];
+// const geolocateStart = (map) => {
+//   console.log('hi lena')
+//   var canvas = map.getCanvasContainer();
+//   // initialize a start corrdinate
+//   let start = [];
 
-  // Add geolocate control to the map.
-  let geolocate = new mapboxgl.GeolocateControl({
-    positionOptions: {
-      enableHighAccuracy: true
-    },
-    trackUserLocation: true
-  });
+//   // Add geolocate control to the map.
+//   let geolocate = new mapboxgl.GeolocateControl({
+//     positionOptions: {
+//       enableHighAccuracy: true
+//     },
+//     trackUserLocation: true
+//   });
 
-  // Add geolocate control button to the map.
-  map.addControl(geolocate);
-  return geolocate
-}
+//   // Add geolocate control button to the map.
+//   map.addControl(geolocate);
+//   return geolocate
+// }
 
-const initRoute = (map) => {
+const initRoute = (start, map) => {
   // define destination point
   const mapElement = document.getElementById('map');
   const destination = JSON.parse(mapElement.dataset.destination);
-  console.log(destination);
 
   // define starting point
-  // initialize the map canvas to interact with later
-  // const geolocObject = geolocateStart(map);
+  // const geolocate = geolocateStart(map);
   // // Geolocate your position and initialize the route rendering
-  // geolocObject.on('geolocate', function (position) {
+  // geolocate.on('geolocate', function (position) {
   //   const latitude = position.coords.latitude;
   //   const longitude = position.coords.longitude;
   //   const start = [longitude, latitude];
-  //   createRoute(start, destination, map);
+  createRoute(start, destination, map);
   // });
 
   // simulate geoloc
-  let start = [139.7081321, 35.6336481];
-  renderRoute(start, start, map);
+  // let start = [139.7081321, 35.6336481];
+  // renderRoute(start, start, map);
 
-  let counter = 0
-  const simulationCoords = [[139.7085, 35.6329933],[139.7085335,35.6328196],[139.7086486, 35.6323355],[139.7086486, 35.6323355],[139.7095947, 35.6318514], [139.7108253, 35.6315044], [139.7112196, 35.6312581], [139.711439, 35.63086635]]
-  setInterval( () => {
-    start = simulationCoords[counter];
-    renderRoute(start, destination, map);
-    const distanceToDestination = distance(start, destination);
-    console.log(distanceToDestination);
-    if (distanceToDestination < 0.005) {
-      arrivalNotification();
-    }
-    counter += 1
-  }, 1500);
+  // let counter = 0
+  // const simulationCoords = [[139.7085, 35.6329933],[139.7085335,35.6328196],[139.7086486, 35.6323355],[139.7086486, 35.6323355],[139.7095947, 35.6318514], [139.7108253, 35.6315044], [139.7112196, 35.6312581], [139.711439, 35.63086635]]
+  // setInterval( () => {
+  //   start = simulationCoords[counter];
+  //   renderRoute(start, destination, map);
+  //   const distanceToDestination = distance(start, destination);
+  //   console.log(distanceToDestination);
+  //   if (distanceToDestination < 0.005) {
+  //     arrivalNotification();
+  //   }
+  //   counter += 1
+  // }, 1500);
 }
 
 export { initRoute };
