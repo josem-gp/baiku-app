@@ -43,7 +43,10 @@
 }
 
 .banner h5 {
-  color: $yellow;
+  color: $white;
+  i {
+    color: $yellow;
+  }
 }
 
 .banner i {
