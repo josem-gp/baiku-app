@@ -24,7 +24,6 @@ const initMapbox = () => {
     if (mapElement.dataset.destination) {
       initRoute(map);
     }
-    
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
