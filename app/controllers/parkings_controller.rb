@@ -13,7 +13,8 @@ class ParkingsController < ApplicationController
         marker: render_to_string(partial: "marker", locals: { parking: parking })
       }
     end
-    @destination = [139.6925947, 35.6324644]
+    @parking = Parking.find(params[:to_parking])
+    @destination = [@parking.longitude, @parking.latitude]
   end
 
   def show
