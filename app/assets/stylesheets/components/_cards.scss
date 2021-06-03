@@ -10,3 +10,30 @@
     margin: 0px 8px 0px 0px;
   }
 }
+
+.card-show-carousel {
+  margin: 16px 0px 16px 16px;
+}
+
+.card-review {
+  width: 344px;
+  margin: 16px 0px 0px 0px;
+  padding: 16px 16px 0px 16px;
+  p {
+    margin: 0px 0px 8px 0px;
+  }
+  i {
+    margin: 0px 6px 0px 0px;
+  }
+  border-radius: 8px;
+}
+
+.star-yellow {
+  color: $yellow;
+  font-size: 12px;
+}
+
+.star-black {
+  color: black;
+  font-size: 12px;
+}

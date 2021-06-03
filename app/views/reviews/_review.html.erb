@@ -1,5 +1,16 @@
-<div class='container card mt-3 pt-3'>
+<div class='container card card-review mt-3'>
   <p><%= "Reviewed by #{review.user.name}" %></p>
-  <p><em><%= review.comment %></em></p>
-  <p><i class="fas fa-star"></i><%= "#{review.rating} out of 5" %></p>
+  <% case review.rating %>
+  <% when 1 %>
+  <p><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i></p>
+  <% when 2 %>
+  <p><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i></p>
+  <% when 3 %>
+  <p><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i></p>
+  <% when 4 %>
+  <p><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-black'></i></p>
+  <% when 5 %>
+  <p><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i></p>
+<% end %>
+<p><em><%= review.comment %></em></p>
 </div>
