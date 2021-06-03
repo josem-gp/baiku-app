@@ -4,7 +4,7 @@
     <h4><b><%= @parking.name %></b></h4>
     <p><i class="fas fa-map-marked-alt"></i><%= @parking.address %></p>
     <p><i class="fas fa-hand-holding-usd"></i><%= @parking.free_or_paid %></p>
-    <p><i class="fas fa-star"></i><%= "#{@parking.average_review_score} out of 5" %></p>
+    <%= render 'average_rating' %>
   </div>
 </div>
 <div class="container btn-show-container">
@@ -13,9 +13,9 @@
 </div>
 <div>
   <div class ='container mt-4'>
-    <h4><b><%= "#{@reviews.count} Reviews" %></b></h4>
+    <%= render 'review_pluralize' %>
   </div>
-  <div>
+  <div class="owl-carousel card-show-carousel">
     <%= render @reviews %>
   </div>
 </div>

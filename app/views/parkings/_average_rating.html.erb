@@ -1,0 +1,15 @@
+<div class='d-flex'>
+  <% case @parking.average_review_score.round %>
+  <% when 1 %>
+  <p><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i></p>
+  <% when 2 %>
+  <p><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i></p>
+  <% when 3 %>
+  <p><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-black'></i><i class='fas fa-star star-black'></i></p>
+  <% when 4 %>
+  <p><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-black'></i></p>
+  <% when 5 %>
+  <p><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i><i class='fas fa-star star-yellow'></i></p>
+<% end %>
+<p><%= "#{@parking.average_review_score} out of 5" %></p>
+</div>
