@@ -21,7 +21,8 @@ const initCarousel = () => {
    })
   owl.on('changed.owl.carousel', function(event) {
     const card = document.querySelectorAll('.card')[event.item.index]
-    document.getElementById(`marker-studio-${card.dataset.id}`).click();
+    document.querySelectorAll('.animate').forEach((marker) => marker.classList.remove('animate'));
+    document.getElementById(`marker-studio-${card.dataset.id}`).classList.add("animate");
   })
 }
 
