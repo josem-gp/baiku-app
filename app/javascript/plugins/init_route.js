@@ -24,30 +24,39 @@ const renderRoute = (start, end, map) => {
     if (map.getSource('route')) {
       map.getSource('route').setData(geojson);
     } else { // otherwise, make a new request
-      map.addLayer({
-        id: 'route',
-        type: 'line',
-        source: {
-          type: 'geojson',
-          data: {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'LineString',
-              coordinates: geojson
-            }
+      map.on('style.load', () => {
+        const waiting = () => {
+          if (!map.isStyleLoaded()) {
+            setTimeout(waiting, 200);
+          } else {
+            map.addLayer({
+              id: 'route',
+              type: 'line',
+              source: {
+                type: 'geojson',
+                data: {
+                  type: 'Feature',
+                  properties: {},
+                  geometry: {
+                    type: 'LineString',
+                    coordinates: geojson
+                  }
+                }
+              },
+              layout: {
+                'line-join': 'round',
+                'line-cap': 'round'
+              },
+              paint: {
+                'line-color': '#3887be',
+                'line-width': 5,
+                'line-opacity': 0.75
+              }
+            });
           }
-        },
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round'
-        },
-        paint: {
-          'line-color': '#3887be',
-          'line-width': 5,
-          'line-opacity': 0.75
-        }
-      });
+        };
+        waiting();
+      })
     }
   };
   req.send();
