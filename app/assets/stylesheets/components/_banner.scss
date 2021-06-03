@@ -18,3 +18,19 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.banner-image {
+  height: 812px;
+  background-position: center;
+}
+
+.banner .banner-text {
+  font-size: 24px;
+  margin-left: 32px;
+}
+
+.banner .banner-logo {
+  position: absolute;
+  bottom: 120px;
+  right: 32px;
+}
