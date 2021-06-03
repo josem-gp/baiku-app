@@ -12,7 +12,7 @@
 }
 
 .card-show-carousel {
-  margin: 16px 0px 16px 16px;
+  margin: -16px 0px 8px 16px;
 }
 
 .card-review {
@@ -30,10 +30,18 @@
 
 .star-yellow {
   color: $yellow;
-  font-size: 12px;
 }
 
 .star-black {
+  color: black;
+}
+
+.star-yellow-sm {
+  color: $yellow;
+  font-size: 12px;
+}
+
+.star-black-sm {
   color: black;
   font-size: 12px;
 }
