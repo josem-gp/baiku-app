@@ -1,21 +1,19 @@
 <%= render 'shared/banner', img_path: cl_image_path(@parking.photos.first.key) %>
 <div class='container card border-0'>
-  <div class="card-info">
-    <h4><%= @parking.name %></h4>
+  <div class="card-show-info">
+    <h4><b><%= @parking.name %></b></h4>
     <p><i class="fas fa-map-marked-alt"></i><%= @parking.address %></p>
-    <p><i class="fas fa-hand-holding-usd"></i><%= @parking.price %></p>
+    <p><i class="fas fa-hand-holding-usd"></i><%= @parking.free_or_paid %></p>
     <p><i class="fas fa-star"></i><%= "#{@parking.average_review_score} out of 5" %></p>
   </div>
 </div>
-<div class="container mt-4 d-flex justify-content-center align-items-center">
-  <%= link_to "Show directions", parkings_path(to_parking: @parking.id), class: 'btn btn-warning btn-yellow btn-show' %>
-</div>
-<div class="container mt-4 d-flex justify-content-center w-auto">
-  <%= link_to "Write a review", parkings_path(to_parking: @parking.id), class: 'btn btn-warning btn-yellow btn-show' %>
+<div class="container btn-show-container">
+  <%= link_to "Show directions", parkings_path(to_parking: @parking.id), class: 'btn btn-show' %>
+  <%= link_to "Write a review", parkings_path(to_parking: @parking.id), class: 'btn btn-show' %>
 </div>
 <div>
   <div class ='container mt-4'>
-    <h4><%= "#{@reviews.count} Reviews" %></h4>
+    <h4><b><%= "#{@reviews.count} Reviews" %></b></h4>
   </div>
   <div>
     <%= render @reviews %>
