@@ -18,10 +18,19 @@
         <div class="card-image">
           <%= cl_image_tag(parking.photos.first.key, width: 160, height: 160, crop: :fill) %>
         </div>
-        <div class="card-details flex-grow-1 pl-3 py-2">
+        <div class="card-details d-flex flex-column pl-3 py-2">
           <p class="mb-2 font-weight-bold"><%= parking.name %></p>
-          <p class="m-0"><i class="fas fa-map-marked-alt"></i> <%= parking.address %></p>
-          <p class="m-0" id="distance"><i class="fas fa-directions"></i></p>
+          <p class="m-0 flex-grow-1"><i class="fas fa-map-marked-alt"></i> <%= parking.address %></p>
+          <div class="card-action d-flex">
+            <%= link_to parking_path(parking) do %>
+          <p class="mb-0 mr-4"><i class="fas fa-info-circle"></i>View</p>
+          <% end %>
+          
+          <%= link_to parkings_path(to_parking: parking.id) do %>
+            <p class="mb-0 mr-2"><i class="fas fa-directions"></i>Direction</p>
+          <% end %>
+          </div>
+
         </div>
       </div>
     <% end %>
