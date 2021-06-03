@@ -12,9 +12,4 @@
   background-color: $yellow;
   padding: 8px 16px;
   border-radius: 8px;
-  opacity: .85;
-  transform: opacity 500ms ease;
-  &:hover {
-    opacity: 1;
-  }
 }

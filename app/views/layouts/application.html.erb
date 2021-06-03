@@ -16,6 +16,8 @@
       <%= render 'shared/flashes' %>
       <%= yield %>
     </div>
+    <% unless current_page?(root_path) %>
     <%= render 'shared/navbar', class: 'footer' %>
+    <% end %>
   </body>
 </html>
