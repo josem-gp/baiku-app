@@ -1,7 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import distance from '@turf/distance';
-import { initRoute } from './init_createRoute';
+import { initRoute } from './init_route';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
