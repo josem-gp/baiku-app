@@ -1,5 +1,5 @@
 
-const directionSync = () => {
+const initDirectionSync = () => {
   document.querySelectorAll(".btn-direction").forEach((card) => {
     card.addEventListener('click', (event) => {
       const id = event.currentTarget.dataset.id;
@@ -8,4 +8,4 @@ const directionSync = () => {
   })
   }
   
-  export { directionSync };
+  export { initDirectionSync };

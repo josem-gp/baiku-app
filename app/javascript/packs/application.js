@@ -28,14 +28,13 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
 import { initCarousel } from '../plugins/init_carousel';
-import { directionSync } from "../components/directionSync";
-import { markerId } from '../plugins/init_pinIt';
+import { initDirectionSync } from '../plugins/init_directionsync';
+import { initPinMarker } from '../plugins/init_pinmarker';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
   initCarousel();
-  directionSync();
-  markerId();
-  console.log(5);
+  initDirectionSync();
+  initPinMarker();
 });

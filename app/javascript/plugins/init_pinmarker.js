@@ -1,4 +1,4 @@
-const markerId = () => {
+const initPinMarker = () => {
   document.querySelectorAll('.marker').forEach((marker) => {
     marker.addEventListener('click', (event) => {
       const id = event.currentTarget.dataset.id;
@@ -11,6 +11,6 @@ const markerId = () => {
   })
 }
 
-export { markerId };
+export { initPinMarker };
 
 
