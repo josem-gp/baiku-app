@@ -12,12 +12,12 @@
 }
 
 .card-show-carousel {
-  margin: -16px 0px 8px 16px;
+  margin: -16px 0px 8px 12px;
 }
 
 .card-review {
   width: 344px;
-  margin: 16px 0px 0px 0px;
+  margin: 16px 0px 8px 4px;
   padding: 16px 16px 0px 16px;
   p {
     margin: 0px 0px 8px 0px;
@@ -26,6 +26,7 @@
     margin: 0px 6px 0px 0px;
   }
   border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 
 .star-yellow {
