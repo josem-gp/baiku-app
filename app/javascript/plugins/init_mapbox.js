@@ -21,8 +21,10 @@ const initMapbox = () => {
       center: [139.6925947, 35.6324644], // starting position
       zoom: 12
     });
-
-    initRoute(map);
+    if (mapElement.dataset.destination) {
+      initRoute(map);
+    }
+    
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {

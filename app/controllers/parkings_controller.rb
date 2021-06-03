@@ -13,12 +13,10 @@ class ParkingsController < ApplicationController
         marker: render_to_string(partial: "marker", locals: { parking: parking })
       }
     end
-    # if params[:to_parking].present?
-    #   @parking = Parking.find(params[:to_parking])
-    #   @destination = [@parking.longitude, @parking.latitude]
-    # else
-    #   @destination = [139.6925947, 35.6324644]
-    # end
+    if params[:to_parking].present?
+      @parking = Parking.find(params[:to_parking])
+      @destination = [@parking.longitude, @parking.latitude]
+    end
   end
 
   def show
