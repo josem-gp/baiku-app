@@ -13,7 +13,7 @@ class ParkingsController < ApplicationController
         marker: render_to_string(partial: "marker", locals: { parking: parking })
       }
     end
-    @destination = [139.6925947, 35.6324644]
+    @destination = [139.711439, 35.63086635]
   end
 
   def show
