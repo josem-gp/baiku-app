@@ -1,4 +1,3 @@
-
 const markerId = () => {
   document.querySelectorAll('.marker').forEach((marker) => {
     marker.addEventListener('click', (event) => {

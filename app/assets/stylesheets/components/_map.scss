@@ -10,8 +10,10 @@
   z-index: 1;
   form {
     .map-text-input {
-      width: 220px;
+      width: 252px;
       margin-right: 4px;
+      border-radius: 8px;
+      padding: 8px 12px;
     }
   }
 }

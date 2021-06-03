@@ -24,30 +24,39 @@ const renderRoute = (start, end, map) => {
     if (map.getSource('route')) {
       map.getSource('route').setData(geojson);
     } else { // otherwise, make a new request
-      map.addLayer({
-        id: 'route',
-        type: 'line',
-        source: {
-          type: 'geojson',
-          data: {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'LineString',
-              coordinates: geojson
-            }
+      map.on('style.load', () => {
+        const waiting = () => {
+          if (!map.isStyleLoaded()) {
+            setTimeout(waiting, 200);
+          } else {
+            map.addLayer({
+              id: 'route',
+              type: 'line',
+              source: {
+                type: 'geojson',
+                data: {
+                  type: 'Feature',
+                  properties: {},
+                  geometry: {
+                    type: 'LineString',
+                    coordinates: geojson
+                  }
+                }
+              },
+              layout: {
+                'line-join': 'round',
+                'line-cap': 'round'
+              },
+              paint: {
+                'line-color': '#3887be',
+                'line-width': 5,
+                'line-opacity': 0.75
+              }
+            });
           }
-        },
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round'
-        },
-        paint: {
-          'line-color': '#3887be',
-          'line-width': 5,
-          'line-opacity': 0.75
-        }
-      });
+        };
+        waiting();
+      })
     }
   };
   req.send();
@@ -136,12 +145,21 @@ const initRoute = (map) => {
   // });
 
   // simulate geoloc
-  var start = [139.6925947, 35.6324644];
+  let start = [139.7081321, 35.6336481];
   renderRoute(start, start, map);
+
+  let counter = 0
+  const simulationCoords = [[139.7085, 35.6329933],[139.7085335,35.6328196],[139.7086486, 35.6323355],[139.7086486, 35.6323355],[139.7095947, 35.6318514], [139.7108253, 35.6315044], [139.7112196, 35.6312581], [139.711439, 35.63086635]]
   setInterval( () => {
-    start[0] = start[0] + 0.001;
+    start = simulationCoords[counter];
     renderRoute(start, destination, map);
-  }, 1000)
+    const distanceToDestination = distance(start, destination);
+    console.log(distanceToDestination);
+    if (distanceToDestination < 0.005) {
+      arrivalNotification();
+    }
+    counter += 1
+  }, 1500);
 }
 
 export { initRoute };
