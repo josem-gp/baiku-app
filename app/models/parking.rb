@@ -19,7 +19,12 @@ class Parking < ApplicationRecord
   }
 
   def average_review_score
-    reviews.average(:rating).to_f.round(1)
+    average = reviews.average(:rating).to_f
+    if average % 1 == 0
+      average.to_i
+    else
+      average.round(1)
+    end
   end
 
   def free_or_paid
