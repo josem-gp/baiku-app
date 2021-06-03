@@ -1,6 +1,3 @@
-
-
-
 const getId = () => {
   console.log('Hi');
   document.querySelectorAll('.marker').forEach((marker) => {
