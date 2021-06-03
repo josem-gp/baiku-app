@@ -17,7 +17,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10',
+      style: 'mapbox://styles/teamruby/ckpgl9zfb166z18nz5gnbcppk',
       center: [139.6925947, 35.6324644], // starting position
       zoom: 12
     });
