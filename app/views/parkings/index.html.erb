@@ -21,11 +21,7 @@
         <div class="card-details d-flex flex-column pl-3 py-2">
           <p class="mb-2 font-weight-bold"><%= parking.name %></p>
           <p class="m-0 flex-grow-1"><i class="fas fa-map-marked-alt"></i> <%= parking.address %></p>
-          <div class="d-flex">
-            <p class="m-0 mr-5"><i class='fas fa-star star-yellow'></i> <%= parking.average_review_score %></p>
-            <% plural = parking.reviews.count == 1 ? 'Review' : 'Reviews' %>
-            <p class="m-0"><i class="fas fa-pencil-alt"></i> <%= "#{parking.reviews.count} #{plural}" %></p>
-          </div>
+          <p class="m-0 mr-5"><%= parking.average_review_score %> <i class='fas fa-star star-yellow'></i> (<%= parking.reviews.count %>) </p>
           <div class="card-action d-flex">
             <%= link_to parking_path(parking) do %>
               <p class="mb-0 mr-4"><i class="fas fa-info-circle"></i> Info</p>
