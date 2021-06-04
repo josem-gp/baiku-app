@@ -45,20 +45,20 @@ puts "Created #{Parking.count} parkings!"
 
 puts "Creating some users..."
 
-user = User.new(email: 'lenatheboss@hotmail.com', password: '1234567', name: 'Lena')
-user.save!
+lena = User.new(email: 'lenatheboss@hotmail.com', password: '1234567', name: 'Lena')
+lena.save!
 
-user = User.new(email: 'jose@hotmail.com', password: '1234567', name: 'Jose')
-user.save!
+jose = User.new(email: 'jose@hotmail.com', password: '1234567', name: 'Jose')
+jose.save!
 
-user = User.new(email: 'allan@hotmail.com', password: '1234567', name: 'Allan')
-user.save!
+allan = User.new(email: 'allan@hotmail.com', password: '1234567', name: 'Allan')
+allan.save!
 
-user = User.new(email: 'kenn@hotmail.com', password: '1234567', name: 'Kenn')
-user.save!
+kenn = User.new(email: 'kenn@hotmail.com', password: '1234567', name: 'Kenn')
+kenn.save!
 
-user = User.new(email: 'doug@hotmail.com', password: '1234567', name: 'Doug')
-user.save!
+doug = User.new(email: 'doug@hotmail.com', password: '1234567', name: 'Doug')
+doug.save!
 
 puts "Created #{User.count} users!"
 
@@ -90,10 +90,43 @@ file = URI.open(image3[0])
 maruetsu = Parking.new(name: names3[0], address: address3[0], description: description3[0])
 maruetsu.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
+2.times do
+  review = reviews.sample.dup
+  review.user = User.all.sample
+  review.parking = maruetsu
+  review.save!
+end
+
 file = URI.open(image3[1])
 seven = Parking.new(name: names3[1], address: address3[1], description: description3[1])
 seven.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
+
+review = review_1
+review.user = lena
+review.parking = seven
+review.save!
+
+review = review_2
+review.user = jose
+review.parking = seven
+review.save!
+
 file = URI.open(image3[2])
 aqua = Parking.new(name: names3[2], address: address3[2], description: description3[2])
 aqua.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+
+review = review_5
+review.user = jose
+review.parking = aqua
+review.save!
+
+review = review_4
+review.user = kenn
+review.parking = aqua
+review.save!
+
+review = review_3
+review.user = doug
+review.parking = aqua
+review.save!
