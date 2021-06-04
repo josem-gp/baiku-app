@@ -86,6 +86,16 @@ puts "Done!"
 
 image3 = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1622449850/Baiku/maruetsu_meguro_plqefa.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451064/Baiku/7_eleven_gyoninzaka_ynhhyo.jpg',
           'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622780020/Baiku/Aqua_Meguro_hkxlon.png']
+
+name3 = ['Maruetsu Meguro', '7 Eleven Meguro Gyoninzaka', 'Aqua Meguro']
+
+address3 = ['2-21-23 Meguro, Tokyo', '1-7-8 Meguro, Tokyo', '3-2-9 Kamiosaki, Tokyo']
+
+description3 = ['Free parking in front of the supermarket', 'Very close to the station. Lots of space for parking.', 'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.']
+
+
+
+
 file = URI.open(image3[0])
 maruetsu = Parking.new(name: names3[0], address: address3[0], description: description3[0])
 maruetsu.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
