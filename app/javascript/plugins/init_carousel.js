@@ -25,7 +25,10 @@ const initCarousel = () => {
   owl.on('changed.owl.carousel', function(event) {
     const card = document.querySelectorAll('.card')[event.item.index]
     document.querySelectorAll('.animate').forEach((marker) => marker.classList.remove('animate'));
-    document.getElementById(`marker-studio-${card.dataset.id}`).classList.add("animate");
+    const marker = document.getElementById(`marker-studio-${card.dataset.id}`);
+    if (marker) {
+      marker.classList.add("animate")
+    }
   })
   syncCardMarker(owl)
 }

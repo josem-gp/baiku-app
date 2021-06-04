@@ -28,14 +28,12 @@
           </div>
           <div class="card-action d-flex">
             <%= link_to parking_path(parking) do %>
-          <p class="mb-0 mr-4"><i class="fas fa-info-circle"></i> Info</p>
-          <% end %>
-          
-          <%= link_to parkings_path(to_parking: parking.id) do %>
-            <p class="mb-0 mr-2"><i class="fas fa-directions"></i> Directions</p>
-          <% end %>
+              <p class="mb-0 mr-4"><i class="fas fa-info-circle"></i> Info</p>
+            <% end %>
+            <%= link_to parkings_path(to_parking: parking.id) do %>
+              <p class="mb-0 mr-2"><i class="fas fa-directions"></i> Directions</p>
+            <% end %>
           </div>
-
         </div>
       </div>
     <% end %>
