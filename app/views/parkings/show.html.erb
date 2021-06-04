@@ -3,7 +3,8 @@
   <div class="card-show-info">
     <h4><b><%= @parking.name %></b></h4>
     <p><i class="fas fa-map-marked-alt"></i><%= @parking.address %></p>
-    <p><i class="fas fa-hand-holding-usd"></i><%= @parking.free_or_paid %></p>
+    <p><i class="fas fa-yen-sign"></i><%= @parking.free_or_paid %></p>
+    <p><i class="fas fa-info-circle"></i><em><%= @parking.description %></em></p>
     <%= render 'average_rating' %>
   </div>
 </div>
