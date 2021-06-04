@@ -1,10 +1,10 @@
 require "open-uri"
 require 'nokogiri'
 
-# puts "Clearing database..."
-# Parking.destroy_all
-# Review.destroy_all
-# User.destroy_all
+puts "Clearing database..."
+Parking.destroy_all
+Review.destroy_all
+User.destroy_all
 
 # name = ['Impact HUB Tokyo', 'Maruetsu Meguro', 'Riverside Earth Training Center', 'Switch Coffee Tokyo',
 #         'JR Tokyumeguro Bldg', 'Otori-jinja Shrine', 'Meguro Tokyu Store', 'Family Mart Otori-jinja',
@@ -49,26 +49,47 @@ require 'nokogiri'
 
 # end
 
-# puts "Created #{Parking.count} parkings!"
+puts "Start the Scraping"
 
-# puts "Creating some users..."
+url = "xmlSeed/seedBikes.kml"
 
-# user = User.new(email: 'lenatheboss@hotmail.com', password: '1234567', name: 'Lena')
-# user.save!
+puts "url checked!"
+file = File.open(url)
+# html_file = URI.open(url).read
+document  = Nokogiri::XML(file)
 
-# user = User.new(email: 'jose@hotmail.com', password: '1234567', name: 'Jose')
-# user.save!
+puts "html_doc checked!"
 
-# user = User.new(email: 'allan@hotmail.com', password: '1234567', name: 'Allan')
-# user.save!
+document.search('Placemark').each do |coordinates|
+  name = coordinates.search('name').text.strip.include?("/") ? coordinates.search('name').text.strip.split("/")[1].strip : coordinates.search('name').text.strip
+  p name
+  longitude = coordinates.search('coordinates').text.strip.split(",")[0].to_f
+  p longitude
+  latitude = coordinates.search('coordinates').text.strip.split(",")[1].to_f
+  p latitude
+  parking = Parking.create(name: name, latitude: latitude, longitude: longitude, price: rand(0..1))
+end
 
-# user = User.new(email: 'kenn@hotmail.com', password: '1234567', name: 'Kenn')
-# user.save!
+puts "Created #{Parking.count} parkings!"
 
-# user = User.new(email: 'doug@hotmail.com', password: '1234567', name: 'Doug')
-# user.save!
+puts "Creating some users..."
 
-# puts "Created #{User.count} users!"
+user = User.new(email: 'lenatheboss@hotmail.com', password: '1234567', name: 'Lena')
+user.save!
+
+user = User.new(email: 'jose@hotmail.com', password: '1234567', name: 'Jose')
+user.save!
+
+user = User.new(email: 'allan@hotmail.com', password: '1234567', name: 'Allan')
+user.save!
+
+user = User.new(email: 'kenn@hotmail.com', password: '1234567', name: 'Kenn')
+user.save!
+
+user = User.new(email: 'doug@hotmail.com', password: '1234567', name: 'Doug')
+user.save!
+
+puts "Created #{User.count} users!"
 
 # puts "Creating some reviews..."
 
@@ -89,18 +110,3 @@ require 'nokogiri'
 
 # puts "Created #{Review.count} reviews!"
 # puts "Done!"
-
-puts "Start the Scraping"
-
-url = "xmlSeed/seedBikes.kml"
-
-puts "url checked!"
-file = File.open(url)
-# html_file = URI.open(url).read
-document  = Nokogiri::XML(file)
-
-puts "html_doc checked!"
-
-document.search('coordinates').each do |coordinates|
-  p coordinates.text.strip.split(",")
-end
