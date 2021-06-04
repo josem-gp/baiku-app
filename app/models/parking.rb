@@ -29,9 +29,9 @@ class Parking < ApplicationRecord
 
   def free_or_paid
     if price == 'free'
-      'Free'
+      'FREE'
     else
-      'Payment required'
+      'Payment required at this spot'
     end
   end
 
