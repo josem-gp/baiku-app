@@ -101,6 +101,6 @@ document  = Nokogiri::XML(file)
 
 puts "html_doc checked!"
 
-p document.search('coordinates').each do |coordinates|
-  p coordinates
+document.search('coordinates').each do |coordinates|
+  p coordinates.text.strip.split(",")
 end
