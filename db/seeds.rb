@@ -98,6 +98,7 @@ description3 = ['Free parking in front of the supermarket', 'Very close to the s
 
 file = URI.open(image3[0])
 maruetsu = Parking.new(name: names3[0], address: address3[0], description: description3[0])
+maruetsu.save!
 maruetsu.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 2.times do
@@ -109,6 +110,7 @@ end
 
 file = URI.open(image3[1])
 seven = Parking.new(name: names3[1], address: address3[1], description: description3[1])
+seven.save!
 seven.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 
@@ -124,6 +126,7 @@ review.save!
 
 file = URI.open(image3[2])
 aqua = Parking.new(name: names3[2], address: address3[2], description: description3[2])
+aqua.save!
 aqua.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 review = review_5
