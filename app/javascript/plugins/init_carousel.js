@@ -3,9 +3,9 @@ import 'owl.carousel';
 import { syncCardMarker } from "./init_syncCardMarker";
 
 const initCarousel = () => {
-  const owl = $('.owl-carousel')
+  const owl = $('.owl-carousel');
   owl.owlCarousel({
-    // stagePadding: 8,
+    // stagePadding: 2,
     loop: false,
     margin: 10,
     responsive:{
