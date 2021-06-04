@@ -1,4 +1,4 @@
-import 'owl.carousel/dist/assets/owl.carousel.css';
+// import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import { syncCardMarker } from "./init_syncCardMarker";
 
@@ -6,7 +6,7 @@ const initCarousel = () => {
   const owl = $('.owl-carousel');
   owl.owlCarousel({
     // stagePadding: 2,
-    loop: false,
+    loop: true,
     margin: 10,
     responsive:{
       0:{
