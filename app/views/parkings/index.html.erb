@@ -16,21 +16,24 @@
     <% @parkings.each do |parking| %>
       <div data-id="<%= parking.id %>" class="card flex-row">
         <div class="card-image">
-          <%= cl_image_tag(parking.photos.first.key, width: 160, height: 160, crop: :fill) %>
+          <%= cl_image_tag(parking.photos.first.key, width: 128, height: 144, crop: :fill) %>
         </div>
         <div class="card-details d-flex flex-column pl-3 py-2">
           <p class="mb-2 font-weight-bold"><%= parking.name %></p>
           <p class="m-0 flex-grow-1"><i class="fas fa-map-marked-alt"></i> <%= parking.address %></p>
-          <div class="card-action d-flex">
-          <%= link_to parking_path(parking) do %>
-            <p class="mb-0 mr-4"><i class="fas fa-info-circle"></i>View</p>
-          <% end %>
-          
-          <%= link_to parkings_path(to_parking: parking.id) do %>
-            <p class="mb-0 mr-2"><i class="fas fa-directions"></i>Direction</p>
-          <% end %>
+          <div class="d-flex">
+            <p class="m-0 mr-5"><i class='fas fa-star star-yellow'></i> <%= parking.average_review_score %></p>
+            <% plural = parking.reviews.count == 1 ? 'Review' : 'Reviews' %>
+            <p class="m-0"><i class="fas fa-pencil-alt"></i> <%= "#{parking.reviews.count} #{plural}" %></p>
           </div>
-
+          <div class="card-action d-flex">
+            <%= link_to parking_path(parking) do %>
+              <p class="mb-0 mr-4"><i class="fas fa-info-circle"></i> Info</p>
+            <% end %>
+            <%= link_to parkings_path(to_parking: parking.id) do %>
+              <p class="mb-0 mr-2"><i class="fas fa-directions"></i> Directions</p>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
