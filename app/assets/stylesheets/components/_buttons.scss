@@ -4,9 +4,10 @@
   width: 100%;
   margin-top: 12px;
   line-height: 40px;
+  
 }
 
-.btn-show-container {
+.btn-container {
   background-color: $white;
 }
 
@@ -19,6 +20,12 @@
   padding: 8px 16px;
   border-radius: 8px;
   border: none;
+  p {
+    color: $black;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 #search {

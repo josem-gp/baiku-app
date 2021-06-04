@@ -22,8 +22,8 @@
           <p class="mb-2 font-weight-bold"><%= parking.name %></p>
           <p class="m-0 flex-grow-1"><i class="fas fa-map-marked-alt"></i> <%= parking.address %></p>
           <div class="card-action d-flex">
-            <%= link_to parking_path(parking) do %>
-          <p class="mb-0 mr-4"><i class="fas fa-info-circle"></i>View</p>
+          <%= link_to parking_path(parking) do %>
+            <p class="mb-0 mr-4"><i class="fas fa-info-circle"></i>View</p>
           <% end %>
           
           <%= link_to parkings_path(to_parking: parking.id) do %>
