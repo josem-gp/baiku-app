@@ -1,7 +1,7 @@
 class Parking < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  
+
   has_many :user_parkings
   has_many :users, through: :user_parkings
   has_many :reviews, dependent: :destroy
@@ -10,10 +10,12 @@ class Parking < ApplicationRecord
   validates :address, presence: true
   validates :description, length: { minimum: 10 }, presence: true
   enum price: [:free, :paid]
+  validates :risk_level, presence: true
+  enum risk_level: [:safe, :risky]
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_address,
-  against: [ :name, :address ],
+    against: [ :name, :address ],
   using: {
     tsearch: { prefix: true }
   }
