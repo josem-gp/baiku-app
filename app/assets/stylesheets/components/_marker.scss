@@ -1,17 +1,23 @@
 
+.marker-vermilion {
+  font-size: 40px;
+  color: $vermilion;
+}
+
+.yen-white {
+  font-size: 20px;
+  color: $white;
+}
+
 .marker-blue {
   font-size: 40px;
   color: $blue;
 }
 
-.yen-blue {
+.bike-yellow {
   font-size: 20px;
-  color: white;
-}
-
-.marker-green {
-  font-size: 28px;
-  color: $green;
+  color: $yellow;
+  bottom: 6px;
 }
 
 .animate {
