@@ -23,6 +23,7 @@ class ParkingsController < ApplicationController
     @parking = Parking.find(params[:id])
     authorize @parking
     @reviews = @parking.reviews
+    @review = Review.new
   end
 
   def create

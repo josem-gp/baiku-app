@@ -19,11 +19,7 @@
         </div>
       </div>
       <div class="col-6">
-        <div class="flex-grow-1 btn-yellow">
-          <%= link_to parkings_path(to_parking: @parking.id) do %>
-            <p class="mb-0 text-center"><i class="far fa-edit"></i> Review</p>
-          <% end %>
-        </div>
+        <%= render 'reviews/modal' %>
       </div>
     </div>
   </div>

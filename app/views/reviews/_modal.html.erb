@@ -1,0 +1,24 @@
+<!-- Button trigger modal -->
+<div class="btn-yellow flex-grow-1 text-center" data-toggle="modal" data-target="#review">
+  <i class="far fa-edit"></i> Review
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="review" tabindex="-1" aria-labelledby="reviewLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reviewLabel">New Review</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body rounded p-3">
+        <%= render 'reviews/form' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
