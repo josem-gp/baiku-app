@@ -4,11 +4,9 @@
       <i class="fas fa-biking"></i>
     </div>
   <% end %>
-  <%= link_to parkings_path, class: "navbar-brand" do %>
-    <div class='navbar-icon'>
-      <i class="fas fa-plus"></i>
-    </div>
-  <% end %>
+  <div class="navbar-icon" data-toggle="modal" data-target="#newParkingModal">
+    <i class="fas fa-plus"></i>
+  </div>
   <%= link_to parkings_path, class: "navbar-brand" do %>
     <div class='navbar-icon'>
       <i class="fas fa-map"></i>
@@ -19,4 +17,7 @@
       <i class="fas fa-user"></i>
     </div>
   <% end %>
+</div>
+<div>
+  <%= render './shared/new_modal' %>
 </div>

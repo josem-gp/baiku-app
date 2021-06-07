@@ -1,6 +1,6 @@
 <%= simple_form_for @parking do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.text :description %>
+  <%= f.input :name, label: 'Parking Spot Name' %>
+  <%= f.input :address, label: 'Address' %>
+  <%= f.input :description, label: 'Description', as: :text %>
   <%= f.submit "Add Parking" %>
 <% end %>

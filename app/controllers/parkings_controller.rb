@@ -16,6 +16,7 @@ class ParkingsController < ApplicationController
       @parking = Parking.find(params[:to_parking])
       @destination = [@parking.longitude, @parking.latitude]
     end
+    @parking = Parking.new
   end
 
   def show
@@ -25,6 +26,7 @@ class ParkingsController < ApplicationController
   end
 
   def create
+    raise
     @parking = Parking.new(parking_params)
   end
 
