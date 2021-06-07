@@ -23,4 +23,14 @@ class ParkingsController < ApplicationController
     authorize @parking
     @reviews = @parking.reviews
   end
+
+  def create
+    @parking = Parking.new(parking_params)
+  end
+
+  private
+
+  def parking_params
+    params.require(:parking).permit(:name, :address, :description, :price)
+  end
 end
