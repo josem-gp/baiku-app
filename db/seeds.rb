@@ -178,12 +178,12 @@ selva.save!
 selva.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 
-review = review_1
+review = review_1a
 review.user = lena
 review.parking = selva
 review.save!
 
-review = review_2
+review = review_2a
 review.user = jose
 review.parking = selva
 review.save!
@@ -193,17 +193,17 @@ aqua = Parking.new(name: names3[2], description: description3[2], price: 0, lati
 aqua.save!
 aqua.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
-review = review_5
+review = review_5a
 review.user = jose
 review.parking = aqua
 review.save!
 
-review = review_4
+review = review_4a
 review.user = kenn
 review.parking = aqua
 review.save!
 
-review = review_3
+review = review_3a
 review.user = doug
 review.parking = aqua
 review.save!
@@ -214,12 +214,12 @@ sushi.save!
 sushi.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 
-review = review_1
+review = review_1b
 review.user = doug
 review.parking = sushi
 review.save!
 
-review = review_2
+review = review_2b
 review.user = lena
 review.parking = sushi
 review.save!
@@ -230,12 +230,12 @@ kibogaoka.save!
 kibogaoka.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 
-review = review_1
+review = review_4b
 review.user = doug
 review.parking = kibogaoka
 review.save!
 
-review = review_2
+review = review_3b
 review.user = lena
 review.parking = kibogaoka
 review.save!
