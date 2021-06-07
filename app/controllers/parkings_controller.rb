@@ -26,13 +26,14 @@ class ParkingsController < ApplicationController
   end
 
   def create
-    raise
     @parking = Parking.new(parking_params)
+    authorize @parking
+    redirect_to parking_path(@parking) if @parking.save
   end
 
   private
 
   def parking_params
-    params.require(:parking).permit(:name, :address, :description, :price, :risk_level)
+    params.require(:parking).permit(:name, :address, :description, :photo, :price, :risk_level)
   end
 end
