@@ -2,5 +2,8 @@
   <%= f.input :comment %>
   <%= f.input :photo, as: :file %>
   <%= f.input :risk_level, label: 'Safe to park?', collection: [['safe', 'Yes'], ['risky', 'No']], label_method: :second, value_method: :first, selected: 'Yes' %>
-  <%= f.submit "Add a Review", class: "btn-yellow" %>
+  <div class='d-flex justify-content-between'>
+    <%= link_to "Go back", parking_path(params[:id]), class: 'btn btn-cancel' %>
+    <%= f.submit "Submit", class: "btn-yellow" %>
+  </div>
 <% end %>
