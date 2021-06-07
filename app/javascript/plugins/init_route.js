@@ -4,10 +4,6 @@ import { initSweetAlert } from './init_sweetalert';
 import { initGetId } from './init_getid';
 
 const renderRoute = (start, end, map) => {
-  console.log('you are in the renderRoute function');
-  console.log(start);
-  console.log(end);
-
   var url = 'https://api.mapbox.com/directions/v5/mapbox/cycling/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?steps=true&geometries=geojson&access_token=' + mapboxgl.accessToken;
   // make an XHR request https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
   var req = new XMLHttpRequest();
@@ -130,8 +126,6 @@ const createRoute = (start, destination, map) => {
 
 const initRoute = (start, map) => {
   // define destination point
-  console.log('This is the start');
-  console.log(start)
   const mapElement = document.getElementById('map');
   const destination = JSON.parse(mapElement.dataset.destination);
   // define starting point
@@ -142,10 +136,7 @@ const initRoute = (start, map) => {
   //   const latitude = position.coords.latitude;
   //   const longitude = position.coords.longitude;
   //   const start = [longitude, latitude];
-  console.log('This is the destination');
-  console.log(destination);
-
-  // createRoute(initStart(),destination, map);
+  createRoute(start, destination, map);
   // });
 
   // simulate geoloc

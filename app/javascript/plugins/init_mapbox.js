@@ -20,32 +20,28 @@ const initMapbox = () => {
       zoom: 12
     });
 
-    // Add the control to the map.
-    const geolocate = map.addControl(
-    );
-        new mapboxgl.GeolocateControl({
+    let geolocate = new mapboxgl.GeolocateControl({
         positionOptions: {
           enableHighAccuracy: true
         },
-          trackUserLocation: true
-      })
+        trackUserLocation: true
+      });
 
-    console.log(geolocate);
+    // Add geolocate control button to the map.
+    map.addControl(geolocate);
+
     map.on('load', function() {
       document.querySelector('.mapboxgl-ctrl-geolocate').click();
     });
 
-    map.on('geolocate', function (position) {
-      console.log('hi')
+    geolocate.on('geolocate', function (position) {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
       const start = [longitude, latitude];
-      console.log('start location');
+        if (mapElement.dataset.destination) {
+          initRoute(start, map);
+        };
     });
-
-    if (mapElement.dataset.destination) {
-      initRoute(start, map);
-    };
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
