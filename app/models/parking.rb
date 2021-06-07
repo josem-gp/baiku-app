@@ -7,7 +7,6 @@ class Parking < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many_attached :photos
   validates :name, uniqueness: { scope: :address }, presence: true
-  validates :description, length: { minimum: 10 }, presence: true
   # validates :address, presence: true
   # validates :description, length: { minimum: 10 }, presence: true
   enum price: [:free, :paid]

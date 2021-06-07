@@ -89,12 +89,11 @@ document.search('Placemark').each do |coordinates|
   idx = rand(images.count)
   file = URI.open(images[idx])
   name = coordinates.search('name').text.strip.include?("/") ? coordinates.search('name').text.strip.split("/")[1].strip : coordinates.search('name').text.strip
-  p name
   longitude = coordinates.search('coordinates').text.strip.split(",")[0].to_f
   p longitude
   latitude = coordinates.search('coordinates').text.strip.split(",")[1].to_f
   p latitude
-  parking = Parking.create(name: name, latitude: latitude, longitude: longitude, price: rand(0..1))
+  parking = Parking.create(name: name, latitude: latitude, longitude: longitude, price: rand(0..1), risk_level: 0)
   parking.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
   puts "Created #{Parking.count} parkings!"
 end
@@ -148,9 +147,9 @@ names3 = ['Atre Meguro Bicycle Parking', 'Selva Meguro', 'Aqua Meguro', 'Sushi T
 
 address3 = ['2-16 Kamiosaki, Tokyo', '3-10 Kamiosaki, Tokyo', '3-2-9 Kamiosaki, Tokyo', '3-6-1 Kamiosaki, Tokyo']
 
-description3 = ['Very close to the station. Lots of space for parking.', 'Unused. Often empty. Have used it several times now.', 
-'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.', 
-'Little street near this sushi restaurant. Very quiet area.']
+description3 = ['Very close to the station. Lots of space for parking.', 'Unused. Often empty. Have used it several times now.',
+                'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.',
+                'Little street near this sushi restaurant. Very quiet area.']
 
 
 
