@@ -4,6 +4,7 @@ import { initSweetAlert } from './init_sweetalert';
 import { initGetId } from './init_getid';
 
 const renderRoute = (start, end, map) => {
+  console.log('you are in the renderRoute function');
   console.log(start);
   console.log(end);
 
@@ -15,7 +16,6 @@ const renderRoute = (start, end, map) => {
     var json = JSON.parse(req.response);
     var data = json.routes[0];
     var route = data.geometry.coordinates;
-    console.log(route);
     var geojson = {
       type: 'Feature',
       properties: {},
@@ -24,7 +24,6 @@ const renderRoute = (start, end, map) => {
         coordinates: route
       }
     };
-    console.log(geojson);
     // if the route already exists on the map, reset it using setData
     if (map.getSource('route')) {
       map.getSource('route').setData(geojson);
@@ -67,19 +66,19 @@ const renderRoute = (start, end, map) => {
   req.send();
 };
 
-const arrivalNotification = () => {
-  initSweetAlert(initGetId());
-}
+// const arrivalNotification = () => {
+//   initSweetAlert(initGetId());
+// }
 
 const createRoute = (start, destination, map) => {
-  const distanceToDestination = distance(start, destination);
-  console.log(distanceToDestination);
-  if (distanceToDestination < 0.0001) {
-    arrivalNotification();
-  }
-  else {
+
+  // const distanceToDestination = distance(start, destination);
+  // console.log(distanceToDestination);
+  // if (distanceToDestination < 0.0001) {
+  //   arrivalNotification();
+  // }
+  // else {
     // map.on('load', function() {
-    console.log('You are far')
       // make an initial directions request that
       // starts and ends at the same location
       renderRoute(start, start, map);
@@ -98,54 +97,56 @@ const createRoute = (start, destination, map) => {
                 type: 'Point',
                 coordinates: start
               }
-            }
-            ]
+            }]
           }
         },
       paint: {
         'circle-radius': 10,
         'circle-color': '#3887be'
       }
-    });
+      });
       // this is where the code from the next step will go
-    renderRoute(start, destination, map);
+      renderRoute(start, destination, map);
   // });
-  }
-}
+};
 
-const geolocateStart = (map) => {
-  var canvas = map.getCanvasContainer();
-  // initialize a start corrdinate
-  let start = [];
+// const geolocateStart = (map) => {
+//   var canvas = map.getCanvasContainer();
+//   // initialize a start corrdinate
+//   let start = [];
 
-  // Add geolocate control to the map.
-  let geolocate = new mapboxgl.GeolocateControl({
-    positionOptions: {
-      enableHighAccuracy: true
-    },
-    trackUserLocation: true
-  });
+//   // Add geolocate control to the map.
+//   let geolocate = new mapboxgl.GeolocateControl({
+//     positionOptions: {
+//       enableHighAccuracy: true
+//     },
+//     trackUserLocation: true
+//   });
 
-  // Add geolocate control button to the map.
-  map.addControl(geolocate);
-  return geolocate
-}
+//   // Add geolocate control button to the map.
+//   map.addControl(geolocate);
+//   return geolocate
+// }
 
-const initRoute = (map) => {
+const initRoute = (start, map) => {
   // define destination point
+  console.log('This is the start');
+  console.log(start)
   const mapElement = document.getElementById('map');
   const destination = JSON.parse(mapElement.dataset.destination);
-
   // define starting point
-  const geolocate = geolocateStart(map);
+  // const geolocate = geolocateStart(map);
 
   // Geolocate your position and initialize the route rendering
-  geolocate.on('geolocate', function (position) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    const start = [longitude, latitude];
-  createRoute(start, destination, map);
-  });
+  // geolocate.on('geolocate', function (position) {
+  //   const latitude = position.coords.latitude;
+  //   const longitude = position.coords.longitude;
+  //   const start = [longitude, latitude];
+  console.log('This is the destination');
+  console.log(destination);
+
+  // createRoute(initStart(),destination, map);
+  // });
 
   // simulate geoloc
   // let start = [139.7081321, 35.6336481];
