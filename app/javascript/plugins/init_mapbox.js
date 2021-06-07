@@ -61,6 +61,7 @@ const initMapbox = () => {
       .addTo(map);
     });
     addMapToMarkers(map, markers);
+
   }
 };
 
