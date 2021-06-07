@@ -24,9 +24,9 @@ class Parking < ApplicationRecord
   }
 
   def average_risk_score
-    total_reviews = self.reviews.count
-    total_safe = parking.reviews.where(risk_level: 'safe').count
-    return round(((total_safe/total_reviews).to_f * 100),2)
+    total_reviews = reviews.count
+    total_safe = reviews.where(risk_level: 'safe').count
+    return (total_safe / total_reviews.to_f * 100).round
   end
 
 
