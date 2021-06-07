@@ -4,7 +4,7 @@
     <p>Be the first to leave a review for <%= @parking.name %>!</p>
   </div>
 <% else %>
-  <div class="owl-carousel">
+  <div class="owl-carousel owl-theme">
     <% @parking.reviews.each do |review| %>
       <div class='container card card-review mt-3'>
         <p><%= "Reviewed by #{review.user.name}" %></p>
