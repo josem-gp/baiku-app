@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to parkings_path
     end
+    @parking = Parking.new
   end
 
   private
