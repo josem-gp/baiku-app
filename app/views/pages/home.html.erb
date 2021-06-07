@@ -2,24 +2,24 @@
   <div class="banner banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/5061062/pexels-photo-5061062.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);">
     <div class="banner-content">
       <div class="banner-text d-flex justify-content-center mb-5">
-        <h1 class="mb-0 mx-3">Find bike parking near you</h1>
+        <h1 class="mb-0">Find bike parking near you</h1>
       </div>
-        <% if user_signed_in? %>
-          <div class="d-flex justify-content-center mx-5">
-            <%= link_to parkings_path, class: "btn-yellow" do %>
-              <p class="m-0 text-body">Get Started</p>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="d-flex justify-content-between mx-5">
-            <%= link_to new_user_registration_path, class: "btn-yellow" do %>
-              <p class="m-0 text-body">Sign Up</p>
-            <% end %>
-            <%= link_to new_user_session_path, class: "btn-yellow" do %>
-              <p class="m-0 text-body">Login</p>
-            <% end %>
-          </div>
-        <% end %>
+      <% if user_signed_in? %>
+        <div class="d-flex justify-content-center mx-5">
+          <%= link_to parkings_path, class: "btn-yellow" do %>
+            <p class="m-0 text-body">Get Started</p>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="d-flex justify-content-between mx-5">
+          <%= link_to new_user_registration_path, class: "btn-yellow" do %>
+            <p class="m-0 text-body">Sign Up</p>
+          <% end %>
+          <%= link_to new_user_session_path, class: "btn-yellow" do %>
+            <p class="m-0 text-body">Login</p>
+          <% end %>
+        </div>
+      <% end %>
       <div class="banner-logo">
         <h5 class="m-0"><i class="fas fa-bicycle"></i>BAIKU</h5>
       </div>
