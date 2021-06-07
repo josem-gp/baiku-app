@@ -1,22 +1,38 @@
-<%= render 'shared/banner', img_path: cl_image_path(@parking.photos.first.key) %>
-<div class='container card border-0'>
-  <div class="card-show-info">
-    <h4><b><%= @parking.name %></b></h4>
-    <p><i class="fas fa-map-marked-alt"></i><%= @parking.address %></p>
-    <p><i class="fas fa-yen-sign"></i><%= @parking.free_or_paid %></p>
-    <p><i class="fas fa-info-circle"></i><em><%= @parking.description %></em></p>
-    <%= render 'average_rating' %>
+<div class="container p-0">
+  <%= render 'shared/banner', img_path: cl_image_path(@parking.photos.first.key) %>
+  <div class='container card border-0'>
+    <div class="card-show-info">
+      <h4><b><%= @parking.name %></b></h4>
+      <p><i class="fas fa-map-marked-alt"></i><%= @parking.address %></p>
+      <p><i class="fas fa-yen-sign"></i><%= @parking.free_or_paid %></p>
+      <p><i class="fas fa-info-circle"></i><%= @parking.description %></p>
+      <%= render 'average_rating' %>
+    </div>
   </div>
-</div>
-<div class="container btn-show-container">
-  <%= link_to "Show directions", parkings_path(to_parking: @parking.id), class: 'btn btn-show' %>
-  <%= link_to "Write a review", parkings_path(to_parking: @parking.id), class: 'btn btn-show' %>
-</div>
-<div>
-  <div class ='container mt-4'>
-    <%= render 'review_pluralize' %>
+  <div class="container btn-container mt-2">
+    <div class="row">
+      <div class="col-6">
+        <div class="flex-grow-1 btn-yellow">
+          <%= link_to parkings_path(to_parking: @parking.id) do %>
+            <p class="mb-0 text-center"><i class="fas fa-directions"></i> Directions</p>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="flex-grow-1 btn-yellow">
+          <%= link_to parkings_path(to_parking: @parking.id) do %>
+            <p class="mb-0 text-center"><i class="far fa-edit"></i> Review</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="owl-carousel card-show-carousel">
-    <%= render @reviews %>
+  <div>
+    <div class ='container mt-4'>
+      <%= render 'review_pluralize' %>
+    </div>
+    <div class="owl-carousel">
+      <%= render @reviews %>
+    </div>
   </div>
 </div>

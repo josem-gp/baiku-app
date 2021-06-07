@@ -1,38 +1,38 @@
 .card-show-info {
-  margin: 16px 0px 0px 0px;
+  margin-top: 16px;
   h4 {
-    margin: 0px 0px 12px 0px;
+    margin-bottom: 12px;
   }
   p {
-    margin: 0px 0px 8px 0px;
+    margin-bottom: 8px;
   }
   i {
-    margin: 0px 8px 0px 0px;
+    margin-right: 8px;
   }
 }
 
 .card-carousel {
-  margin: -16px 0 0 0;
+  position: fixed;
+  bottom: 23px;
 }
 
 .card-action a {
   text-decoration: none;
 }
 
-.card-show-carousel {
-  margin: -8px 0px 8px 12px;
-}
-
 .card-review {
   width: 344px;
-  margin: 16px 0px 8px 4px;
-  padding: 16px 16px 0px 16px;
+  padding: 16px;
   p {
-    margin: 0px 0px 8px 0px;
+    margin-bottom: 8px;
   }
   i {
-    margin: 0px 6px 0px 0px;
+    margin-right: 6px;
   }
   border-radius: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+.card-details i {
+  margin-right: 2px;
 }

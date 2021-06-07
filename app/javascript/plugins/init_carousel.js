@@ -1,4 +1,4 @@
-import 'owl.carousel/dist/assets/owl.carousel.css';
+// import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import { syncCardMarker } from "./init_syncCardMarker";
 
@@ -6,7 +6,7 @@ const initCarousel = () => {
   const owl = $('.owl-carousel');
   owl.owlCarousel({
     // stagePadding: 2,
-    loop: false,
+    loop: true,
     margin: 10,
     responsive:{
       0:{
@@ -25,7 +25,10 @@ const initCarousel = () => {
   owl.on('changed.owl.carousel', function(event) {
     const card = document.querySelectorAll('.card')[event.item.index]
     document.querySelectorAll('.animate').forEach((marker) => marker.classList.remove('animate'));
-    document.getElementById(`marker-studio-${card.dataset.id}`).classList.add("animate");
+    const marker = document.getElementById(`marker-studio-${card.dataset.id}`);
+    if (marker) {
+      marker.classList.add("animate")
+    }
   })
   syncCardMarker(owl)
 }

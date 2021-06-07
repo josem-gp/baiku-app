@@ -101,24 +101,25 @@ end
 puts "Finished! Created #{Parking.count} parkings!"
 puts "Creating some users..."
 
-user = User.new(email: 'lenatheboss@hotmail.com', password: '1234567', name: 'Lena')
-user.save!
+lena = User.new(email: 'lenatheboss@hotmail.com', password: '1234567', name: 'Lena')
+lena.save!
 
-user = User.new(email: 'jose@hotmail.com', password: '1234567', name: 'Jose')
-user.save!
+jose = User.new(email: 'jose@hotmail.com', password: '1234567', name: 'Jose')
+jose.save!
 
-user = User.new(email: 'allan@hotmail.com', password: '1234567', name: 'Allan')
-user.save!
+allan = User.new(email: 'allan@hotmail.com', password: '1234567', name: 'Allan')
+allan.save!
 
-user = User.new(email: 'kenn@hotmail.com', password: '1234567', name: 'Kenn')
-user.save!
+kenn = User.new(email: 'kenn@hotmail.com', password: '1234567', name: 'Kenn')
+kenn.save!
 
-user = User.new(email: 'doug@hotmail.com', password: '1234567', name: 'Doug')
-user.save!
+doug = User.new(email: 'doug@hotmail.com', password: '1234567', name: 'Doug')
+doug.save!
 
 puts "Created #{User.count} users!"
 
 # puts "Creating some reviews..."
+
 
 # review_5 = Review.new(comment: "Perfect! Very quiet and had no issues. Will definitely use this spot again.", rating: 5)
 # review_4 = Review.new(comment: "Great place! I've used this spot twice now. Quite a few bikes, but I", rating: 4)
@@ -135,5 +136,67 @@ puts "Created #{User.count} users!"
 # end
 
 
-# puts "Created #{Review.count} reviews!"
-# puts "Done!"
+puts "Created #{Review.count} reviews!"
+puts "Done!"
+
+
+
+image3 = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1622449850/Baiku/maruetsu_meguro_plqefa.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451064/Baiku/7_eleven_gyoninzaka_ynhhyo.jpg',
+          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622780020/Baiku/Aqua_Meguro_hkxlon.png']
+
+names3 = ['Maruetsu Meguro', '7 Eleven Meguro Gyoninzaka', 'Aqua Meguro']
+
+address3 = ['2-21-23 Meguro, Tokyo', '1-7-8 Meguro, Tokyo', '3-2-9 Kamiosaki']
+
+description3 = ['Paid parking in front of the supermarket', 'Very close to the station. Lots of space for parking.', 'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.']
+
+
+
+
+file = URI.open(image3[0])
+maruetsu = Parking.new(name: names3[0], address: address3[0], description: description3[0], price: 1)
+maruetsu.save!
+maruetsu.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+
+2.times do
+  review = reviews.sample.dup
+  review.user = User.all.sample
+  review.parking = maruetsu
+  review.save!
+end
+
+file = URI.open(image3[1])
+seven = Parking.new(name: names3[1], address: address3[1], description: description3[1], price: 0)
+seven.save!
+seven.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+
+
+review = review_1
+review.user = lena
+review.parking = seven
+review.save!
+
+review = review_2
+review.user = jose
+review.parking = seven
+review.save!
+
+file = URI.open(image3[2])
+aqua = Parking.new(name: names3[2], address: address3[2], description: description3[2], price: 0)
+aqua.save!
+aqua.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+
+review = review_5
+review.user = jose
+review.parking = aqua
+review.save!
+
+review = review_4
+review.user = kenn
+review.parking = aqua
+review.save!
+
+review = review_3
+review.user = doug
+review.parking = aqua
+review.save!
