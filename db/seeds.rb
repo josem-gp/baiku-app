@@ -17,14 +17,13 @@ description = ['Free for members', 'Free for customers', 'Quiet area near the a 
                'Next to Otori-jinja', 'Free for customers', 'Quiet street behind Family Mart. Free for customers', 'Free for customers', "Quiet residential area. Mainly seniors that don't say much",
                'Free for customers', 'Small street near Mita Okanoue Park', 'Free for customers', 'Opposite a photography studio', 'Free for customers', 'Next to an academy. Plenty of space']
 
-images = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1622449850/Baiku/impactHub_pq4jb2.png',
-          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451058/Baiku/riverside_m5fsig.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622452484/Baiku/SWITCH_COFFEE_SHOP_fhqw3n.jpg',
-          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622450476/Baiku/jr_megurobldg_uz6gbe.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451919/Baiku/otorikjinja_fmlvjb.png',
-          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451063/Baiku/tokyu_store_vgrfjh.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451800/Baiku/family_mart_otori_dyn6kd.jpg',
-          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451946/Baiku/pine_heights_oaws8m.jpg',
-          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451066/Baiku/seven_eleven_central_square_bxxztf.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622450705/Baiku/Prime_urban_meguro_t1oxmf.jpg',
-          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622450773/Baiku/cocokara_fine_byiw0u.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451828/Baiku/Image_Studio_109_Meguro_studio_wnnn7n.jpg',
-          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622450373/Baiku/familymart_meguroeast_axm4jc.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451077/Baiku/voice_academy_et6sie.png']
+images = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 
+          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 
+          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 
+          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 
+          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 
+          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 
+          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623030470/Baiku/5%20Meguro%20Seeds/default-image_fqkirf.jpg', ]
 
 puts "Creating parking"
 
@@ -82,48 +81,50 @@ puts "Done!"
 
 
 
-image3 = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1622449850/Baiku/maruetsu_meguro_plqefa.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622451064/Baiku/7_eleven_gyoninzaka_ynhhyo.jpg',
-          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1622780020/Baiku/Aqua_Meguro_hkxlon.png']
+image3 = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029881/Baiku/5%20Meguro%20Seeds/Atre_Meguro_Bicycle_Parking_bnufzz.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029517/Baiku/5%20Meguro%20Seeds/Selva_Meguro_tlgdbn.png',
+          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029518/Baiku/5%20Meguro%20Seeds/Aqua_Meguro_r7b9an.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623032229/Baiku/5%20Meguro%20Seeds/Sushi_Tatsu_qwabwo.png']
 
-names3 = ['Maruetsu Meguro', '7 Eleven Meguro Gyoninzaka', 'Aqua Meguro']
+names3 = ['Atre Meguro Bicycle Parking', 'Selva Meguro', 'Aqua Meguro', 'Sushi Tatsu']
 
-address3 = ['2-21-23 Meguro, Tokyo', '1-7-8 Meguro, Tokyo', '3-2-9 Kamiosaki']
+address3 = ['2-16 Kamiosaki, Tokyo', '3-10 Kamiosaki, Tokyo', '3-2-9 Kamiosaki, Tokyo', '3-6-1 Kamiosaki, Tokyo']
 
-description3 = ['Paid parking in front of the supermarket', 'Very close to the station. Lots of space for parking.', 'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.']
+description3 = ['Very close to the station. Lots of space for parking.', 'Unused. Often empty. Have used it several times now.', 
+'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.', 
+'Little street near this sushi restaurant. Very quiet area.']
 
 
 
 
 file = URI.open(image3[0])
-maruetsu = Parking.new(name: names3[0], address: address3[0], description: description3[0], price: 1)
-maruetsu.save!
-maruetsu.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+atre = Parking.new(name: names3[0], description: description3[0], price: 1, latitude: 35.63443467268105, longitude: 139.71603872641003)
+atre.save!
+atre.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 2.times do
   review = reviews.sample.dup
   review.user = User.all.sample
-  review.parking = maruetsu
+  review.parking = atre
   review.save!
 end
 
 file = URI.open(image3[1])
-seven = Parking.new(name: names3[1], address: address3[1], description: description3[1], price: 0)
-seven.save!
-seven.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+selva = Parking.new(name: names3[1], description: description3[1], price: 0, latitude: 35.63267101798207, longitude: 139.7181321379397)
+selva.save!
+selva.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 
 review = review_1
 review.user = lena
-review.parking = seven
+review.parking = selva
 review.save!
 
 review = review_2
 review.user = jose
-review.parking = seven
+review.parking = selva
 review.save!
 
 file = URI.open(image3[2])
-aqua = Parking.new(name: names3[2], address: address3[2], description: description3[2], price: 0)
+aqua = Parking.new(name: names3[2], description: description3[2], price: 0, latitude: 35.63332594010175, longitude: 139.71745909737535)
 aqua.save!
 aqua.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
@@ -140,4 +141,20 @@ review.save!
 review = review_3
 review.user = doug
 review.parking = aqua
+review.save!
+
+file = URI.open(image3[3])
+sushi = Parking.new(name: names3[3], description: description3[3], price: 0, latitude: 35.63369948256393, longitude: 139.71950072500582)
+sushi.save!
+sushi.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+
+
+review = review_1
+review.user = lena
+review.parking = sushi
+review.save!
+
+review = review_2
+review.user = jose
+review.parking = sushi
 review.save!
