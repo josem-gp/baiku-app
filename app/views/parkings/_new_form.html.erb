@@ -2,5 +2,7 @@
   <%= f.input :name, label: 'Parking Spot Name' %>
   <%= f.input :address, label: 'Address' %>
   <%= f.input :description, label: 'Description', as: :text %>
-  <%= f.submit "Add Parking" %>
+  <%= f.input :price, label: 'Parking Fee', collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first, selected: 'Free' %>
+  <%= f.input :risk_level, label: 'Safe to park?', collection: [['0', 'Free'], ['1', 'Paid']], label_method: :second, value_method: :first, selected: 'Yes' %>
+  <%= f.submit "Submit" %>
 <% end %>
