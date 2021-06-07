@@ -14,7 +14,7 @@ class Parking < ApplicationRecord
   # validates :description, length: { minimum: 10 }, presence: true
   enum price: [:free, :paid]
   validates :risk_level, presence: true
-  enum risk_level: [:safe, :risky]
+
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_address,
@@ -23,14 +23,12 @@ class Parking < ApplicationRecord
     tsearch: { prefix: true }
   }
 
-  def average_review_score
-    average = reviews.average(:rating).to_f
-    if average % 1 == 0
-      average.to_i
-    else
-      average.round(1)
-    end
+  def average_risk_score
+    total_reviews = self.reviews.count
+    total_safe = parking.reviews.where(risk_level: 'safe').count
+    return round(((total_safe/total_reviews).to_f * 100),2)
   end
+
 
   def free_or_paid
     if price == 'free'
