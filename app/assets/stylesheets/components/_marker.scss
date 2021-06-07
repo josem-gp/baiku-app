@@ -6,12 +6,18 @@
 
 .yen-blue {
   font-size: 20px;
-  color: white;
+  color: $white;
 }
 
-.marker-green {
-  font-size: 28px;
-  color: $green;
+.marker-black {
+  font-size: 40px;
+  color: $black;
+}
+
+.bike-yellow {
+  font-size: 20px;
+  color: $yellow;
+  bottom: 6px;
 }
 
 .animate {
