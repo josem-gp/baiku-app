@@ -117,22 +117,22 @@ doug.save!
 
 puts "Created #{User.count} users!"
 
-# puts "Creating some reviews..."
+puts "Creating some reviews..."
 
 
-# review_5 = Review.new(comment: "Perfect! Very quiet and had no issues. Will definitely use this spot again.", rating: 5)
-# review_4 = Review.new(comment: "Great place! I've used this spot twice now. Quite a few bikes, but I", rating: 4)
-# review_3 = Review.new(comment: "Good. No problems this time. The street is quite busy though. I might try and look for a quieter place.", rating: 3)
-# review_2 = Review.new(comment: "I could park my bike here, but one of the locals living across the road warned me not to.", rating: 2)
-# review_1 = Review.new(comment: "Terrible place! Someone stole my bicycle seat. WTF? NOT recommended.", rating: 1)
-# reviews = [review_1, review_2, review_3, review_4, review_5]
+review_5 = Review.new(comment: "Perfect! Very quiet and had no issues. Will definitely use this spot again.", rating: 5)
+review_4 = Review.new(comment: "Great place! I've used this spot twice now. Quite a few bikes, but I", rating: 4)
+review_3 = Review.new(comment: "Good. No problems this time. The street is quite busy though. I might try and look for a quieter place.", rating: 3)
+review_2 = Review.new(comment: "I could park my bike here, but one of the locals living across the road warned me not to.", rating: 2)
+review_1 = Review.new(comment: "Terrible place! Someone stole my bicycle seat. WTF? NOT recommended.", rating: 1)
+reviews = [review_1, review_2, review_3, review_4, review_5]
 
-# 20.times do
-#   review = reviews.sample.dup
-#   review.user = User.all.sample
-#   review.parking = Parking.all.sample
-#   review.save!
-# end
+600.times do
+  review = reviews.sample.dup
+  review.user = User.all.sample
+  review.parking = Parking.all.sample
+  review.save!
+end
 
 
 puts "Created #{Review.count} reviews!"
