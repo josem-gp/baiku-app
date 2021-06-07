@@ -1,6 +1,7 @@
 class Parking < ApplicationRecord
   reverse_geocoded_by :latitude, :longitude
   after_validation :reverse_geocode, if: :will_save_change_to_latitude?
+
   has_many :user_parkings
   has_many :users, through: :user_parkings
   has_many :reviews, dependent: :destroy

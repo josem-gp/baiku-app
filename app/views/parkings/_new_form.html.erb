@@ -1,0 +1,9 @@
+<%= simple_form_for @parking do |f| %>
+  <%= f.input :name, label: 'Parking Spot Name' %>
+  <%= f.input :address, label: 'Address' %>
+  <%= f.input :description, label: 'Description', as: :text %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :price, label: 'Parking Fee', collection: [['free', 'Free'], ['paid', 'Paid']], label_method: :second, value_method: :first, selected: 'Free' %>
+  <%= f.input :risk_level, label: 'Safe to park?', collection: [['safe', 'Yes'], ['risky', 'No']], label_method: :second, value_method: :first, selected: 'Yes' %>
+  <%= f.submit "Submit" %>
+<% end %>
