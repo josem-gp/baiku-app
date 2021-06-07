@@ -1,6 +1,6 @@
 <%= simple_form_for [@parking, @review] do |f| %>
   <%= f.input :comment %>
   <%= f.input :photo, as: :file %>
-  <%= f.input :risk_level, label: "Safe to park?", collection: [["0", "Yes"], ["1", "No"]], label_method: :second, value_method: :first, selected: "Yes" %>
+  <%= f.input :risk_level, label: 'Safe to park?', collection: [['safe', 'Yes'], ['risky', 'No']], label_method: :second, value_method: :first, selected: 'Yes' %>
   <%= f.submit "Add a Review", class: "btn-yellow" %>
 <% end %>
