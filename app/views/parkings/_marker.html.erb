@@ -1,6 +1,7 @@
 <% if parking.price == 'free' %>
-  <div data-id = '<%= parking.id %>' id='marker-studio-<%= parking.id %>' class='marker marker-green'>
-    <i class="fas fa-map-marker-alt"></i>
+  <div data-id = '<%= parking.id %>' id='marker-studio-<%= parking.id %>' class='marker fa-stack' style="vertical-align: top;">
+    <i class="fas fa-map-marker fa-stack-1x marker-black"></i>
+    <i class="fas fa-bicycle fa-stack-2x bike-yellow"></i>
   </div>
 <% elsif parking.price == 'paid' %>
   <div data-id = '<%= parking.id %>' id='marker-studio-<%= parking.id %>' class='marker fa-stack' style="vertical-align: top;">
