@@ -18,12 +18,22 @@
 }
 
 .navbar-logo {
-  color: #FFE548;
   margin: 0px -8px 0px 8px;
 }
 
 .navbar-icon {
-  color: white;
+  color: #EEF0F2;
+  transition: 0.2s;
+  &:hover {
+    color: grey;
+  }
+}
+
+.navbar-active {
+  color: $yellow-baiku;
+  &:hover {
+  color: $yellow-baiku;
+  }
 }
 
 .nav-link {
