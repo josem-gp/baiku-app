@@ -26,9 +26,8 @@ class Parking < ApplicationRecord
   def average_risk_score
     total_reviews = reviews.count
     total_safe = reviews.where(risk_level: 'safe').count
-    return (total_safe / total_reviews.to_f * 100).round
+    return (total_safe / total_reviews.to_f * 100).round if total_reviews > 0
   end
-
 
   def free_or_paid
     if price == 'free'
