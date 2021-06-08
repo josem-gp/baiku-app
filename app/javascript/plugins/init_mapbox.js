@@ -29,13 +29,17 @@ const initMapbox = () => {
       .setLngLat([marker.lng, marker.lat])
       .addTo(map);
     });
+
     addMapToMarkers(map, markers);
 
     let geolocate = new mapboxgl.GeolocateControl({
         positionOptions: {
           enableHighAccuracy: true
         },
-        trackUserLocation: true
+        trackUserLocation: true,
+        fitBoundsOptions: {
+          maxZoom: 13
+        }
       });
 
     // Add geolocate control button to the map.
