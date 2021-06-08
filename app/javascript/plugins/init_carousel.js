@@ -22,7 +22,7 @@ const initCarousel = () => {
         items: 5
       }
     },
-    dots: true,
+    dots: false,
    })
   const mapElement = document.getElementById('map');
   if (mapElement) {
