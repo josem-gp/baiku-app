@@ -10,7 +10,7 @@ const initCarousel = () => {
     margin: 10,
     responsive:{
       0:{
-        dotsEach:15,
+        dotsEach:50,
         items:1
       },
       600:{
