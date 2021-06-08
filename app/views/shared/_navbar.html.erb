@@ -1,17 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to parkings_path, class: "navbar-brand" do %>
-    <div class="navbar-logo">
+    <div class="navbar-logo navbar-icon <%= active_class(parkings_path) %>">
       <i class="fas fa-biking"></i>
     </div>
   <% end %>
   <%= link_to new_parking_path, class: "navbar-brand" do %>
-    <div class="navbar-icon">
+    <div class="navbar-icon <%= active_class(new_parking_path) %>">
       <i class="fas fa-plus"></i>
     </div>
   <% end %>
   <%= link_to parkings_path, class: "navbar-brand" do %>
     <div class='navbar-icon'>
-      <i class="fas fa-map"></i>
+      <i class="fas fa-star"></i>
     </div>
   <% end %>
   <%= link_to parkings_path, class: "navbar-brand" do %>
