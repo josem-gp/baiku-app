@@ -75,7 +75,8 @@ puts "Created #{User.count} users!"
 
 puts "Creating some random reviews..."
 
-
+review_paid1 = Review.new(comment: "Safe and easy. Too expensive though... I'd rather save my money next time.", risk_level: 0)
+review_paid2 = Review.new(comment: "Have to pay if you don't spend at least ¥1000 in Atre. Just a heads up!", risk_level: 0)
 review_5a = Review.new(comment: "Perfect! Very quiet and had no issues. Will definitely use this spot again.", risk_level: 0)
 review_5b = Review.new(comment: "Brilliant find! Will definitely use it again. Thanks!", risk_level: 0) 
 review_5c = Review.new(comment: "Great little hidden gem! I've been using this place for a while now. Such a nice spot.", risk_level: 0) 
@@ -121,12 +122,15 @@ atre = Parking.new(name: names3[0], description: description3[0], price: 1, lati
 atre.save!
 atre.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
-5.times do
-  review = reviews.sample.dup
-  review.user = User.all.sample
-  review.parking = atre
-  review.save!
-end
+review = review_paid1
+review.user = kenn
+review.parking = atre
+review.save!
+
+review = review_paid2
+review.user = yann
+review.parking = atre
+review.save!
 
 file = URI.open(image3[1])
 selva = Parking.new(name: names3[1], description: description3[1], price: 0, latitude: 35.63267101798207, longitude: 139.7181321379397, risk_level: 0)
