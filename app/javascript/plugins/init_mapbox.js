@@ -20,29 +20,6 @@ const initMapbox = () => {
       zoom: 12
     });
 
-    let geolocate = new mapboxgl.GeolocateControl({
-        positionOptions: {
-          enableHighAccuracy: true
-        },
-        trackUserLocation: true
-      });
-
-    // Add geolocate control button to the map.
-    map.addControl(geolocate);
-
-    map.on('load', function() {
-      document.querySelector('.mapboxgl-ctrl-geolocate').click();
-    });
-
-    geolocate.on('geolocate', function (position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      const start = [longitude, latitude];
-        if (mapElement.dataset.destination) {
-          initRoute(start, map);
-        };
-    });
-
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const markerHtml = document.createElement('div')
@@ -54,6 +31,38 @@ const initMapbox = () => {
     });
     addMapToMarkers(map, markers);
 
+    let geolocate = new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      });
+
+    // Add geolocate control button to the map.
+    map.addControl(geolocate, 'bottom-right');
+
+    if (mapElement.dataset.destination) {
+      map.on('load', function() {
+        document.querySelector('.mapboxgl-ctrl-geolocate').click();
+      });
+
+      geolocate.on('geolocate', function (position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const start = [longitude, latitude];
+        initRoute(start, map);
+      });
+    } else {
+      map.on('load', function() {
+        document.querySelector('.mapboxgl-ctrl-geolocate').click();
+      });
+
+      geolocate.on('geolocate', function (position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const start = [longitude, latitude];
+      });
+    };
   }
 };
 
