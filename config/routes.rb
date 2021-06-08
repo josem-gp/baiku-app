@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   resources :parkings, only: [:index, :show] do
     member do
       post 'toggle_favorite', to: "parkings#toggle_favorite"
+    end
   end
 end

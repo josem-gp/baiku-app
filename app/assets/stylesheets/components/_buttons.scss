@@ -51,3 +51,11 @@
 #search:hover {
   opacity: 1;
 }
+
+.like-icon {
+  color: $gray;
+}
+
+.like-icon.red {
+  color: $red;
+}

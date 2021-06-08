@@ -1,0 +1,7 @@
+var toggleLikeButton = (favoritedParking) => {
+  const parkingId = '<%= @parking.id %>'
+  let likeButton = document.querySelector(`.like-icon[data-id='${parkingId}']`)
+  likeButton.classList.toggle('red');
+}
+
+toggleLikeButton('<%= j render "parkings/like_button", parking: @parking %>');
