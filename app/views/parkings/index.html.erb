@@ -29,7 +29,7 @@
             <%= render 'parkings/average_rating', parking: parking %>
             <div class="ml-3 align-self-end">
               <% unless parking.average_risk_score == nil %>
-                <p class="mb-0">Riskometer: <%= parking.average_risk_score %></p>
+                <p class="mb-0">Safety: <%= parking.average_risk_score %>%</p>
               <% else %>
                 <p class="mb-0"><em>No reviews</em></p>
               <% end %>
