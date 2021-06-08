@@ -15,3 +15,17 @@
   color: #D0D0D0;
   font-size: 12px;
 }
+
+.like-icon {
+  color: $light-gray;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.like-icon.red {
+  color: $red;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
