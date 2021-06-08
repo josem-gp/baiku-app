@@ -4,7 +4,7 @@
   width: 100%;
   margin-top: 12px;
   line-height: 40px;
-  
+
 }
 
 .btn-container {
@@ -48,14 +48,7 @@
   opacity: .9;
   transform: opacity 500ms ease;
 }
+
 #search:hover {
   opacity: 1;
-}
-
-.like-icon {
-  color: $gray;
-}
-
-.like-icon.red {
-  color: $red;
 }
