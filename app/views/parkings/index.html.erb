@@ -1,11 +1,11 @@
-<div class="container p-0">
+<div class="container-fluid p-0">
   <div class="map-search">
     <%= form_tag parkings_path, class: "form-inline", method: :get do %>
       <%= text_field_tag :query,
-          params[:query],
-          class: "form-control map-text-input",
-          placeholder: "Search location"
-        %>
+            params[:query],
+            class: "form-control map-text-input",
+            placeholder: "Search location"
+          %>
       <%= submit_tag "Search", id: "search", class: "btn-yellow text-body" %>
     <% end %>
   </div>
@@ -33,4 +33,4 @@
       </div>
     <% end %>
   </div>
-</div>
+</div> 
