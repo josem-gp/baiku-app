@@ -67,16 +67,18 @@ const renderRoute = (start, end, map) => {
 // }
 
 const createRoute = (start, destination, map) => {
-
-  // const distanceToDestination = distance(start, destination);
-  // console.log(distanceToDestination);
-  // if (distanceToDestination < 0.0001) {
-  //   arrivalNotification();
-  // }
-  // else {
+  const distanceToDestination = distance(start, destination);
+  if (distanceToDestination < 0.0001) {
+    console.log('you are close')
+    arrivalNotification();
+  }
+  else {
+    console.log('you are far')
     // map.on('load', function() {
+      console.log('hi')
       // make an initial directions request that
       // starts and ends at the same location
+      console.log(start)
       renderRoute(start, start, map);
       // Add starting point to the map
       map.addLayer({
@@ -105,6 +107,7 @@ const createRoute = (start, destination, map) => {
       renderRoute(start, destination, map);
   // });
 };
+};
 
 // const geolocateStart = (map) => {
 //   var canvas = map.getCanvasContainer();
@@ -128,6 +131,7 @@ const initRoute = (start, map) => {
   // define destination point
   const mapElement = document.getElementById('map');
   const destination = JSON.parse(mapElement.dataset.destination);
+  createRoute(start, destination, map);
   // define starting point
   // const geolocate = geolocateStart(map);
 
@@ -136,7 +140,7 @@ const initRoute = (start, map) => {
   //   const latitude = position.coords.latitude;
   //   const longitude = position.coords.longitude;
   //   const start = [longitude, latitude];
-  createRoute(start, destination, map);
+  // createRoute(start, destination, map);
   // });
 
   // simulate geoloc
