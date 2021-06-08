@@ -40,32 +40,55 @@ lena.save!
 jose = User.new(email: 'jose@hotmail.com', password: '1234567', name: 'Jose')
 jose.save!
 
-allan = User.new(email: 'allan@hotmail.com', password: '1234567', name: 'Allan')
-allan.save!
-
 kenn = User.new(email: 'kenn@hotmail.com', password: '1234567', name: 'Kenn')
 kenn.save!
 
 doug = User.new(email: 'doug@hotmail.com', password: '1234567', name: 'Doug')
 doug.save!
 
+yann = User.new(email: 'yann@hotmail.com', password: '1234567', name: 'Yann')
+yann.save!
+
+trouni = User.new(email: 'trouni@hotmail.com', password: '1234567', name: 'Trouni')
+trouni.save!
+
+noemi = User.new(email: 'noemi@hotmail.com', password: '1234567', name: 'Noemi')
+noemi.save!
+
+lee = User.new(email: 'lee@hotmail.com', password: '1234567', name: 'Lee')
+lee.save!
+
+kazu = User.new(email: 'kazu@hotmail.com', password: '1234567', name: 'Kazu')
+kazu.save!
+
+satomi = User.new(email: 'satomi@hotmail.com', password: '1234567', name: 'Satomi')
+satomi.save!
+
+kate = User.new(email: 'kate@hotmail.com', password: '1234567', name: 'Kate')
+kate.save!
+
+sergio = User.new(email: 'sergio@hotmail.com', password: '1234567', name: 'Sergio')
+sergio.save!
+
 puts "Created #{User.count} users!"
 
 
 puts "Creating some random reviews..."
 
-
+review_paid1 = Review.new(comment: "Safe and easy. Too expensive though... I'd rather save my money next time.", risk_level: 0)
+review_paid2 = Review.new(comment: "Have to pay if you don't spend at least ¥1000 in Atre. Just a heads up!", risk_level: 0)
 review_5a = Review.new(comment: "Perfect! Very quiet and had no issues. Will definitely use this spot again.", risk_level: 0)
 review_5b = Review.new(comment: "Brilliant find! Will definitely use it again. Thanks!", risk_level: 0) 
+review_5c = Review.new(comment: "Great little hidden gem! I've been using this place for a while now. Such a nice spot.", risk_level: 0) 
 review_4a = Review.new(comment: "Great place! I've used this spot twice now. Quite a few bikes, but it seems safe.", risk_level: 0)
 review_4b = Review.new(comment: "Nice little spot. Thanks for sharing!", risk_level: 0)
 review_3a = Review.new(comment: "Good. No problems this time. The street is quite busy though. I might try and look for a quieter place.", risk_level: 0)
-review_3b = Review.new(comment: "Not bad! I could leave my bike her all morning without any issues.", risk_level: 0)
-review_2a = Review.new(comment: "I could park my bike here, but one of the locals living across the road warned me not to.", risk_level: 0)
-review_2b = Review.new(comment: "Didn't have any problems, but I saw inspectors down the street. Probably won't risk leaving it here again.", risk_level: 0)
+review_3b = Review.new(comment: "Not real complaints. I could leave my bike here all morning without any issues.", risk_level: 0)
+review_2a = Review.new(comment: "I could park my bike here, but one of the locals living across the road warned me not to.", risk_level: 1)
+review_2b = Review.new(comment: "Didn't have any problems, but I saw inspectors down the street. Probably won't risk leaving it here again.", risk_level: 1)
 review_1a = Review.new(comment: "Terrible place! Someone stole my bicycle seat. WTF? NOT recommended.", risk_level: 1)
 review_1b = Review.new(comment: "Do NOT use this spot. My bike was impounded. Had to pay ¥3000 to get it back...", risk_level: 1)
-reviews = [review_1a, review_1b, review_2a, review_2b, review_3a, review_3b, review_4a, review_4b, review_5a, review_5b]
+reviews = [review_1a, review_1b, review_2a, review_2b, review_3a, review_3b, review_4a, review_4b, review_5a, review_5b, review_5c]
 
 # 600.times do
 #   review = reviews.sample.dup
@@ -99,12 +122,15 @@ atre = Parking.new(name: names3[0], description: description3[0], price: 1, lati
 atre.save!
 atre.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
-3.times do
-  review = reviews.sample.dup
-  review.user = User.all.sample
-  review.parking = atre
-  review.save!
-end
+review = review_paid1
+review.user = kenn
+review.parking = atre
+review.save!
+
+review = review_paid2
+review.user = yann
+review.parking = atre
+review.save!
 
 file = URI.open(image3[1])
 selva = Parking.new(name: names3[1], description: description3[1], price: 0, latitude: 35.63267101798207, longitude: 139.7181321379397, risk_level: 0)
@@ -121,28 +147,43 @@ review.user = jose
 review.parking = selva
 review.save!
 
+review = review_3a
+review.user = jose
+review.parking = selva
+review.save!
+
+review = review_2b
+review.user = kenn
+review.parking = selva
+review.save!
+
 file = URI.open(image3[2])
-aqua = Parking.new(name: names3[2], description: description3[2], price: 0, latitude: 35.63332594010175, longitude: 139.71745909737535, risk_level: 0)
+aqua = Parking.new(name: names3[2], description: description3[2], price: 0, latitude: 35.63369948256393, longitude: 139.71950072500582, risk_level: 0)
 aqua.save!
 aqua.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
-review = review_5a
-review.user = jose
-review.parking = aqua
-review.save!
-
-review = review_4a
+review = review_4b
 review.user = kenn
 review.parking = aqua
 review.save!
 
-review = review_3a
-review.user = doug
+review = review_3b
+review.user = noemi
+review.parking = aqua
+review.save!
+
+review = review_5b
+review.user = sergio
+review.parking = aqua
+review.save!
+
+review = review_2b
+review.user = kazu
 review.parking = aqua
 review.save!
 
 file = URI.open(image3[3])
-sushi = Parking.new(name: names3[3], description: description3[3], price: 0, latitude: 35.63369948256393, longitude: 139.71950072500582, risk_level: 0)
+sushi = Parking.new(name: names3[3], description: description3[3], price: 0, latitude: 35.63332594010175, longitude: 139.71745909737535, risk_level: 0)
 sushi.save!
 sushi.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
@@ -162,13 +203,18 @@ kibogaoka.save!
 kibogaoka.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 
-review = review_4b
-review.user = doug
+review = review_5c
+review.user = lee
 review.parking = kibogaoka
 review.save!
 
-review = review_3b
-review.user = lena
+review = review_5a
+review.user = trouni
+review.parking = kibogaoka
+review.save!
+
+review = review_4a
+review.user = kazu
 review.parking = kibogaoka
 review.save!
 
