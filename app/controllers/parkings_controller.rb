@@ -1,4 +1,5 @@
 class ParkingsController < ApplicationController
+  before_action :authenticate_user!, only: :toggle_favorite
 
   def index
     @parkings = policy_scope(Parking)
@@ -16,6 +17,7 @@ class ParkingsController < ApplicationController
       @parking = Parking.find(params[:to_parking])
       @destination = [@parking.longitude, @parking.latitude]
     end
+    @favorite_parkings = current_user.favorited_by_type('Parking')
   end
 
   def show
@@ -38,6 +40,12 @@ class ParkingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def toggle_favorite
+    @parking = Parking.find_by(id: params[:id])
+    authorize @parking
+    current_user.favorited?(@parking) ? current_user.unfavorite(@parking) : current_user.favorite(@parking)
   end
 
   private

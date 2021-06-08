@@ -24,4 +24,8 @@ class ParkingPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def toggle_favorite?
+    true
+  end
 end

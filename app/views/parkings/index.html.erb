@@ -1,11 +1,11 @@
-<div class="container p-0">
+<div class="container-fluid p-0">
   <div class="map-search">
     <%= form_tag parkings_path, class: "form-inline", method: :get do %>
       <%= text_field_tag :query,
-          params[:query],
-          class: "form-control map-text-input",
-          placeholder: "Search location"
-        %>
+            params[:query],
+            class: "form-control map-text-input",
+            placeholder: "Search location"
+          %>
       <%= submit_tag "Search", id: "search", class: "btn-yellow text-body" %>
     <% end %>
   </div>
@@ -19,6 +19,9 @@
           <%= cl_image_tag(parking.photos.first.key, width: 128, height: 144, crop: :fill) %>
         </div>
         <div class="card-details d-flex flex-column pl-3 py-2">
+        <%= link_to toggle_favorite_parking_path(parking), remote: true, method: :post do %>
+          <%= render 'parkings/like_button', parking: parking %>
+        <% end %>
           <p class="mb-2 font-weight-bold"><%= parking.name %></p>
           <p class="mb-2"><i class="fas fa-thumbs-up text-success"></i> <%= parking.average_risk_score %>%</p>
           <%= render 'parkings/average_rating', parking: parking %>
@@ -34,4 +37,5 @@
       </div>
     <% end %>
   </div>
-</div>
+</div> 
+
