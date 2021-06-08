@@ -22,7 +22,7 @@
 }
 
 .navbar-icon {
-  color: white;
+  color: #EEF0F2;
   transition: 0.2s;
   &:hover {
     color: grey;
@@ -30,9 +30,9 @@
 }
 
 .navbar-active {
-  color: #FFE548;
+  color: $yellow-baiku;
   &:hover {
-  color: #FFE548;
+  color: $yellow-baiku;
   }
 }
 
