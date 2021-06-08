@@ -36,7 +36,10 @@ const initMapbox = () => {
         positionOptions: {
           enableHighAccuracy: true
         },
-        trackUserLocation: true
+        trackUserLocation: true,
+        fitBoundsOptions: {
+          maxZoom: 13.5
+        }
       });
 
     // Add geolocate control button to the map.
