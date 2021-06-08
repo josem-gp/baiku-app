@@ -1,0 +1,254 @@
+.gauge {
+  padding-bottom: 50%;
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+.gauge:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #cccccc;
+}
+.gauge:after {
+  content: '';
+  background: #eeeeee;
+  position: absolute;
+  top: 60%;
+  right: 30%;
+  bottom: -40%;
+  left: 30%;
+  border-radius: 50%;
+}
+.gauge__meter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform-origin: center bottom;
+}
+
+// for 10%
+@keyframes gauge-rotate-10 {
+  from {
+    transform: rotate(0.5turn);
+  }
+  to {
+    transform: rotate(0.55turn);
+  }
+}
+.active .gauge__meter--10 {
+  animation: gauge-rotate-10 1s forwards;
+}
+.gauge__meter--10:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #8d8d8d;
+}
+
+//for 20%
+@keyframes gauge-rotate-20 {
+  from {
+    transform: rotate(0.5turn);
+  }
+  to {
+    transform: rotate(0.600turn);
+  }
+}
+.active .gauge__meter--20 {
+  animation: gauge-rotate-20 1s forwards;
+}
+.gauge__meter--20:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #de2f31;
+}
+//for 30%
+@keyframes gauge-rotate-30 {
+  from {
+    transform: rotate(0.5turn);
+  }
+  to {
+    transform: rotate(0.650turn);
+  }
+}
+.active .gauge__meter--30 {
+  animation: gauge-rotate-30 1s forwards;
+}
+.gauge__meter--30:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #de2f31;
+}
+
+// for 40%
+@keyframes gauge-rotate-40 {
+  from {
+    transform: rotate(0.5turn);
+  }
+  to {
+    transform: rotate(0.700turn);
+  }
+}
+.active .gauge__meter--40 {
+  animation: gauge-rotate-40 1s forwards;
+}
+.gauge__meter--40:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #de2f31;
+}
+
+//for 50%
+@keyframes gauge-rotate-50 {
+  from {
+    transform: rotate(0.5turn);
+  }
+  to {
+    transform: rotate(0.75turn);
+  }
+}
+.active  .gauge__meter--50 {
+  animation: gauge-rotate-50 1s forwards;
+}
+.gauge__meter--50:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #de5c2f;
+}
+
+//for 60%
+@keyframes gauge-rotate-60 {
+  from {
+    transform: rotate(0.5turn);
+  }
+  to {
+    transform: rotate(0.800turn);
+  }
+}
+.active  .gauge__meter--60 {
+  animation: gauge-rotate-60 1s forwards;
+}
+.gauge__meter--60:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #e5a147;
+}
+
+//for 70%
+@keyframes gauge-rotate-70 {
+  from {
+    transform: rotate(0.5turn);
+  }
+  to {
+    transform: rotate(0.850turn);
+  }
+}
+.active  .gauge__meter--70 {
+  animation: gauge-rotate-70 1s forwards;
+}
+.gauge__meter--70:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #e5a147;
+}
+
+// for 80%
+@keyframes gauge-rotate-80 {
+  from {
+    transform: rotate(0.5turn);
+  }
+  to {
+    transform: rotate(0.900turn);
+  }
+}
+.active  .gauge__meter--80 {
+  animation: gauge-rotate-80 1s forwards;
+}
+.gauge__meter--80:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #41b565;
+}
+
+//for 90%
+@keyframes gauge-rotate-90 {
+  from {
+    transform: rotate(0.5turn);
+  }
+  to {
+    transform: rotate(0.95turn);
+  }
+}
+.active .gauge__meter--90 {
+  animation: gauge-rotate-90 1s forwards;
+}
+.gauge__meter--90:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #41b565;
+}
+
+//for 100%
+@keyframes gauge-rotate-100 {
+  from {
+    transform: rotate(0.5turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.active .gauge__meter--100 {
+  animation: gauge-rotate-100 1s forwards;
+}
+.gauge__meter--100:before {
+  content: '';
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #41b565;
+}
+
+
+////
+.row {
+  width: 30%;
+  margin: 1%;
+  display: inline-block;
+}
+body {
+  width: 80%;
+  margin: 10px auto;
+  background: #eeeeee;
+}
