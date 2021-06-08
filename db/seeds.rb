@@ -147,7 +147,7 @@ image3 = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029881/Baiku/5
           'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029518/Baiku/5%20Meguro%20Seeds/Aqua_Meguro_r7b9an.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623032229/Baiku/5%20Meguro%20Seeds/Sushi_Tatsu_qwabwo.png',
           'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623046451/Baiku/5%20Meguro%20Seeds/Kibogaoka_Park_wuamqs.png']
 
-names3 = ['Atre Meguro Bicycle Parking', 'Selva Meguro', 'Aqua Meguro', 'Sushi Tatsu', 'Kibogaoka Park']
+names3 = ['Atre Meguro Station Bicycle Parking', 'Selva Meguro Station', 'Aqua Meguro Station', 'Sushi Tatsu Meguro Station', 'Kibogaoka Park Meguro Station']
 
 description3 = ['Very close to the station. Lots of space for parking.', 'Unused. Often empty. Have used it several times now.',
                 'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.',
