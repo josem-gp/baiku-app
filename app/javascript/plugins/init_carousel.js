@@ -10,16 +10,19 @@ const initCarousel = () => {
     margin: 10,
     responsive:{
       0:{
+        dotsEach:50,
         items:1
       },
       600:{
+        dotsEach:50,
         items:3
       },
       1000: {
+        dotsEach:50,
         items: 5
       }
     },
-    dots: true,
+    dots: false,
    })
   const mapElement = document.getElementById('map');
   if (mapElement) {

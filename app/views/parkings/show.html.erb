@@ -1,11 +1,13 @@
 <div class="container p-0">
-  <%= render 'shared/banner', img_path: cl_image_path(@parking.photos.first.key) %>
+  <div>
+    <%= render 'shared/banner', img_path: cl_image_path(@parking.photos.first.key) %>
+    <%= link_to toggle_favorite_parking_path(@parking), remote: true, method: :post do %>
+      <%= render 'parkings/like_button', parking: @parking %>
+    <% end %>
+  </div>
   <div class='container card border-0'>
     <div class="card-show-info">
       <h4><b><%= @parking.name %></b></h4>
-      <%= link_to toggle_favorite_parking_path(@parking), remote: true, method: :post do %>
-        <%= render 'parkings/like_button', parking: @parking %>
-      <% end %>
       <div class='d-flex'>
         <p><i class="fas fa-map-marked-alt"></i></p>
         <p><%= @parking.address %></p>
