@@ -29,6 +29,7 @@ const initMapbox = () => {
       .setLngLat([marker.lng, marker.lat])
       .addTo(map);
     });
+
     addMapToMarkers(map, markers);
 
     let geolocate = new mapboxgl.GeolocateControl({
