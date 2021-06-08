@@ -39,7 +39,7 @@ const initMapbox = () => {
       });
 
     // Add geolocate control button to the map.
-    map.addControl(geolocate);
+    map.addControl(geolocate, 'bottom-right');
 
     if (mapElement.dataset.destination) {
       map.on('load', function() {
