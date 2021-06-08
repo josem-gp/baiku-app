@@ -57,7 +57,7 @@ images = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623025062/Baiku/D
           'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623024234/Baiku/4_exoeov.jpg']
 
 
-document.search('Placemark').first(500).each do |coordinates|
+document.search('Placemark').first(100).each do |coordinates|
   idx = rand(images.count)
   file = URI.open(images[idx])
   name = coordinates.search('name').text.strip.include?("/") ? coordinates.search('name').text.strip.split("/")[1].strip : coordinates.search('name').text.strip
@@ -118,8 +118,8 @@ puts "Creating some random reviews..."
 review_paid1 = Review.new(comment: "Safe and easy. Too expensive though... I'd rather save my money next time.", risk_level: 0)
 review_paid2 = Review.new(comment: "Have to pay if you don't spend at least ¥1000 in Atre. Just a heads up!", risk_level: 0)
 review_5a = Review.new(comment: "Perfect! Very quiet and had no issues. Will definitely use this spot again.", risk_level: 0)
-review_5b = Review.new(comment: "Brilliant find! Will definitely use it again. Thanks!", risk_level: 0) 
-review_5c = Review.new(comment: "Great little hidden gem! I've been using this place for a while now. Such a nice spot.", risk_level: 0) 
+review_5b = Review.new(comment: "Brilliant find! Will definitely use it again. Thanks!", risk_level: 0)
+review_5c = Review.new(comment: "Great little hidden gem! I've been using this place for a while now. Such a nice spot.", risk_level: 0)
 review_4a = Review.new(comment: "Great place! I've used this spot twice now. Quite a few bikes, but it seems safe.", risk_level: 0)
 review_4b = Review.new(comment: "Nice little spot. Thanks for sharing!", risk_level: 0)
 review_3a = Review.new(comment: "Good. No problems this time. The street is quite busy though. I might try and look for a quieter place.", risk_level: 0)
@@ -130,7 +130,7 @@ review_1a = Review.new(comment: "Terrible place! Someone stole my bicycle seat. 
 review_1b = Review.new(comment: "Do NOT use this spot. My bike was impounded. Had to pay ¥3000 to get it back...", risk_level: 1)
 reviews = [review_1a, review_1b, review_2a, review_2b, review_3a, review_3b, review_4a, review_4b, review_5a, review_5b, review_5c]
 
-1000.times do
+200.times do
   review = reviews.sample.dup
   review.user = User.all.sample
   review.parking = Parking.all.sample
