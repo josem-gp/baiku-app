@@ -31,6 +31,7 @@ import { initCarousel } from '../plugins/init_carousel';
 import { initDirectionSync } from '../plugins/init_directionsync';
 import { initPinMarker } from '../plugins/init_pinmarker';
 
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
