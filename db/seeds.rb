@@ -158,14 +158,14 @@ aqua = Parking.new(name: names3[2], description: description3[2], price: 0, lati
 aqua.save!
 aqua.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
-review = review_4a
+review = review_4b
 review.user = kenn
 review.parking = aqua
 review.save!
 
 review = review_3b
 review.user = noemi
-review.parking = kibogaoka
+review.parking = aqua
 review.save!
 
 review = review_5b
@@ -175,7 +175,7 @@ review.save!
 
 review = review_2b
 review.user = kazu
-review.parking = sushi
+review.parking = aqua
 review.save!
 
 file = URI.open(image3[3])
@@ -206,10 +206,10 @@ review.save!
 
 review = review_5a
 review.user = trouni
-review.parking = aqua
+review.parking = kibogaoka
 review.save!
 
-review = review_4b
+review = review_4a
 review.user = kazu
 review.parking = kibogaoka
 review.save!
