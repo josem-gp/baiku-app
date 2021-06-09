@@ -9,9 +9,14 @@
       <i class="fas fa-plus"></i>
     </div>
   <% end %>
-  <%= link_to parkings_path, class: "navbar-brand" do %>
-    <div class='navbar-icon'>
+  <%= link_to notifications_path, class: "navbar-brand" do %>
+    <div class='navbar-icon notification-icon <%= active_class(notifications_path) %>'>
       <i class="fas fa-bell"></i>
+      <% unless current_user.unread_count == 0 %>
+        <div class="notification-badge">
+          <%= current_user.unread_count %>
+        </div>
+      <% end %>
     </div>
   <% end %>
   <%= link_to parkings_path, class: "navbar-brand" do %>

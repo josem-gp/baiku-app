@@ -38,11 +38,10 @@ const initMapbox = () => {
         },
         trackUserLocation: true,
         fitBoundsOptions: {
-          maxZoom: 13
+          maxZoom: 15
         }
       });
 
-    // Add geolocate control button to the map.
     map.addControl(geolocate, 'bottom-right');
 
     if (mapElement.dataset.destination) {

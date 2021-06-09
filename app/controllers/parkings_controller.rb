@@ -16,6 +16,11 @@ class ParkingsController < ApplicationController
     if params[:to_parking].present?
       @parking = Parking.find(params[:to_parking])
       @destination = [@parking.longitude, @parking.latitude]
+      @markers = [{
+                    lat: @parking.latitude,
+                    lng: @parking.longitude,
+                    marker: render_to_string(partial: "marker", locals: { parking: @parking })
+      }]
     end
     @favorite_parkings = current_user.favorited_by_type('Parking')
   end
