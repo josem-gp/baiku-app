@@ -118,8 +118,8 @@ puts "Creating some random reviews..."
 review_paid1 = Review.new(comment: "Safe and easy. Too expensive though... I'd rather save my money next time.", risk_level: 0)
 review_paid2 = Review.new(comment: "Have to pay if you don't spend at least ¥1000 in Atre. Just a heads up!", risk_level: 0)
 review_5a = Review.new(comment: "Perfect! Very quiet and had no issues. Will definitely use this spot again.", risk_level: 0)
-review_5b = Review.new(comment: "Brilliant find! Will definitely use it again. Thanks!", risk_level: 0) 
-review_5c = Review.new(comment: "Great little hidden gem! I've been using this place for a while now. Such a nice spot.", risk_level: 0) 
+review_5b = Review.new(comment: "Brilliant find! Will definitely use it again. Thanks!", risk_level: 0)
+review_5c = Review.new(comment: "Great little hidden gem! I've been using this place for a while now. Such a nice spot.", risk_level: 0)
 review_4a = Review.new(comment: "Great place! I've used this spot twice now. Quite a few bikes, but it seems safe.", risk_level: 0)
 review_4b = Review.new(comment: "Nice little spot. Thanks for sharing!", risk_level: 0)
 review_3a = Review.new(comment: "Good. No problems this time. The street is quite busy though. I might try and look for a quieter place.", risk_level: 0)
@@ -147,7 +147,7 @@ image3 = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029881/Baiku/5
           'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029518/Baiku/5%20Meguro%20Seeds/Aqua_Meguro_r7b9an.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623032229/Baiku/5%20Meguro%20Seeds/Sushi_Tatsu_qwabwo.png',
           'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623046451/Baiku/5%20Meguro%20Seeds/Kibogaoka_Park_wuamqs.png']
 
-names3 = ['Atre Meguro Bicycle Parking', 'Selva Meguro', 'Aqua Meguro', 'Sushi Tatsu', 'Kibogaoka Park']
+names3 = ['Atre Meguro Station Bicycle Parking', 'Selva Meguro Station', 'Aqua Meguro Station', 'Sushi Tatsu Meguro Station', 'Kibogaoka Park Meguro Station']
 
 description3 = ['Very close to the station. Lots of space for parking.', 'Unused. Often empty. Have used it several times now.',
                 'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.',
