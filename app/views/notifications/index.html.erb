@@ -1,3 +1,5 @@
-<% @notifications.each do |n| %>
-  <p><%= n %> </p>
+<% @notifications.each do |notification| %>
+  <% if notification.message == 'risk' %>
+    <p>Your favorite parking <%= notification.parking.name %>'s safety level dropped below 40%</p>
+  <% end %>
 <% end %>

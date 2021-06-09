@@ -2,12 +2,20 @@ class NotificationPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       @notifications = []
+      @parking_ids = []
+      @all = Notification.all
       @favorites = user.all_favorited
       @favorites.each do |favorite|
-        id = favorite.id
-        @notifications << Notification.where(id: id)
+        @parking_ids << favorite.id
       end
-      return @notifications
+      @parking_ids
+
+      @all.each do |notification|
+        if @parking_ids.include?(notification.parking_id)
+          @notifications << notification
+        end
+      end
+      @notifications
     end
   end
 end

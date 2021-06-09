@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  before_save :check_risk
+  before_create :check_risk
   after_save :create_notification
 
   belongs_to :user
@@ -11,11 +11,11 @@ class Review < ApplicationRecord
   enum risk_level: [:safe, :risky]
 
   def check_risk
-    @average_before = parking.average_risk_score
+    @risk_before = parking.average_risk_score
   end
 
   def create_notification
-    if @average_before >= 40 && parking.average_risk_score < 40
+    if @risk_before > 40 && parking.average_risk_score <= 40
       notification = Notification.new(message: 0, parking_id: parking.id)
       notification.save!
     end
