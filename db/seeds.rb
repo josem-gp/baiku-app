@@ -75,7 +75,9 @@ document.search('Placemark').each_with_index do |coordinates, index|
     p latitude
     parking = Parking.create(name: name, latitude: latitude, longitude: longitude, price: rand(0..1), risk_level: 0, description: description[idx_descrip])
     parking.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+    sleep(2)
     file.rewind
+
     puts "Created #{Parking.count} parkings!"
   end
 end
