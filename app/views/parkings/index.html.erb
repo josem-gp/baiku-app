@@ -14,7 +14,7 @@
   <%= render 'pin_form' %>
   <div class="owl-carousel owl-theme card-carousel">
     <% @parkings.each do |parking| %>
-      <div data-id="<%= parking.id %>" class="card">
+      <div data-id="<%= parking.id %>" class="card card-index">
         <div class="card-image">
           <%= cl_image_tag(parking.photos.first.key, width: 128, height: 144, crop: :fill) %>
         </div>
