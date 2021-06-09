@@ -28,6 +28,7 @@
 
 .card-details {
   width: 231px;
+  height: 100%;
 }
 
 .card-risk-label {
@@ -35,10 +36,14 @@
   color: $black;
 }
 
+.card-risk-score-container {
+  position: relative;
+}
+
 .card-risk-score {
   position: absolute;
-  bottom: 41px;
-  left: 184px;
+  bottom: 3px;
+  left: 39px;
   z-index: 1;
 }
 
@@ -68,4 +73,3 @@
   border-radius: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
-
