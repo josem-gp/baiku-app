@@ -33,9 +33,22 @@ class ParkingsController < ApplicationController
   end
 
   def create
+
     @parking = Parking.new(parking_params)
     authorize @parking
     if @parking.save
+      gps_latitude = MiniMagick::Image.open(@parking.photos.first).exif["GPSLatitude"]
+      result = gps_latitude.split(',')
+      latitude_sum = (result[0].split("/")[0].to_i) + ((result[1].split("/")[0].to_i)/60.0) +  (((result[2].split("/")[0].to_i)/(result[2].split("/")[1]).to_f)/3600.0)
+      @parking.latitude = latitude_sum
+
+      gps_longitude = MiniMagick::Image.open(@parking.photos.first).exif["GPSLongitude"]
+      result = gps_longitude.split(',')
+      longitude_sum = (result[0].split("/")[0].to_i) + ((result[1].split("/")[0].to_i)/60.0) +  (((result[2].split("/")[0].to_i)/(result[2].split("/")[1]).to_f)/3600.0)
+      @parking.longitude = longitude_sum
+
+      @parking.save
+
       redirect_to parking_path(@parking)
     else
       render :new
@@ -51,6 +64,6 @@ class ParkingsController < ApplicationController
   private
 
   def parking_params
-    params.require(:parking).permit(:name, :address, :description, :photos, :price, :risk_level)
+    params.require(:parking).permit(:name, :description, :photos, :price, :risk_level)
   end
 end

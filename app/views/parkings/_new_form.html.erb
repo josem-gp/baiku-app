@@ -3,7 +3,6 @@
   <h5>Help the community and add yours</h5>
   <%= simple_form_for @parking do |f| %>
     <%= f.input :name, label: 'Name your parking spot:' %>
-    <%= f.input :address, label: 'Address:' %>
     <%= f.input :description, label: 'Description:', as: :text %>
     <%= f.input :photos, as: :file %>
     <%= f.input :price, label: 'Free or paid?', collection: [['free', 'Free'], ['paid', 'Paid']], label_method: :second, value_method: :first, selected: 'Free' %>
