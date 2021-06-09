@@ -4,6 +4,11 @@
   color: $vermilion;
 }
 
+.marker-red {
+  font-size: 40px;
+  color: $red-marker;
+}
+
 .yen-white {
   font-size: 20px;
   color: $white;
@@ -22,13 +27,17 @@
 
 .marker-yellow {
   font-size: 40px;
-  color: $yellow;
+  color: $yellow-baiku;
 }
 
 .bike-black {
   font-size: 20px;
-  color: $black;
+  color: $black-baiku;
   bottom: 6px;
+}
+
+.marker-border {
+  -webkit-text-stroke: 0.4px $black-baiku;
 }
 
 .animate {
