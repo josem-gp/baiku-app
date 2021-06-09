@@ -1,6 +1,6 @@
 class Parking < ApplicationRecord
   acts_as_favoritable
-  
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
@@ -11,6 +11,7 @@ class Parking < ApplicationRecord
   has_many :users, through: :user_parkings
   has_many :reviews, dependent: :destroy
   has_many_attached :photos
+  has_many :notifications
   validates :name, uniqueness: { scope: :address }, presence: true
   # validates :address, presence: true
   # validates :description, length: { minimum: 10 }, presence: true
