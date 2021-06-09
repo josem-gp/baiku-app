@@ -18,3 +18,11 @@
     }
   }
 }
+
+.mapboxgl-user-location-accuracy-circle {
+  z-index: -1;
+}
+
+.mapboxgl-canvas {
+  z-index: -2;
+}
