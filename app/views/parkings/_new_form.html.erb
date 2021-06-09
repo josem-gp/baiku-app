@@ -5,8 +5,8 @@
     <%= f.input :name, label: 'Name your parking spot:' %>
     <%= f.input :description, label: 'Description:', as: :text %>
     <%= f.input :photos, as: :file %>
-    <%= f.input :price, label: 'Free or paid?', collection: [['free', 'Free'], ['paid', 'Paid']], label_method: :second, value_method: :first, selected: 'Free' %>
-    <%= f.input :risk_level, label: 'Safe to park?', collection: [['safe', 'Yes'], ['risky', 'No']], label_method: :second, value_method: :first, selected: 'Yes' %>
+    <%= f.input :price, label: 'Free or paid?', as: :radio_buttons, collection: [['free', 'Free'], ['paid', 'Paid']], label_method: :second, value_method: :first, selected: 'Free' %>
+    <%= f.input :risk_level, label: 'Safe to park?', as: :radio_buttons, collection: [['safe', 'Yes'], ['risky', 'No']], label_method: :second, value_method: :first, selected: 'Yes' %>
     <div class='d-flex justify-content-between'>
       <%= link_to "Go back", parkings_path, class: 'btn btn-cancel' %>
       <%= f.submit "Add this spot", class: 'btn btn-yellow' %>
