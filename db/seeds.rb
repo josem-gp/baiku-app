@@ -56,19 +56,27 @@ images = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623025062/Baiku/D
           'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623024234/Baiku/2_lsbrqx.jpg', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623024234/Baiku/6_niahhy.jpg',
           'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623024234/Baiku/4_exoeov.jpg']
 
+description = ['Free for members', 'Free for customers', 'Quiet area near the a training center', 'Small street. Cafe and river nearby', 'Lots of parking spaces',
+               'Next to Otori-jinja', 'Free for customers', 'Quiet street behind Family Mart. Free for customers', 'Free for customers', "Quiet residential area. Mainly seniors that don't say much",
+               'Free for customers', 'Small street near Mita Okanoue Park', 'Free for customers', 'Opposite a photography studio', 'Free for customers', 'Next to an academy. Plenty of space',
+               'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here. Used it several times during the day without any issues.']
 
-document.search('Placemark').first(100).each do |coordinates|
-  idx = rand(images.count)
-  file = URI.open(images[idx])
-  name = coordinates.search('name').text.strip.include?("/") ? coordinates.search('name').text.strip.split("/")[1].strip : coordinates.search('name').text.strip
-  p name
-  longitude = coordinates.search('coordinates').text.strip.split(",")[0].to_f
-  p longitude
-  latitude = coordinates.search('coordinates').text.strip.split(",")[1].to_f
-  p latitude
-  parking = Parking.create(name: name, latitude: latitude, longitude: longitude, price: rand(0..1), risk_level: 0)
-  parking.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
-  puts "Created #{Parking.count} parkings!"
+
+document.search('Placemark').each_with_index do |coordinates, index|
+  if index.to_s.include?('12') || index.to_s.include?('13')
+    idx_descrip = rand(0...description.count)
+    idx = rand(images.count)
+    file = URI.open(images[idx])
+    name = coordinates.search('name').text.strip.include?("/") ? coordinates.search('name').text.strip.split("/")[1].strip : coordinates.search('name').text.strip
+    p name
+    longitude = coordinates.search('coordinates').text.strip.split(",")[0].to_f
+    p longitude
+    latitude = coordinates.search('coordinates').text.strip.split(",")[1].to_f
+    p latitude
+    parking = Parking.create(name: name, latitude: latitude, longitude: longitude, price: rand(0..1), risk_level: 0, description: description[idx_descrip])
+    parking.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+    puts "Created #{Parking.count} parkings!"
+  end
 end
 
 puts "Finished! Created #{Parking.count} parkings!"
@@ -130,7 +138,7 @@ review_1a = Review.new(comment: "Terrible place! Someone stole my bicycle seat. 
 review_1b = Review.new(comment: "Do NOT use this spot. My bike was impounded. Had to pay ¥3000 to get it back...", risk_level: 1)
 reviews = [review_1a, review_1b, review_2a, review_2b, review_3a, review_3b, review_4a, review_4b, review_5a, review_5b, review_5c]
 
-200.times do
+300.times do
   review = reviews.sample.dup
   review.user = User.all.sample
   review.parking = Parking.all.sample
