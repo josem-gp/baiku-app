@@ -3,7 +3,7 @@ class NotificationPolicy < ApplicationPolicy
     def resolve
       @notifications = []
       @parking_ids = []
-      @all = Notification.all
+      @all = Notification.all.order(created_at: 'DESC')
       @favorites = user.all_favorited
       @favorites.each do |favorite|
         @parking_ids << favorite.id
