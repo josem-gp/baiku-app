@@ -63,23 +63,22 @@ description = ['Free for members', 'Free for customers', 'Quiet area near the a 
 
 
 document.search('Placemark').each_with_index do |coordinates, index|
-  if index.to_s.include?('12') || index.to_s.include?('13')
-    idx_descrip = rand(0...description.count)
-    idx = rand(images.count)
-    file = URI.open(images[idx])
-    name = coordinates.search('name').text.strip.include?("/") ? coordinates.search('name').text.strip.split("/")[1].strip : coordinates.search('name').text.strip
-    p name
-    longitude = coordinates.search('coordinates').text.strip.split(",")[0].to_f
-    p longitude
-    latitude = coordinates.search('coordinates').text.strip.split(",")[1].to_f
-    p latitude
-    parking = Parking.create(name: name, latitude: latitude, longitude: longitude, price: rand(0..1), risk_level: 0, description: description[idx_descrip])
-    parking.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
-    sleep(2)
-    file.rewind
+  next unless index.to_s.include?('12') || index.to_s.include?('13')
 
-    puts "Created #{Parking.count} parkings!"
-  end
+  idx_descrip = rand(0...description.count)
+  idx = rand(images.count)
+  file = URI.open(images[idx])
+  name = coordinates.search('name').text.strip.include?("/") ? coordinates.search('name').text.strip.split("/")[1].strip : coordinates.search('name').text.strip
+  p name
+  longitude = coordinates.search('coordinates').text.strip.split(",")[0].to_f
+  p longitude
+  latitude = coordinates.search('coordinates').text.strip.split(",")[1].to_f
+  p latitude
+  parking = Parking.create(name: name, latitude: latitude, longitude: longitude, price: rand(0..1), risk_level: 0, description: description[idx_descrip])
+  parking.photos.attach(io: file, filename: 'parking.jpg', content_type: 'image/jpg')
+  sleep(2)
+
+  puts "Created #{Parking.count} parkings!"
 end
 
 puts "Finished! Created #{Parking.count} parkings!"
@@ -172,7 +171,6 @@ file = URI.open(image_three[0])
 atre = Parking.new(name: names_three[0], description: description_three[0], price: 1, latitude: 35.63443467268105, longitude: 139.71603872641003, risk_level: 0)
 atre.save!
 atre.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
-file.rewind
 
 review = review_paid_one
 review.user = kenn
@@ -188,7 +186,6 @@ file = URI.open(image_three[1])
 selva = Parking.new(name: names_three[1], description: description_three[1], price: 0, latitude: 35.63267101798207, longitude: 139.7181321379397, risk_level: 0)
 selva.save!
 selva.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
-file.rewind
 
 review = review_first_a
 review.user = lena
@@ -214,7 +211,6 @@ file = URI.open(image_three[2])
 aqua = Parking.new(name: names_three[2], description: description_three[2], price: 0, latitude: 35.63369948256393, longitude: 139.71950072500582, risk_level: 0)
 aqua.save!
 aqua.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
-file.rewind
 
 review = review_fourth_b
 review.user = kenn
@@ -240,7 +236,6 @@ file = URI.open(image_three[3])
 sushi = Parking.new(name: names_three[3], description: description_three[3], price: 0, latitude: 35.63332594010175, longitude: 139.71745909737535, risk_level: 0)
 sushi.save!
 sushi.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
-file.rewind
 
 review = review_first_b
 review.user = doug
@@ -256,7 +251,6 @@ file = URI.open(image_three[4])
 kibogaoka = Parking.new(name: names_three[4], description: description_three[4], price: 0, latitude: 35.63162602727671, longitude: 139.71835186522134, risk_level: 0)
 kibogaoka.save!
 kibogaoka.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
-file.rewind
 
 
 review = review_fifth_c
