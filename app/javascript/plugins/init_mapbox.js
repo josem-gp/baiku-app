@@ -16,7 +16,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/teamruby/ckpgl9zfb166z18nz5gnbcppk',
+      style: 'mapbox://styles/teamruby/ckpgl9zfb166z18nz5gnbcppk?optimize=true',
       zoom: 12
     });
 
