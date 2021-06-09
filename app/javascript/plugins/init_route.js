@@ -48,7 +48,7 @@ const renderRoute = (start, end, map) => {
                 'line-cap': 'round'
               },
               paint: {
-                'line-color': '#3887be',
+                'line-color': '#2F6F9D',
                 'line-width': 5,
                 'line-opacity': 0.75
               }
@@ -62,6 +62,7 @@ const renderRoute = (start, end, map) => {
   req.send();
 };
 
+// (line 51) ORIGINAL paint: line color = #3887be
 const arrivalNotification = () => {
   initSweetAlert(initGetId());
 }
