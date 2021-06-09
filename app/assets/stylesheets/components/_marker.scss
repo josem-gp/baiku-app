@@ -1,7 +1,7 @@
 
-.marker-vermilion {
+.marker-red {
   font-size: 40px;
-  color: $vermilion;
+  color: $red-marker;
 }
 
 .yen-white {
@@ -9,32 +9,36 @@
   color: $white;
 }
 
-.marker-blue {
+.marker-yellow {
   font-size: 40px;
-  color: $blue;
+  color: $yellow-baiku;
 }
 
-.bike-yellow {
+.bike-black {
   font-size: 20px;
-  color: $yellow;
+  color: $black-baiku;
   bottom: 6px;
 }
 
+.marker-border {
+  -webkit-text-stroke: 0.3px $black-baiku;
+}
+
 .animate {
-  animation: updown 2s ease-out infinite;
+  animation: updown 3s ease-out infinite;
 }
 
 
 @keyframes updown {
   0% {
-    transform: translateY(-50%);
+    transform: translateY(-100%);
   }
 
   50% {
-    transform: translateY(50%);
+    transform: translateY(0%);
   }
 
   100% {
-    transform: translateY(-50%);
+    transform: translateY(-100%);
   }
 }
