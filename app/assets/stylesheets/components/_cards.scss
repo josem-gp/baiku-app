@@ -16,8 +16,21 @@
   bottom: 52px;
 }
 
+.card {
+  display: flex;
+  flex-direction: row;
+  height: 144px;
+}
+
+.card-name {
+  overflow: hidden;
+}
+
+.card-details {
+  width: 231px;
+}
+
 .card-action {
-  margin-right: 16px;
   p {
     font-size: 24px;
   }
@@ -40,6 +53,3 @@
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 
-.card-details i {
-  margin-right: 2px;
-}
