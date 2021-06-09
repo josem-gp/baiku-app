@@ -5,7 +5,7 @@ ruby '2.6.6'
 
 gem "mini_magick"
 gem 'exifr'
-gem 'exif'
+# gem 'exif'
 gem 'watir'
 gem 'pg_search', '~> 2.3.0'
 gem 'cloudinary', '~> 1.16.0'
