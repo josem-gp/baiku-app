@@ -123,20 +123,20 @@ puts "Created #{User.count} users!"
 
 puts "Creating some random reviews..."
 
-review_paid1 = Review.new(comment: "Safe and easy. Too expensive though... I'd rather save my money next time.", risk_level: 0)
-review_paid2 = Review.new(comment: "Have to pay if you don't spend at least ¥1000 in Atre. Just a heads up!", risk_level: 0)
-review_5a = Review.new(comment: "Perfect! Very quiet and had no issues. Will definitely use this spot again.", risk_level: 0)
-review_5b = Review.new(comment: "Brilliant find! Will definitely use it again. Thanks!", risk_level: 0)
-review_5c = Review.new(comment: "Great little hidden gem! I've been using this place for a while now. Such a nice spot.", risk_level: 0)
-review_4a = Review.new(comment: "Great place! I've used this spot twice now. Quite a few bikes, but it seems safe.", risk_level: 0)
-review_4b = Review.new(comment: "Nice little spot. Thanks for sharing!", risk_level: 0)
-review_3a = Review.new(comment: "Good. No problems this time. The street is quite busy though. I might try and look for a quieter place.", risk_level: 0)
-review_3b = Review.new(comment: "Not real complaints. I could leave my bike here all morning without any issues.", risk_level: 0)
-review_2a = Review.new(comment: "I could park my bike here, but one of the locals living across the road warned me not to.", risk_level: 1)
-review_2b = Review.new(comment: "Didn't have any problems, but I saw inspectors down the street. Probably won't risk leaving it here again.", risk_level: 1)
-review_1a = Review.new(comment: "Terrible place! Someone stole my bicycle seat. WTF? NOT recommended.", risk_level: 1)
-review_1b = Review.new(comment: "Do NOT use this spot. My bike was impounded. Had to pay ¥3000 to get it back...", risk_level: 1)
-reviews = [review_1a, review_1b, review_2a, review_2b, review_3a, review_3b, review_4a, review_4b, review_5a, review_5b, review_5c]
+review_paid_one = Review.new(comment: "Safe and easy. Too expensive though... I'd rather save my money next time.", risk_level: 0)
+review_paid_two = Review.new(comment: "Have to pay if you don't spend at least ¥1000 in Atre. Just a heads up!", risk_level: 0)
+review_fifth_a = Review.new(comment: "Perfect! Very quiet and had no issues. Will definitely use this spot again.", risk_level: 0)
+review_fifth_b = Review.new(comment: "Brilliant find! Will definitely use it again. Thanks!", risk_level: 0)
+review_fifth_c = Review.new(comment: "Great little hidden gem! I've been using this place for a while now. Such a nice spot.", risk_level: 0)
+review_fourth_a = Review.new(comment: "Great place! I've used this spot twice now. Quite a few bikes, but it seems safe.", risk_level: 0)
+review_fourth_b = Review.new(comment: "Nice little spot. Thanks for sharing!", risk_level: 0)
+review_third_a = Review.new(comment: "Good. No problems this time. The street is quite busy though. I might try and look for a quieter place.", risk_level: 0)
+review_third_b = Review.new(comment: "Not real complaints. I could leave my bike here all morning without any issues.", risk_level: 0)
+review_second_a = Review.new(comment: "I could park my bike here, but one of the locals living across the road warned me not to.", risk_level: 1)
+review_second_b = Review.new(comment: "Didn't have any problems, but I saw inspectors down the street. Probably won't risk leaving it here again.", risk_level: 1)
+review_first_a = Review.new(comment: "Terrible place! Someone stole my bicycle seat. WTF? NOT recommended.", risk_level: 1)
+review_first_b = Review.new(comment: "Do NOT use this spot. My bike was impounded. Had to pay ¥3000 to get it back...", risk_level: 1)
+reviews = [review_first_a, review_first_b, review_second_a, review_second_b, review_third_a, review_third_b, review_fourth_a, review_fourth_b, review_fifth_a, review_fifth_b, review_fifth_c]
 
 300.times do
   review = reviews.sample.dup
@@ -151,117 +151,117 @@ puts "Creating some pitch reviews..."
 
 
 
-image3 = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029881/Baiku/5%20Meguro%20Seeds/Atre_Meguro_Bicycle_Parking_bnufzz.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029517/Baiku/5%20Meguro%20Seeds/Selva_Meguro_tlgdbn.png',
-          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029518/Baiku/5%20Meguro%20Seeds/Aqua_Meguro_r7b9an.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623032229/Baiku/5%20Meguro%20Seeds/Sushi_Tatsu_qwabwo.png',
-          'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623046451/Baiku/5%20Meguro%20Seeds/Kibogaoka_Park_wuamqs.png']
+image_three = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029881/Baiku/5%20Meguro%20Seeds/Atre_Meguro_Bicycle_Parking_bnufzz.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029517/Baiku/5%20Meguro%20Seeds/Selva_Meguro_tlgdbn.png',
+               'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029518/Baiku/5%20Meguro%20Seeds/Aqua_Meguro_r7b9an.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623032229/Baiku/5%20Meguro%20Seeds/Sushi_Tatsu_qwabwo.png',
+               'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623046451/Baiku/5%20Meguro%20Seeds/Kibogaoka_Park_wuamqs.png']
 
-names3 = ['Atre Meguro Station Bicycle Parking', 'Selva Meguro Station', 'Aqua Meguro Station', 'Sushi Tatsu Meguro Station', 'Kibogaoka Park Meguro Station']
+names_three = ['Atre Meguro Station Bicycle Parking', 'Selva Meguro Station', 'Aqua Meguro Station', 'Sushi Tatsu Meguro Station', 'Kibogaoka Park Meguro Station']
 
-description3 = ['Very close to the station. Lots of space for parking.', 'Unused. Often empty. Have used it several times now.',
-                'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.',
-                'Little street near this sushi restaurant. Very quiet area.', 'Area right next to the park. Many people use it, so it seems quite safe.']
-
-
+description_three = ['Very close to the station. Lots of space for parking.', 'Unused. Often empty. Have used it several times now.',
+                     'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.',
+                     'Little street near this sushi restaurant. Very quiet area.', 'Area right next to the park. Many people use it, so it seems quite safe.']
 
 
-file = URI.open(image3[0])
 
-atre = Parking.new(name: names3[0], description: description3[0], price: 1, latitude: 35.63443467268105, longitude: 139.71603872641003, risk_level: 0)
+
+file = URI.open(image_three[0])
+
+atre = Parking.new(name: names_three[0], description: description_three[0], price: 1, latitude: 35.63443467268105, longitude: 139.71603872641003, risk_level: 0)
 atre.save!
 atre.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
-review = review_paid1
+review = review_paid_one
 review.user = kenn
 review.parking = atre
 review.save!
 
-review = review_paid2
+review = review_paid_two
 review.user = yann
 review.parking = atre
 review.save!
 
-file = URI.open(image3[1])
-selva = Parking.new(name: names3[1], description: description3[1], price: 0, latitude: 35.63267101798207, longitude: 139.7181321379397, risk_level: 0)
+file = URI.open(image_three[1])
+selva = Parking.new(name: names_three[1], description: description_three[1], price: 0, latitude: 35.63267101798207, longitude: 139.7181321379397, risk_level: 0)
 selva.save!
 selva.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
-review = review_1a
+review = review_first_a
 review.user = lena
 review.parking = selva
 review.save!
 
-review = review_2a
+review = review_second_a
 review.user = jose
 review.parking = selva
 review.save!
 
-review = review_3a
+review = review_third_a
 review.user = jose
 review.parking = selva
 review.save!
 
-review = review_2b
+review = review_second_b
 review.user = kenn
 review.parking = selva
 review.save!
 
-file = URI.open(image3[2])
-aqua = Parking.new(name: names3[2], description: description3[2], price: 0, latitude: 35.63369948256393, longitude: 139.71950072500582, risk_level: 0)
+file = URI.open(image_three[2])
+aqua = Parking.new(name: names_three[2], description: description_three[2], price: 0, latitude: 35.63369948256393, longitude: 139.71950072500582, risk_level: 0)
 aqua.save!
 aqua.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
-review = review_4b
+review = review_fourth_b
 review.user = kenn
 review.parking = aqua
 review.save!
 
-review = review_3b
+review = review_third_b
 review.user = noemi
 review.parking = aqua
 review.save!
 
-review = review_5b
+review = review_fifth_b
 review.user = sergio
 review.parking = aqua
 review.save!
 
-review = review_2b
+review = review_second_b
 review.user = kazu
 review.parking = aqua
 review.save!
 
-file = URI.open(image3[3])
-sushi = Parking.new(name: names3[3], description: description3[3], price: 0, latitude: 35.63332594010175, longitude: 139.71745909737535, risk_level: 0)
+file = URI.open(image_three[3])
+sushi = Parking.new(name: names_three[3], description: description_three[3], price: 0, latitude: 35.63332594010175, longitude: 139.71745909737535, risk_level: 0)
 sushi.save!
 sushi.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
-review = review_1b
+review = review_first_b
 review.user = doug
 review.parking = sushi
 review.save!
 
-review = review_2b
+review = review_second_b
 review.user = lena
 review.parking = sushi
 review.save!
 
-file = URI.open(image3[4])
-kibogaoka = Parking.new(name: names3[4], description: description3[4], price: 0, latitude: 35.63162602727671, longitude: 139.71835186522134, risk_level: 0)
+file = URI.open(image_three[4])
+kibogaoka = Parking.new(name: names_three[4], description: description_three[4], price: 0, latitude: 35.63162602727671, longitude: 139.71835186522134, risk_level: 0)
 kibogaoka.save!
 kibogaoka.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 
-review = review_5c
+review = review_fifth_c
 review.user = lee
 review.parking = kibogaoka
 review.save!
 
-review = review_5a
+review = review_fifth_a
 review.user = trouni
 review.parking = kibogaoka
 review.save!
 
-review = review_4a
+review = review_fourth_a
 review.user = kazu
 review.parking = kibogaoka
 review.save!
