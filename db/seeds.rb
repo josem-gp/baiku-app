@@ -63,20 +63,22 @@ description = ['Free for members', 'Free for customers', 'Quiet area near the a 
 
 
 document.search('Placemark').each_with_index do |coordinates, index|
-  if index.to_s.include?('12') || index.to_s.include?('13')
-    idx_descrip = rand(0...description.count)
-    idx = rand(images.count)
-    file = URI.open(images[idx])
-    name = coordinates.search('name').text.strip.include?("/") ? coordinates.search('name').text.strip.split("/")[1].strip : coordinates.search('name').text.strip
-    p name
-    longitude = coordinates.search('coordinates').text.strip.split(",")[0].to_f
-    p longitude
-    latitude = coordinates.search('coordinates').text.strip.split(",")[1].to_f
-    p latitude
-    parking = Parking.create(name: name, latitude: latitude, longitude: longitude, price: rand(0..1), risk_level: 0, description: description[idx_descrip])
-    parking.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
-    puts "Created #{Parking.count} parkings!"
-  end
+  next unless index.to_s.include?('12') || index.to_s.include?('13')
+
+  idx_descrip = rand(0...description.count)
+  idx = rand(images.count)
+  file = URI.open(images[idx])
+  name = coordinates.search('name').text.strip.include?("/") ? coordinates.search('name').text.strip.split("/")[1].strip : coordinates.search('name').text.strip
+  p name
+  longitude = coordinates.search('coordinates').text.strip.split(",")[0].to_f
+  p longitude
+  latitude = coordinates.search('coordinates').text.strip.split(",")[1].to_f
+  p latitude
+  parking = Parking.create(name: name, latitude: latitude, longitude: longitude, price: rand(0..1), risk_level: 0, description: description[idx_descrip])
+  parking.photos.attach(io: file, filename: 'parking.jpg', content_type: 'image/jpg')
+  sleep(2)
+
+  puts "Created #{Parking.count} parkings!"
 end
 
 puts "Finished! Created #{Parking.count} parkings!"
