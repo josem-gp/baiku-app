@@ -13,11 +13,46 @@
 
 .card-carousel {
   position: fixed;
-  bottom: 52px;
+  bottom: 50px;
 }
 
-.card-action a {
-  text-decoration: none;
+.card {
+  display: flex;
+  flex-direction: row;
+  height: 144px;
+}
+
+.card-name {
+  overflow: hidden;
+}
+
+.card-details {
+  width: 231px;
+}
+
+.card-risk-label {
+  font-size: 10px;
+  color: $black;
+}
+
+.card-risk-score {
+  position: absolute;
+  bottom: 41px;
+  left: 184px;
+  z-index: 1;
+}
+
+.card-index-review {
+  font-size: 14px;
+}
+
+.card-action {
+  p {
+    font-size: 24px;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 .card-review {
@@ -34,6 +69,3 @@
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 
-.card-details i {
-  margin-right: 2px;
-}

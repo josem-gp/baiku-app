@@ -31,8 +31,8 @@
   </div>
   <div>
     <div class ='container mt-4'>
-      <%= render 'review_pluralize' %>
+      <%= render 'review_pluralize', review: @reviews %>
     </div>
-    <%= render 'review_carousel' %>
+    <h4><b><%= render 'review_carousel' %></b></h4>
   </div>
 </div>

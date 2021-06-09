@@ -14,36 +14,56 @@
   <%= render 'pin_form' %>
   <div class="owl-carousel owl-theme card-carousel">
     <% @parkings.each do |parking| %>
-      <div data-id="<%= parking.id %>" class="card flex-row">
+      <div data-id="<%= parking.id %>" class="card">
         <div class="card-image">
           <%= cl_image_tag(parking.photos.first.key, width: 128, height: 144, crop: :fill) %>
         </div>
+        
+        
         <div class="card-details d-flex flex-column pl-3 py-2">
           <%= link_to toggle_favorite_parking_path(parking), remote: true, method: :post do %>
             <%= render 'parkings/like_button', parking: parking %>
           <% end %>
+          
+          <p class="card-name mb-2 mr-3 font-weight-bold"><%= parking.name %></p>
           <div class="flex-grow-1">
-            <p class="mb-2 font-weight-bold"><%= parking.name %></p>
           </div>
-          <div class="d-flex">
-            <%= render 'parkings/average_rating', parking: parking %>
-            <div class="ml-3 align-self-end">
-              <% unless parking.average_risk_score == nil %>
-                <p class="mb-0">Safety: <%= parking.average_risk_score %>%</p>
-              <% else %>
-                <p class="mb-0"><em>No reviews</em></p>
+
+          <div class="d-flex justify-content-between">
+          
+            <div class="d-flex flex-column">
+              <%= render 'parkings/average_rating', parking: parking %>
+              <div>
+                <% unless parking.average_risk_score == nil %>
+                  <p class="card-risk-score m-0"><%= parking.average_risk_score %></p>
+                <% else %>
+                  <p class="mb-0"><em>No reviews</em></p>
+                <% end %>
+              </div>
+              <div class="card-risk-label d-flex justify-content-between">
+                <p class="mb-0">Risky</p>
+                <p class="mb-0">Safe</p>
+              </div>
+              <div class="card-index-review">
+                <p class="mb-0 text-center"><%= render 'parkings/review_pluralize', review: parking.reviews %></p>
+              </div>
+            </div>
+
+            <div class="card-action d-flex align-self-end">
+              <%= link_to parking_path(parking) do %>
+                <p class="mb-0 mr-2"><i class="fas fa-info-circle"></i></p>
+              <% end %>
+              <%= link_to parkings_path(to_parking: parking.id) do %>
+                <p class="mb-0"><i class="fas fa-directions"></i></p>
               <% end %>
             </div>
+
           </div>
-          <div class="card-action d-flex">
-            <%= link_to parking_path(parking) do %>
-              <p class="mb-0 mr-4"><i class="fas fa-info-circle"></i> Info</p>
-            <% end %>
-            <%= link_to parkings_path(to_parking: parking.id) do %>
-              <p class="mb-0 mr-2"><i class="fas fa-directions"></i> Directions</p>
-            <% end %>
-          </div>
+
+
         </div>
+        
+        
       </div>
     <% end %>
   </div>
