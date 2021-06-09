@@ -34,13 +34,17 @@
               <%= render 'parkings/average_rating', parking: parking %>
               <div>
                 <% unless parking.average_risk_score == nil %>
-                  <p class="mb-0"><%= parking.average_risk_score %></p>
+                  <p class="card-parking-score m-0"><%= parking.average_risk_score %></p>
                 <% else %>
                   <p class="mb-0"><em>No reviews</em></p>
                 <% end %>
               </div>
+              <div class="card-parking-risky d-flex justify-content-between">
+                <p class="mb-0">Risky</p>
+                <p class="mb-0">Safe</p>
+              </div>
               <div>
-                <%= render 'parkings/review_pluralize', review: parking.reviews %>
+                <p class="mb-0 text-center"><%= render 'parkings/review_pluralize', review: parking.reviews %></p>
               </div>
             </div>
 

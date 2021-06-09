@@ -13,7 +13,7 @@
 
 .card-carousel {
   position: fixed;
-  bottom: 52px;
+  bottom: 50px;
 }
 
 .card {
@@ -28,6 +28,18 @@
 
 .card-details {
   width: 231px;
+}
+
+.card-parking-risky {
+  color: $white;
+  background: ;
+}
+
+.card-parking-score {
+  position: absolute;
+  bottom: 53px;
+  left: 180px;
+  z-index: 1;
 }
 
 .card-action {
