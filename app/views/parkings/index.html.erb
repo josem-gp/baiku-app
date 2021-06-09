@@ -26,7 +26,8 @@
           <% end %>
           
           <p class="card-name mb-2 mr-3 font-weight-bold"><%= parking.name %></p>
-          
+          <div class="flex-grow-1">
+          </div>
 
           <div class="d-flex justify-content-between">
           
@@ -34,16 +35,16 @@
               <%= render 'parkings/average_rating', parking: parking %>
               <div>
                 <% unless parking.average_risk_score == nil %>
-                  <p class="card-parking-score m-0"><%= parking.average_risk_score %></p>
+                  <p class="card-risk-score m-0"><%= parking.average_risk_score %></p>
                 <% else %>
                   <p class="mb-0"><em>No reviews</em></p>
                 <% end %>
               </div>
-              <div class="card-parking-risky d-flex justify-content-between">
+              <div class="card-risk-label d-flex justify-content-between">
                 <p class="mb-0">Risky</p>
                 <p class="mb-0">Safe</p>
               </div>
-              <div>
+              <div class="card-index-review">
                 <p class="mb-0 text-center"><%= render 'parkings/review_pluralize', review: parking.reviews %></p>
               </div>
             </div>

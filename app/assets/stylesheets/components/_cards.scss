@@ -30,16 +30,20 @@
   width: 231px;
 }
 
-.card-parking-risky {
-  color: $white;
-  background: ;
+.card-risk-label {
+  font-size: 10px;
+  color: $black;
 }
 
-.card-parking-score {
+.card-risk-score {
   position: absolute;
-  bottom: 53px;
-  left: 180px;
+  bottom: 41px;
+  left: 184px;
   z-index: 1;
+}
+
+.card-index-review {
+  font-size: 14px;
 }
 
 .card-action {
