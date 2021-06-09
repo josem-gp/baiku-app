@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: black;
+  background: $black;
   display: flex;
   height: 6vh;
   position: fixed;
@@ -30,9 +30,9 @@
 }
 
 .navbar-active {
-  color: $yellow-baiku;
+  color: $yellow;
   &:hover {
-  color: $yellow-baiku;
+  color: $yellow;
   }
 }
 

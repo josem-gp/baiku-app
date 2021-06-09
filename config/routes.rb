@@ -21,4 +21,6 @@ Rails.application.routes.draw do
       post 'toggle_favorite', to: "parkings#toggle_favorite"
     end
   end
+
+  resources :notifications, only: :index
 end
