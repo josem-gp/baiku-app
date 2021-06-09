@@ -1,5 +1,5 @@
 <% @notifications.each do |notification| %>
   <% if notification.message == 'risk' %>
-    <p>Your favorite parking <%= notification.parking.name %>'s safety level dropped below 40%</p>
+    <div class="p-3 m-2" style="background-color: rgba(255, 234, 112, 0.3)">Your favorite parking <%= notification.parking.name %>'s safety level dropped below 40%</div>
   <% end %>
 <% end %>
