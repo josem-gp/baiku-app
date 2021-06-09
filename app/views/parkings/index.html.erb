@@ -22,27 +22,39 @@
           <%= link_to toggle_favorite_parking_path(parking), remote: true, method: :post do %>
             <%= render 'parkings/like_button', parking: parking %>
           <% end %>
-          <div class="flex-grow-1">
-            <p class="mb-2 font-weight-bold"><%= parking.name %></p>
+          <div>
+            <p class="mb-2 mr-3 font-weight-bold"><%= parking.name %></p>
           </div>
-          <div class="d-flex">
+
+        <div class="d-flex justify-content-between">
+        
+          <div class="d-flex flex-column">
+            <p>Safety</p>
             <%= render 'parkings/average_rating', parking: parking %>
-            <div class="ml-3 align-self-end">
+            <div>
               <% unless parking.average_risk_score == nil %>
-                <p class="mb-0">Riskometer: <%= parking.average_risk_score %></p>
+                <p class="mb-0"><%= parking.average_risk_score %></p>
               <% else %>
                 <p class="mb-0"><em>No reviews</em></p>
               <% end %>
             </div>
+            <div>
+              <%= render 'parkings/review_pluralize', review: parking.reviews %>
+            </div>
           </div>
-          <div class="card-action d-flex">
+
+          <div class="card-action d-flex align-self-end">
             <%= link_to parking_path(parking) do %>
-              <p class="mb-0 mr-4"><i class="fas fa-info-circle"></i> Info</p>
+              <p class="mb-0 mr-2"><i class="fas fa-info-circle"></i></p>
             <% end %>
             <%= link_to parkings_path(to_parking: parking.id) do %>
-              <p class="mb-0 mr-2"><i class="fas fa-directions"></i> Directions</p>
+              <p class="mb-0"><i class="fas fa-directions"></i></p>
             <% end %>
           </div>
+
+        </div>
+
+
         </div>
       </div>
     <% end %>

@@ -16,8 +16,14 @@
   bottom: 52px;
 }
 
-.card-action a {
-  text-decoration: none;
+.card-action {
+  margin-right: 16px;
+  p {
+    font-size: 24px;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 .card-review {
