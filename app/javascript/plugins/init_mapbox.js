@@ -8,7 +8,7 @@ const initMapbox = () => {
   const addMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
     markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 300 });
+    map.fitBounds(bounds, { padding: 70, maxZoom: 14, duration: 300 });
   };
 
   if (mapElement) {
@@ -17,7 +17,7 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/teamruby/ckposdxs208tz18s7f9z585dl?optimize=true',
-      zoom: 12
+      zoom: 14
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
@@ -38,7 +38,7 @@ const initMapbox = () => {
         },
         trackUserLocation: true,
         fitBoundsOptions: {
-          maxZoom: 13
+          maxZoom: 14
         }
       });
 
