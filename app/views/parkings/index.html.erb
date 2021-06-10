@@ -9,28 +9,24 @@
       <%= submit_tag "Search", id: "search", class: "btn-yellow text-body" %>
     <% end %>
   </div>
-  <div id="map" style="width: 100%; height: 76.4vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-destination="<%= @destination %>">
+  <div id="map" style="width: 100%; height: 74.5vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-destination="<%= @destination %>">
   </div>
   <%= render 'pin_form' %>
   <div class="owl-carousel owl-theme card-carousel">
     <% @parkings.each do |parking| %>
       <div data-id="<%= parking.id %>" class="card card-index">
         <div class="card-image">
-        <% if parking.photos.attached? %>
-          <%= cl_image_tag(parking.photos.first.key, width: 128, height: 144, crop: :fill) %>
-        <% end %>
+          <% if parking.photos.attached? %>
+            <%= cl_image_tag(parking.photos.first.key, width: 128, height: 144, crop: :fill) %>
+          <% end %>
         </div>
-        
-        
         <div class="card-details d-flex flex-column pl-3 py-2">
           <%= link_to toggle_favorite_parking_path(parking), remote: true, method: :post do %>
             <%= render 'parkings/like_button', parking: parking %>
           <% end %>
           <p class="card-name mb-2 mr-3 font-weight-bold"><%= parking.name %></p>
           <div class="d-flex justify-content-between">
-          
             <div class="d-flex flex-column">
-              
               <div class="card-risk-score-container">
                 <%= render 'parkings/average_rating', parking: parking %>
                 <% unless parking.average_risk_score == nil %>
@@ -39,17 +35,14 @@
                   <p class="card-risk-score mb-0">N/A</p>
                 <% end %>
               </div>
-
               <div class="card-risk-label d-flex justify-content-between">
-                  <p class="mb-0">Risky</p>
-                  <p class="mb-0">Safe</p>
+                <p class="mb-0">Risky</p>
+                <p class="mb-0">Safe</p>
               </div>
-
               <div class="card-index-review">
                 <p class="mb-0 text-center"><%= render 'parkings/review_pluralize', review: parking.reviews %></p>
               </div>
             </div>
-
             <div class="card-action d-flex align-self-end">
               <%= link_to parking_path(parking) do %>
                 <p class="mb-0 mr-2"><i class="fas fa-info-circle"></i></p>
@@ -58,13 +51,8 @@
                 <p class="mb-0"><i class="fas fa-directions"></i></p>
               <% end %>
             </div>
-
           </div>
-
-
         </div>
-        
-        
       </div>
     <% end %>
   </div>
