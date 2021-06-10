@@ -78,5 +78,32 @@ class SeedingJob < ApplicationJob
 
       puts "Created #{Parking.count} parkings!"
     end
+
+    puts "Creating some random reviews..."
+
+    review_paid_one = Review.new(comment: "Safe and easy. Too expensive though... I'd rather save my money next time.", risk_level: 0)
+    review_paid_two = Review.new(comment: "Have to pay if you don't spend at least ¥1000 in Atre. Just a heads up!", risk_level: 0)
+    review_fifth_a = Review.new(comment: "Perfect! Very quiet and had no issues. Will definitely use this spot again.", risk_level: 0)
+    review_fifth_b = Review.new(comment: "Brilliant find! Will definitely use it again. Thanks!", risk_level: 0)
+    review_fifth_c = Review.new(comment: "Great little hidden gem! I've been using this place for a while now. Such a nice spot.", risk_level: 0)
+    review_fourth_a = Review.new(comment: "Great place! I've used this spot twice now. Quite a few bikes, but it seems safe.", risk_level: 0)
+    review_fourth_b = Review.new(comment: "Nice little spot. Thanks for sharing!", risk_level: 0)
+    review_third_a = Review.new(comment: "Good. No problems this time. The street is quite busy though. I might try and look for a quieter place.", risk_level: 0)
+    review_third_b = Review.new(comment: "Not real complaints. I could leave my bike here all morning without any issues.", risk_level: 0)
+    review_second_a = Review.new(comment: "I could park my bike here, but one of the locals living across the road warned me not to.", risk_level: 1)
+    review_second_b = Review.new(comment: "Didn't have any problems, but I saw inspectors down the street. Probably won't risk leaving it here again.", risk_level: 1)
+    review_first_a = Review.new(comment: "Terrible place! Someone stole my bicycle seat. WTF? NOT recommended.", risk_level: 1)
+    review_first_b = Review.new(comment: "Do NOT use this spot. My bike was impounded. Had to pay ¥3000 to get it back...", risk_level: 1)
+    reviews = [review_first_a, review_first_b, review_second_a, review_second_b, review_third_a, review_third_b, review_fourth_a, review_fourth_b, review_fifth_a, review_fifth_b, review_fifth_c]
+
+    600.times do
+      review = reviews.sample.dup
+      review.user = User.all.sample
+      review.parking = Parking.all.sample
+      review.save!
+    end
+
+
+    puts "Created #{Review.count} random reviews!"
   end
 end

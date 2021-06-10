@@ -17,8 +17,10 @@ class Review < ApplicationRecord
 
   def create_notification
     if check_risk > 40 && parking.average_risk_score <= 40
-      notification = Notification.new(message: 0, parking_id: parking.id)
-      notification.save!
+      parking.favoritors.each do |user|
+        notification = Notification.new(message: 0, parking: parking, user_id: user.id)
+        notification.save!
+      end
     end
   end
 end
