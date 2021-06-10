@@ -20,7 +20,7 @@
     </div>
   <% end %>
   <%= link_to profile_user_path(current_user), class: "navbar-brand" do %>
-    <div class='navbar-icon'>
+    <div class='navbar-icon <%= active_class(profile_user_path(current_user)) %>'>
       <i class="fas fa-user"></i>
     </div>
   <% end %>
