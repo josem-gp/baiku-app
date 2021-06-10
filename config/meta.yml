@@ -1,0 +1,5 @@
+meta_product_name: "Baiku"
+meta_title: "Baiku - Find bike parking near you"
+meta_description: "Make your journey easy. Discover free and safe bicycle parking on the streets of your city."
+meta_image: "cover.jpg" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account" # required for Twitter Cards
