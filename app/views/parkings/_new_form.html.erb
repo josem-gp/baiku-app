@@ -4,8 +4,8 @@
   <%= simple_form_for @parking, remote:true do |f| %>
     <%= f.input :name, label: 'Name your parking spot:' %>
     <%= f.input :description, label: 'Description:', as: :text %>
-    <%= f.input :address, label: 'Address:', as: :text %>
     <%= f.input :photos, as: :file %>
+    <%= f.input :address, label: 'Address:', as: :text %>
     <%= f.input :price, label: 'Free or paid?', as: :radio_buttons, collection: [['free', 'Free'], ['paid', 'Paid']], label_method: :second, value_method: :first, selected: 'Free' %>
     <div class='d-flex justify-content-between'>
       <%= link_to "Go back", parkings_path, class: 'btn btn-cancel' %>
