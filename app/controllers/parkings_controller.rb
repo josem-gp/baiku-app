@@ -22,7 +22,6 @@ class ParkingsController < ApplicationController
                     marker: render_to_string(partial: "marker", locals: { parking: @parking })
       }]
     end
-    @favorite_parkings = current_user.favorited_by_type('Parking')
   end
 
   def show
