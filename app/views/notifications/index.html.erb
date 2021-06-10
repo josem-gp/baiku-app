@@ -1,8 +1,15 @@
-<% @notifications.each do |notification| %>
-  <% if notification.message == 'risk' %>
-    <div class="d-flex" style="background-color: rgba(255, 234, 112, 0.3)">
-      <p class="mr-3">⚠️</p>
-      <p class="p-3 m-2">Your favorite parking <%= notification.parking.name %>'s safety level dropped below 40%</p>
-    </div>
+<div class="container">
+  <h4 class="m-2 my-3"><i class="fas fa-parking"></i> NOTIFICATIONS</h4>
+  <% @notifications.each do |notification| %>
+    <% if notification.message == 'risk' %>
+      <div class="m-2 p-3 d-flex justify-content-between align-items-center card-notification" style="background-color: rgba(255, 234, 112, 0.3)">
+        <%= link_to '', parking_path(notification.parking), class: 'card-link'  %>
+        <div class="mr-2">
+          <p class="mb-2" style="font-size: 12px;"><%= @date %></p>
+          <p class="mb-0">⚠️ <strong><%= notification.parking.name %></strong> may no longer be safe! See what reviewers are saying.</p>
+        </div>
+        <p class="mb-0 ml-1"><i class="fas fa-chevron-right"></i></p>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
