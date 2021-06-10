@@ -38,7 +38,6 @@ class ParkingsController < ApplicationController
   end
 
   def create
-
     @parking = Parking.new(parking_params)
     authorize @parking
     if @parking.save
@@ -69,6 +68,6 @@ class ParkingsController < ApplicationController
   private
 
   def parking_params
-    params.require(:parking).permit(:name, :description, :photos, :price, :risk_level)
+    params.require(:parking).permit(:name, :description, :address , :photos, :price, :risk_level)
   end
 end
