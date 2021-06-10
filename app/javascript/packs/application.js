@@ -4,6 +4,10 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
+// import Rails from "@rails/ujs";
+// Rails.start();
+// window.Rails = Rails;
+
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
@@ -30,7 +34,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initCarousel } from '../plugins/init_carousel';
 import { initDirectionSync } from '../plugins/init_directionsync';
 import { initPinMarker } from '../plugins/init_pinmarker';
-
+import { triggerGeolocation } from '../plugins/triggerGeolocation';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -38,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   initCarousel();
   initDirectionSync();
   initPinMarker();
+  triggerGeolocation();
 });

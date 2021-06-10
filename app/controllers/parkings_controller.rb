@@ -22,7 +22,6 @@ class ParkingsController < ApplicationController
                     marker: render_to_string(partial: "marker", locals: { parking: @parking })
       }]
     end
-    @favorite_parkings = current_user.favorited_by_type('Parking')
   end
 
   def show
@@ -38,25 +37,31 @@ class ParkingsController < ApplicationController
   end
 
   def create
-
     @parking = Parking.new(parking_params)
     authorize @parking
-    if @parking.save
-      gps_latitude = MiniMagick::Image.open(@parking.photos.first).exif["GPSLatitude"]
+
+    if @parking.address.blank?
+      gps_latitude = MiniMagick::Image.open(parking_params[:photos].tempfile.path).exif["GPSLatitude"]
       result = gps_latitude.split(',')
       latitude_sum = (result[0].split("/")[0].to_i) + ((result[1].split("/")[0].to_i)/60.0) +  (((result[2].split("/")[0].to_i)/(result[2].split("/")[1]).to_f)/3600.0)
       @parking.latitude = latitude_sum
 
-      gps_longitude = MiniMagick::Image.open(@parking.photos.first).exif["GPSLongitude"]
+      gps_longitude = MiniMagick::Image.open(parking_params[:photos].tempfile.path).exif["GPSLongitude"]
       result = gps_longitude.split(',')
       longitude_sum = (result[0].split("/")[0].to_i) + ((result[1].split("/")[0].to_i)/60.0) +  (((result[2].split("/")[0].to_i)/(result[2].split("/")[1]).to_f)/3600.0)
       @parking.longitude = longitude_sum
 
-      @parking.save
-
-      redirect_to parking_path(@parking)
+      @parking.address = @parking.reverse_geocode
+      respond_to do |format|
+        format.html
+        format.js
+      end
     else
-      render :new
+      if @parking.save
+        redirect_to parking_path(@parking)
+      else
+        render :new
+      end
     end
   end
 
@@ -69,6 +74,6 @@ class ParkingsController < ApplicationController
   private
 
   def parking_params
-    params.require(:parking).permit(:name, :description, :photos, :price, :risk_level)
+    params.require(:parking).permit(:name, :description, :address, :photos, :price, :risk_level)
   end
 end

@@ -16,7 +16,6 @@ class Parking < ApplicationRecord
   # validates :address, presence: true
   # validates :description, length: { minimum: 10 }, presence: true
   enum price: [:free, :paid]
-  validates :risk_level, presence: true
 
 
   include PgSearch::Model
