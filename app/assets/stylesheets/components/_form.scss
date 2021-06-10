@@ -14,24 +14,24 @@
 .form-check {
   display: inline-block;
   margin-right: 16px;
-  background-color: #fff19e;
-  width: 140px;
-  padding: 8px;
-  border-radius: 16px;
-  text-align: center;
+  // background-color: #fff19e;
+  // width: 140px;
+  // padding: 8px;
+  // border-radius: 16px;
+  // text-align: center;
 }
 
-.form-check:hover {
-  background-color: $yellow-baiku;
+// .form-check:hover {
+//   background-color: $yellow-baiku;
+// }
+
+.btn-active {
+  background-color: red;
 }
 
-.form-check:active {
-  background-color: $yellow-baiku;
-}
-
-.form-check-input {
-  visibility: hidden;
-}
+// .form-check-input {
+//   visibility: hidden;
+// }
 
 .submit-buttons {
   margin-top: 40px;
