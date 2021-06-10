@@ -5,7 +5,7 @@
       <div class="m-2 p-3 d-flex justify-content-between align-items-center card-notification" style="background-color: rgba(255, 234, 112, 0.3)">
         <%= link_to '', parking_path(notification.parking), class: 'card-link'  %>
         <div class="mr-2">
-          <p class="mb-2" style="font-size: 12px;"><%= @date %></p>
+          <p class="mb-2" style="font-size: 12px;"><%= format_date(notification) %></p>
           <p class="mb-0">⚠️ <strong><%= notification.parking.name %></strong> may no longer be safe! See what reviewers are saying.</p>
         </div>
         <p class="mb-0 ml-1"><i class="fas fa-chevron-right"></i></p>
