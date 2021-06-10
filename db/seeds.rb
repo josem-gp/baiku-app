@@ -168,7 +168,7 @@ description_three = ['Very close to the station. Next to Lawson.', 'Close to Sub
 
 file = URI.open(image_three[0])
 
-shibuya = Parking.new(name: names_three[0], description: description_three[0], price: 1, latitude: 35.65754188736417, longitude: 139.69736019314823, risk_level: 0)
+shibuya = Parking.new(name: names_three[0], description: description_three[0], price: 1, latitude: 35.65523004473431, longitude: 139.70172146688435, risk_level: 0)
 shibuya.save!
 shibuya.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
