@@ -26,22 +26,27 @@ const initCarousel = () => {
    })
   const mapElement = document.getElementById('map');
   if (mapElement) {
-    syncCardMarker(owl)
-    const card = document.querySelector(".active > div").dataset.id
-    document.getElementById(`marker-studio-${card}`).classList.add("animate");
-    owl.on('changed.owl.carousel', function(event) {
-      const card = document.querySelectorAll('.card')[event.item.index]
-      document.querySelectorAll('.animate').forEach((marker) => marker.classList.remove('animate'));
-      const marker = document.getElementById(`marker-studio-${card.dataset.id}`);
-      if (marker) {
-        marker.classList.add("animate")
-      }
-    })
     const checkQuery = window.location.search;
     if (checkQuery !== '') {
         const queryElement = new URLSearchParams(checkQuery);
         const queryId = queryElement.get('to_parking');
-        document.querySelector(`[data-id="${queryId}"]`).click()
+        // document.querySelector(`[data-id="${queryId}"]`).click()
+        document.querySelectorAll('.card-index').forEach((element,idx) => {
+          if (element.dataset.id == `${queryId}`) { owl.trigger('to.owl.carousel', [idx, 50])}
+        })
+
+    } else {
+      syncCardMarker(owl)
+      const card = document.querySelector(".active > div").dataset.id
+      document.getElementById(`marker-studio-${card}`).classList.add("animate");
+      owl.on('changed.owl.carousel', function(event) {
+        const card = document.querySelectorAll('.card')[event.item.index]
+        document.querySelectorAll('.animate').forEach((marker) => marker.classList.remove('animate'));
+        const marker = document.getElementById(`marker-studio-${card.dataset.id}`);
+        if (marker) {
+          marker.classList.add("animate")
+        }
+      })
     }
   }
 }

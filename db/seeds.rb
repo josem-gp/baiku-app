@@ -153,62 +153,62 @@ puts "Creating some pitch reviews..."
 
 
 
-image_three = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029881/Baiku/5%20Meguro%20Seeds/Atre_Meguro_Bicycle_Parking_bnufzz.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029517/Baiku/5%20Meguro%20Seeds/Selva_Meguro_tlgdbn.png',
+image_three = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623298857/Baiku/5%20Meguro%20Seeds/Lawson_Bicycle_Parking_toiakt.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623298858/Baiku/5%20Meguro%20Seeds/Subway_yppa6p.png',
                'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029518/Baiku/5%20Meguro%20Seeds/Aqua_Meguro_r7b9an.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623032229/Baiku/5%20Meguro%20Seeds/Sushi_Tatsu_qwabwo.png',
                'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623046451/Baiku/5%20Meguro%20Seeds/Kibogaoka_Park_wuamqs.png']
 
-names_three = ['Atre Meguro Station Bicycle Parking', 'Selva Meguro Station', 'Aqua Meguro Station', 'Sushi Tatsu Meguro Station', 'Kibogaoka Park Meguro Station']
+names_three = ['Shibuya Station Bicycle Parking', 'Subway Restaurant Shibuya Station', 'Aqua Shibuya Station', 'Sushi Tatsu Shibuya Station', 'Sakuraoka Park Shibuya Station']
 
-description_three = ['Very close to the station. Lots of space for parking.', 'Unused. Often empty. Have used it several times now.',
-                     'This spot is on a side street in front of Hoshino building (south side) close to Meguro station. Few bikes are usually parked here.',
-                     'Little street near this sushi restaurant. Very quiet area.', 'Area right next to the park. Many people use it, so it seems quite safe.']
+description_three = ['Very close to the station. Next to Lawson.', 'Close to Subway. Suitable for parking in the morning.',
+                     'On a side street near Shibuya station. Few bikes are usually parked here.',
+                     'Little street near a sushi restaurant. Very quiet area.', 'Area right next to the park. Many people use it, so it seems quite safe.']
 
 
 
 
 file = URI.open(image_three[0])
 
-atre = Parking.new(name: names_three[0], description: description_three[0], price: 1, latitude: 35.63443467268105, longitude: 139.71603872641003, risk_level: 0)
-atre.save!
-atre.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+shibuya = Parking.new(name: names_three[0], description: description_three[0], price: 1, latitude: 35.65754188736417, longitude: 139.69736019314823, risk_level: 0)
+shibuya.save!
+shibuya.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 review = review_paid_one
 review.user = kenn
-review.parking = atre
+review.parking = shibuya
 review.save!
 
 review = review_paid_two
 review.user = yann
-review.parking = atre
+review.parking = shibuya
 review.save!
 
 file = URI.open(image_three[1])
-selva = Parking.new(name: names_three[1], description: description_three[1], price: 0, latitude: 35.63267101798207, longitude: 139.7181321379397, risk_level: 0)
-selva.save!
-selva.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+subway = Parking.new(name: names_three[1], description: description_three[1], price: 0, latitude: 35.65626868398324, longitude: 139.70012743183713, risk_level: 0)
+subway.save!
+subway.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 review = review_first_a
 review.user = lena
-review.parking = selva
+review.parking = subway
 review.save!
 
 review = review_second_a
 review.user = jose
-review.parking = selva
+review.parking = subway
 review.save!
 
 review = review_third_a
 review.user = jose
-review.parking = selva
+review.parking = subway
 review.save!
 
 review = review_second_b
 review.user = kenn
-review.parking = selva
+review.parking = subway
 review.save!
 
 file = URI.open(image_three[2])
-aqua = Parking.new(name: names_three[2], description: description_three[2], price: 0, latitude: 35.63369948256393, longitude: 139.71950072500582, risk_level: 0)
+aqua = Parking.new(name: names_three[2], description: description_three[2], price: 0, latitude: 35.65151072247957, longitude: 139.69933888052407, risk_level: 0)
 aqua.save!
 aqua.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
@@ -233,7 +233,7 @@ review.parking = aqua
 review.save!
 
 file = URI.open(image_three[3])
-sushi = Parking.new(name: names_three[3], description: description_three[3], price: 0, latitude: 35.63332594010175, longitude: 139.71745909737535, risk_level: 0)
+sushi = Parking.new(name: names_three[3], description: description_three[3], price: 0, latitude: 35.65502895187834, longitude: 139.69982969146847, risk_level: 0)
 sushi.save!
 sushi.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
@@ -248,24 +248,24 @@ review.parking = sushi
 review.save!
 
 file = URI.open(image_three[4])
-kibogaoka = Parking.new(name: names_three[4], description: description_three[4], price: 0, latitude: 35.63162602727671, longitude: 139.71835186522134, risk_level: 0)
-kibogaoka.save!
-kibogaoka.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
+sakuragaoka = Parking.new(name: names_three[4], description: description_three[4], price: 0, latitude: 35.65545891350227, longitude: 139.69873961348526, risk_level: 0)
+sakuragaoka.save!
+sakuragaoka.photos.attach(io: file, filename: 'parking.png', content_type: 'image/jpg')
 
 
 review = review_fifth_c
 review.user = lee
-review.parking = kibogaoka
+review.parking = sakuragaoka
 review.save!
 
 review = review_fifth_a
 review.user = trouni
-review.parking = kibogaoka
+review.parking = sakuragaoka
 review.save!
 
 review = review_fourth_a
 review.user = kazu
-review.parking = kibogaoka
+review.parking = sakuragaoka
 review.save!
 
 puts "Created #{Review.count} pitch reviews!"
