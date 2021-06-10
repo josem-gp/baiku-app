@@ -27,9 +27,9 @@ const initCarousel = () => {
   const mapElement = document.getElementById('map');
   if (mapElement) {
     const checkQuery = window.location.search;
-    if (checkQuery !== '') {
-        const queryElement = new URLSearchParams(checkQuery);
-        const queryId = queryElement.get('to_parking');
+    const queryElement = new URLSearchParams(checkQuery);
+    const queryId = queryElement.get('to_parking');
+    if (queryId) {
         // document.querySelector(`[data-id="${queryId}"]`).click()
         document.querySelectorAll('.card-index').forEach((element,idx) => {
           if (element.dataset.id == `${queryId}`) { owl.trigger('to.owl.carousel', [idx, 50])}
