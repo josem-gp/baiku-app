@@ -7,6 +7,11 @@
   <div class="owl-carousel owl-theme">
     <% @parking.reviews.each do |review| %>
       <div class='card card-review'>
+        <% if review.risk_level == 'safe' %>
+          <i class="fas fa-shield-alt thumbs-up"></i>
+        <% else %>
+          <i class="fas fa-exclamation-triangle thumbs-down"></i>
+        <% end %>
         <p><%= "Reviewed by #{review.user.name}" %></p>
         <p><em><%= review.comment %></em></p>
       </div>
