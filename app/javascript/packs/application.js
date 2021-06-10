@@ -35,6 +35,7 @@ import { initCarousel } from '../plugins/init_carousel';
 import { initDirectionSync } from '../plugins/init_directionsync';
 import { initPinMarker } from '../plugins/init_pinmarker';
 import { triggerGeolocation } from '../plugins/triggerGeolocation';
+// import { togglePriceButtons } from '../plugins/init_togglePriceButtons';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -43,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   initDirectionSync();
   initPinMarker();
   triggerGeolocation();
+  // togglePriceButtons();
 });
