@@ -37,6 +37,7 @@
   position: absolute;
   bottom: 32px;
   right: 32px;
+  font-size: 28px;
 }
 
 .banner a {
@@ -45,11 +46,11 @@
 
 .banner h5 {
   color: $white;
-  i {
-    color: $yellow;
-  }
+  padding-top: 1px;
+  font-size: 28px;
 }
 
 .banner i {
   margin-right: 4px;
+  color: $yellow;
 }
