@@ -29,9 +29,8 @@
             <div class="d-flex flex-column">
               <div class="card-risk-score-container">
                 <%= render 'parkings/average_rating', parking: parking %>
-                <% unless parking.average_risk_score == nil %>
-                  <p class="card-risk-score m-0"><%= parking.average_risk_score %></p>
-                <% else %>
+                <% if parking.average_risk_score == nil %>
+                  
                   <p class="card-risk-score mb-0">N/A</p>
                 <% end %>
               </div>
