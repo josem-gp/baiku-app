@@ -6,7 +6,7 @@
 <% else %>
   <div class="owl-carousel owl-theme">
     <% @parking.reviews.each do |review| %>
-      <div class='card card-review mt-3'>
+      <div class='card card-review'>
         <p><%= "Reviewed by #{review.user.name}" %></p>
         <p><em><%= review.comment %></em></p>
       </div>

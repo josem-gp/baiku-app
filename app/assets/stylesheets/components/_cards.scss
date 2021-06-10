@@ -62,8 +62,7 @@
 
 .card-review {
   padding: 16px;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin: 16px;
   p {
     margin-bottom: 8px;
   }
@@ -72,16 +71,4 @@
   }
   border-radius: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
-}
-
-.card-notification {
-  position: relative;
-}
-
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
