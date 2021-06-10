@@ -157,7 +157,7 @@ image_three = ['https://res.cloudinary.com/dqjzulqyf/image/upload/v1623298857/Ba
                'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623029518/Baiku/5%20Meguro%20Seeds/Aqua_Meguro_r7b9an.png', 'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623032229/Baiku/5%20Meguro%20Seeds/Sushi_Tatsu_qwabwo.png',
                'https://res.cloudinary.com/dqjzulqyf/image/upload/v1623046451/Baiku/5%20Meguro%20Seeds/Kibogaoka_Park_wuamqs.png']
 
-names_three = ['Shibuya Station Bicycle Parking', 'Subway Restaurant Shibuya Station', 'Aqua Shibuya', 'Sushi Tatsu Shibuya', 'Sakuraoka Park Shibuya']
+names_three = ['Shibuya Station Bicycle Parking', 'Subway Restaurant Shibuya Station', 'Aqua Shibuya Station', 'Sushi Tatsu Shibuya Station', 'Sakuraoka Park Shibuya Station']
 
 description_three = ['Very close to the station. Next to Lawson.', 'Close to Subway. Suitable for parking in the morning.',
                      'On a side street near Shibuya station. Few bikes are usually parked here.',
