@@ -1,9 +1,14 @@
 <div class="container mt-3 text-center">
   <div class="card-profile">
-    <h1>Profile</h1>
+    <h1>My Profile</h1>
     <p><%= "Name: #{@user.name}" %></p>
     <p><%= "Email: #{@user.email}" %></p>
+    <p><%= "Locations added: #{@user.parkings.count}" %></p>
     <p><%= "Reviews left: #{@user.reviews.count}" %></p>
+    <p><%= "Unread Notifications: #{@user.unread_count}" %></p>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-yellow" %>
+  </div>
+  <div class="card-about">
+    <%= link_to 'The BAIKU Team', parkings_path, class: 'btn btn-about mt-3' %>
   </div>
 </div>

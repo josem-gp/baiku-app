@@ -6,6 +6,7 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable
 
   has_one :parking
+  has_many :user_parkings
   has_many :parkings, through: :user_parkings
   has_many :replies
   has_many :reviews

@@ -44,6 +44,23 @@
   }
 }
 
+.btn-about {
+  color: white;
+  background-color: $dark-gray;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  p {
+    color: $black;
+  }
+  a {
+    text-decoration: none;
+  }
+  #modal-button {
+    padding: 0px;
+  }
+}
+
 // COMMENTED THIS OUT TO THIS TO MAKE SEARCH BAR CLEARER. DELETE IF OK
 // #search {
 //   opacity: .9;
