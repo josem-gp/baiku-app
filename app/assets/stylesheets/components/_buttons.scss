@@ -28,6 +28,43 @@
   }
 }
 
+.btn-yellow-index {
+  background-color: $yellow;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  p {
+    color: $black;
+  }
+  a {
+    text-decoration: none;
+  }
+  #modal-button {
+    padding: 0px;
+  }
+}
+
+.btn-grey {
+  background-color: gray;
+  margin: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  p {
+    color: white;
+  }
+  a {
+    text-decoration: none;
+  }
+  #modal-button {
+    padding: 0px;
+  }
+}
+
+
+
+
 .btn-add {
   width: 100%;
 }

@@ -15,7 +15,7 @@
 }
 .gauge:after {
   content: '';
-  background: #eeeeee;
+  background: white;
   position: absolute;
   top: 40%;
   right: 18%;
@@ -247,4 +247,5 @@
   margin: 1%;
   display: inline-block;
   z-index: 0;
+  // overflow: auto;
 }
