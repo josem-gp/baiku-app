@@ -95,10 +95,18 @@
   }
 }
 
-.card-about {
+.card-about-btn {
   padding: 16px;
   height: 350px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+}
+
+.card-about {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid grey;
+  box-shadow: 1px 1px 3px grey;
 }
