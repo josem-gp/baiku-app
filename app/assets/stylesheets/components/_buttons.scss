@@ -13,6 +13,7 @@
 
 .btn-yellow {
   background-color: $yellow;
+  margin: 16px;
   padding: 8px 16px;
   border-radius: 8px;
   border: none;
@@ -35,6 +36,23 @@
   width: 100%;
   color: white;
   background-color: gray;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  p {
+    color: $black;
+  }
+  a {
+    text-decoration: none;
+  }
+  #modal-button {
+    padding: 0px;
+  }
+}
+
+.btn-about {
+  color: white;
+  background-color: $dark-gray;
   padding: 8px 16px;
   border-radius: 8px;
   border: none;

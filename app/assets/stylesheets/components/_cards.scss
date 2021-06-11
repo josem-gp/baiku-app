@@ -90,4 +90,15 @@
   border-radius: 8px;
   border: 1px solid grey;
   box-shadow: 1px 1px 3px grey;
+  h1 {
+    margin-bottom: 16px;
+  }
+}
+
+.card-about {
+  padding: 16px;
+  height: 350px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
