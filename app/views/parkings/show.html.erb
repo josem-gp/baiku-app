@@ -2,7 +2,9 @@
   <div>
     <%= render 'shared/banner', img_path: cl_image_path(@parking.photos.first.key) %>
     <%= link_to toggle_favorite_parking_path(@parking), remote: true, method: :post do %>
-      <%= render 'parkings/like_button', parking: @parking %>
+      <div class="like-icon-show mx-2 <%= 'red' if current_user.favorited?(@parking) %>" data-id="<%= @parking.id %>">
+        <i class="fas fa-heart"></i>
+      </div>
     <% end %>
   </div>
   <div class='container card border-0'>
