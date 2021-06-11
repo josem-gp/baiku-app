@@ -8,7 +8,7 @@ const initMapbox = () => {
   const addMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
     markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 70, maxZoom: 13, duration: 300 });
+    map.fitBounds(bounds, { padding: 70, maxZoom: 13, duration: 0 });
   };
 
   if (mapElement) {
@@ -44,27 +44,35 @@ const initMapbox = () => {
 
     map.addControl(geolocate, 'bottom-right');
 
+    map.on('load', function() {
+      document.querySelector('.mapboxgl-ctrl-geolocate').click();
+    });
+
     if (mapElement.dataset.destination) {
-      map.on('load', function() {
-        document.querySelector('.mapboxgl-ctrl-geolocate').click();
-      });
 
+      // map.on('load', function() {
+      //   document.querySelector('.mapboxgl-ctrl-geolocate').click();
+      // });
+      // let start
       geolocate.on('geolocate', function (position) {
+        console.log('geolocate')
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         const start = [longitude, latitude];
+        setTimeout(() => {
         initRoute(start, map);
-      });
-    } else {
-      map.on('load', function() {
-        document.querySelector('.mapboxgl-ctrl-geolocate').click();
+
+      }, 1000)
       });
 
-      geolocate.on('geolocate', function (position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        const start = [longitude, latitude];
-      });
+    } else {
+
+
+      // geolocate.on('geolocate', function (position) {
+      //   const latitude = position.coords.latitude;
+      //   const longitude = position.coords.longitude;
+      //   const start = [longitude, latitude];
+      // });
     };
   }
 };

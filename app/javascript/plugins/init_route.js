@@ -3,11 +3,16 @@ import distance from '@turf/distance';
 import { initSweetAlert } from './init_sweetalert';
 import { initGetId } from './init_getid';
 
-const renderRoute = (start, end, map) => {
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+const renderRoute = async (start, end, map) => {
+  console.log("renderRoute", start, end)
   var url = 'https://api.mapbox.com/directions/v5/mapbox/cycling/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?steps=true&geometries=geojson&access_token=' + mapboxgl.accessToken;
   // make an XHR request https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
   var req = new XMLHttpRequest();
-  req.open('GET', url, true);
+  await req.open('GET', url, true);
   req.onload = function() {
     var json = JSON.parse(req.response);
     var data = json.routes[0];
@@ -29,6 +34,7 @@ const renderRoute = (start, end, map) => {
       //     if (!map.isStyleLoaded()) {
       //       setTimeout(waiting, 200);
       //     } else {
+
             map.addLayer({
               id: 'route',
               type: 'line',
@@ -65,10 +71,10 @@ const renderRoute = (start, end, map) => {
     }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
 
     map.fitBounds(bounds, {
-      padding: 40
+      padding: 40, duration: 100
     });
   };
-  req.send();
+  return req.send();
 };
 
 // (line 51) ORIGINAL paint: line color = #3887be
@@ -76,7 +82,7 @@ const arrivalNotification = () => {
   initSweetAlert(initGetId());
 }
 
-const createRoute = (start, destination, map) => {
+const createRoute = async (start, destination, map) => {
   const distanceToDestination = distance(start, destination);
   if (distanceToDestination < 0.0001) {
     console.log('you are close')
@@ -85,32 +91,38 @@ const createRoute = (start, destination, map) => {
   else {
       // make an initial directions request that
       // starts and ends at the same location
-      renderRoute(start, start, map);
+      await renderRoute(start, start, map);
+      console.log('finished start start')
       // Add starting point to the map
-      map.addLayer({
-        id: 'point',
-        type: 'circle',
-        source: {
-          type: 'geojson',
-          data: {
-            type: 'FeatureCollection',
-            features: [{
-              type: 'Feature',
-              properties: {},
-              geometry: {
-                type: 'Point',
-                coordinates: start
-              }
-            }]
-          }
-        },
-      paint: {
-        'circle-radius': 10,
-        'circle-color': '#3887be'
+      if (map.getLayer('point')) {
+        map.addLayer({
+          id: 'point',
+          type: 'circle',
+          source: {
+            type: 'geojson',
+            data: {
+              type: 'FeatureCollection',
+              features: [{
+                type: 'Feature',
+                properties: {},
+                geometry: {
+                  type: 'Point',
+                  coordinates: start
+                }
+              }]
+            }
+          },
+        paint: {
+          'circle-radius': 10,
+          'circle-color': '#3887be'
+        }
+        });
       }
-      });
       // this is where the code from the next step will go
-      renderRoute(start, destination, map);
+      // setTimeout(() => {
+      await renderRoute(start, destination, map);
+
+    // }, 500)
   // });
   };
 };
@@ -119,7 +131,10 @@ const initRoute = (start, map) => {
   // define destination point
   const mapElement = document.getElementById('map');
   const destination = JSON.parse(mapElement.dataset.destination);
-  createRoute(start, destination, map);
+    console.log(start)
+    console.log(destination)
+    createRoute(start, destination, map);
+
 
   // simulate geoloc
   // let start = [139.7081321, 35.6336481];
