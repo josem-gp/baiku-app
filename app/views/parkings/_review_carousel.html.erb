@@ -12,7 +12,7 @@
         <% else %>
           <i class="fas fa-exclamation-triangle thumbs-down"></i>
         <% end %>
-        <p><%= "Reviewed by #{review.user.name}" %></p>
+        <p>Reviewed by <strong><%= review.user.name %></strong></p>
         <p><em><%= review.comment %></em></p>
       </div>
     <% end %>
