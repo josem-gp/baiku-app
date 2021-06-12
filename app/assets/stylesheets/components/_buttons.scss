@@ -43,30 +43,6 @@
   }
 }
 
-.btn-grey {
-  background-color: gray;
-  margin: 16px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: none;
-  color: white;
-  p {
-    color: white;
-  }
-  a {
-    text-decoration: none;
-  }
-  #modal-button {
-    padding: 0px;
-  }
-}
-
-.pad-btn{
-  padding: 12px 42px;
-  width: 100%;
-}
-
-
 .btn-add {
   width: 100%;
 }
@@ -105,16 +81,6 @@
     padding: 0px;
   }
 }
-
-// COMMENTED THIS OUT TO THIS TO MAKE SEARCH BAR CLEARER. DELETE IF OK
-// #search {
-//   opacity: .9;
-//   transform: opacity 500ms ease;
-// }
-
-// #search:hover {
-//   opacity: 1;
-// }
 
 .btn-yellow-log {
   background-color: $yellow;
