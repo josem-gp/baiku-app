@@ -10,8 +10,8 @@
       <%= f.input :price, label: '', as: :radio_buttons, collection: [['free', 'Free'], ['paid', 'Paid']], label_method: :second, value_method: :first, selected: 'Free' %>
     </div>
     <div class='d-flex justify-content-between submit-buttons'>
-      <%= link_to "Back", parkings_path, class: 'btn btn-grey pad-btn' %>
-      <%= f.submit "Add", class: 'btn btn-yellow pad-btn' %>
+      <%= link_to "Back", parkings_path, class: 'btn btn-cancel mr-3' %>
+      <%= f.submit "Add", class: 'btn btn-yellow btn-add' %>
     </div>
   <% end %>
 </div>
