@@ -1,0 +1,27 @@
+.about-pic {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  margin: 24px 0px 0px 0px;
+}
+
+.about-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    width: auto;
+    margin: 16px 0px; 
+  }
+}
+
+.about-copyright {
+  display: flex;
+  align-items: flex-end;
+  height: 105px;
+  p {
+    margin: 0;
+  }
+}

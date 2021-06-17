@@ -8,7 +8,7 @@
     <p><%= "Unread Notifications: #{@user.unread_count}" %></p>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-yellow" %>
   </div>
-  <div class="card-about">
+  <div class="card-about-btn">
     <%= link_to 'The BAIKU Team', about_path, class: 'btn btn-about mt-3' %>
   </div>
 </div>
