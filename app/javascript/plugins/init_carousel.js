@@ -15,11 +15,11 @@ const initCarousel = () => {
       },
       600:{
         dotsEach:50,
-        items:3
+        items:2
       },
       1000: {
         dotsEach:50,
-        items: 5
+        items:3
       }
     },
     dots: false,
