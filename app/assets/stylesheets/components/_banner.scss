@@ -4,6 +4,11 @@
   background-position: center;
 }
 
+// Used for parking location show pages
+.banner-studio {
+  height: 240px;
+}
+
 // Used for homepage
 .banner-image {
   width: 100%;
@@ -29,8 +34,6 @@
     }
   }
 }
-
-// Used for homepage
 .banner-logo {
   position: absolute;
   bottom: 32px;
@@ -47,6 +50,7 @@
   }
 }
 
+// Media Queries
 @media (max-width: 576px) {
   .banner-image h1 {
     margin-left: 32px;
