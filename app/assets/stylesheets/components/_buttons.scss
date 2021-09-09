@@ -12,6 +12,7 @@
 }
 
 .btn-yellow {
+  max-width: 400px;
   background-color: $yellow;
   padding: 8px 16px;
   border-radius: 8px;
@@ -44,11 +45,11 @@
 }
 
 .btn-add {
-  width: 100%;
+  width: 400px;
 }
 
 .btn-cancel {
-  width: 100%;
+  width: 400px;
   color: white;
   background-color: gray;
   padding: 8px 16px;
