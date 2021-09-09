@@ -1,0 +1,25 @@
+.container-profile {
+  max-width: 600px;
+  text-align: center;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 100px;
+  padding-bottom: 32px;
+}
+
+.container-about {
+  height: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container-notifications {
+  max-width: 600px;
+}
