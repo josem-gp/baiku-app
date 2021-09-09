@@ -2,6 +2,9 @@
   position: fixed;
   z-index: 0;
   top: 0;
+  width: 100%;
+  height: calc(100vh - 8vh - 144px - 6px)
+  // viewport - navbar - carousel - space above navbar
 }
 
 .map-search {
