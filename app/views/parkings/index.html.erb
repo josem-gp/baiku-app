@@ -21,9 +21,6 @@
           <% end %>
         </div>
         <div class="card-details d-flex flex-column pl-3 py-2">
-          <%= link_to toggle_favorite_parking_path(parking), remote: true, method: :post do %>
-            <%= render 'parkings/like_button', parking: parking %>
-          <% end %>
           <p class="card-name mb-2 mr-3 font-weight-bold"><%= parking.name %></p>
           <div class="d-flex justify-content-between">
             <div class="d-flex flex-column">
@@ -50,6 +47,11 @@
               <% end %>
             </div>
           </div>
+        </div>
+        <div class="container-heart">
+          <%= link_to toggle_favorite_parking_path(parking), remote: true, method: :post do %>
+            <%= render 'parkings/like_button', parking: parking %>
+          <% end %>
         </div>
       </div>
     <% end %>
