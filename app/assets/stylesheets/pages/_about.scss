@@ -7,9 +7,9 @@
 
 .about-info {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
   align-items: center;
   p {
     width: auto;
@@ -18,10 +18,8 @@
 }
 
 .about-copyright {
-  display: flex;
-  align-items: flex-end;
-  height: 105px;
   p {
     margin: 0;
+    font-size: 14px;
   }
 }
