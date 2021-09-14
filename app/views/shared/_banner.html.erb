@@ -1,4 +1,4 @@
-<div class="banner banner-studio" style="background-image: url(<%= img_path %>);">
+<div class="banner banner-show" style="background-image: url(<%= img_path %>);">
   <div class="container-heart">
     <%= link_to toggle_favorite_parking_path(@parking), remote: true, method: :post do %>
       <div class="like-icon mr-2 <%= 'red' if current_user.favorited?(@parking) %>" style="font-size:32px" data-id="<%= @parking.id %>">
