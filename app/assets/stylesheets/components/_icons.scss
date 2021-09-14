@@ -19,9 +19,11 @@
 .like-icon {
   color: $dark-gray;
   font-size: 20px;
+  transition: 0.2s;
 }
 
 .like-icon.red {
   color: $red;
   font-size: 20px;
+  transition: 0.3s;
 }

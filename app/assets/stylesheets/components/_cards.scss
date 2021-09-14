@@ -21,6 +21,15 @@
   flex-direction: row;
   justify-content: space-between;
   height: 144px;
+  margin: 8px 8px 8px 5px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  // border: 2px solid rgba(18, 20, 23, 0.125);
+  border-radius: 8px 8px 8px 8px;
+}
+
+.card-image img {
+  border-radius: 8px 0 0 8px;
+  padding: 0 0 2px 0;
 }
 
 .card-name {

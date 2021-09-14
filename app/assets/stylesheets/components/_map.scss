@@ -3,8 +3,9 @@
   z-index: 0;
   top: 0;
   width: 100%;
-  height: calc(100vh - 8vh - 144px - 6px)
+  height: calc(100vh - 8vh - 144px - 6px);
   // viewport - navbar - carousel - space above navbar
+  // border-radius: 0 0 16px 16px;
 }
 
 .map-search {
