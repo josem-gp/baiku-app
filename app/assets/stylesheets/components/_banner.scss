@@ -18,13 +18,17 @@
   background-position: 48% 16%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   .banner-content {
-    h1 {
-      color: $white;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-      font-size: 40px;
-      font-weight: bold;
+    .banner-text {
+      display: flex;
+      justify-content: center;
+      h1 {
+        color: $white;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        font-size: 40px;
+        font-weight: bold;
+      }
     }
     p {
       font-size: 20px;
@@ -37,9 +41,10 @@
   }
 }
 .banner-logo {
-  position: absolute;
-  bottom: 32px;
-  right: 32px;
+  display: flex;
+  justify-content: end;
+  padding: 0 32px 28px 0;
+  width: 100%;
   font-size: 28px;
   h5 {
     color: $white;
@@ -54,7 +59,8 @@
 
 // Media Queries
 @media (max-width: 576px) {
-  .banner-image h1 {
+  .banner-text {
     margin-left: 32px;
+    margin-right: 32px;
   }
 }
