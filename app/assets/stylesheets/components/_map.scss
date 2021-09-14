@@ -6,6 +6,7 @@
   height: 92vh;
   // height: calc(100vh - 8vh - 144px - 6px)
   // viewport - navbar - carousel - space above navbar
+  // border-radius: 0 0 16px 16px;
 }
 
 .map-search {
@@ -31,6 +32,16 @@
   z-index: -2;
 }
 
-.mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right {
-  bottom : 140px !important;
+.mapboxgl-ctrl-bottom-left {
+  bottom : 150px !important;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  bottom : 160px !important;
+}
+
+@media (max-width: 576px) {
+  .mapboxgl-ctrl-bottom-right {
+    bottom : 150px !important;
+  }
 }

@@ -1,3 +1,1 @@
-<div class="like-icon mr-2 mt-1 <%= 'red' if current_user.favorited?(parking) %>" data-id="<%= parking.id %>">
-  <i class="fas fa-heart"></i>
-</div>
+<i class="fas fa-heart like-icon mr-1 <%= 'red' if current_user.favorited?(parking) %>" data-id="<%= parking.id %>"></i>
