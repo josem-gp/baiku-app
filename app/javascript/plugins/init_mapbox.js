@@ -20,6 +20,9 @@ const initMapbox = () => {
       zoom: 13
     });
 
+    // This makes the route stay withing the viewport
+    map.setPadding({top: 40, bottom: 150}); 
+
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const markerHtml = document.createElement('div')
