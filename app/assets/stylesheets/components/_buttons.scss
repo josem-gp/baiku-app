@@ -17,6 +17,7 @@
   padding: 8px 16px;
   border-radius: 8px;
   border: none;
+  transition: 0.2s;
   p {
     color: $black;
   }
@@ -25,6 +26,10 @@
   }
   #modal-button {
     padding: 0px;
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: $yellow-hover;
   }
 }
 
