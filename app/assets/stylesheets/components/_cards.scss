@@ -1,3 +1,58 @@
+.card {
+  border: none;
+  max-width: 600px;
+}
+
+.card-carousel {
+  position: fixed;
+  bottom: 9vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 23px rgba(0, 0, 0, 0.2);
+}
+
+.card-index {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 144px;
+  margin: 8px 8px 8px 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  .card-image img {
+    border-radius: 8px 0 0 8px;
+  }
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    .card-details-top {
+      display: flex;
+      justify-content: space-around;
+      height: 28px;
+      .card-name {
+        margin: 0 8px 0 0;
+        overflow: hidden;
+        flex: 2;
+        text-align: center;
+      }
+    }
+    .card-details-bottom {
+      display: flex;
+      justify-content: space-around;
+      .card-action {
+        p {
+          font-size: 28px;
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
 .card-show-info {
   margin-top: 16px;
   h4 {
@@ -9,36 +64,6 @@
   i {
     margin-right: 8px;
   }
-}
-
-.card-carousel {
-  position: fixed;
-  bottom: 65px;
-}
-
-.card-index {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 144px;
-  margin: 8px 8px 8px 5px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  // border: 2px solid rgba(18, 20, 23, 0.125);
-  border-radius: 8px 8px 8px 8px;
-}
-
-.card-image img {
-  border-radius: 8px 0 0 8px;
-  padding: 0 0 2px 0;
-}
-
-.card-name {
-  overflow: hidden;
-}
-
-.card-details {
-  width: 231px;
-  height: 100%;
 }
 
 .card-risk-label {
@@ -59,15 +84,6 @@
 
 .card-index-review {
   font-size: 14px;
-}
-
-.card-action {
-  p {
-    font-size: 32px;
-  }
-  a {
-    text-decoration: none;
-  }
 }
 
 .card-review {
@@ -107,7 +123,6 @@
 
 .card-about-btn {
   padding: 16px;
-  // height: 350px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -119,4 +134,13 @@
   border-radius: 8px;
   border: 1px solid grey;
   box-shadow: 1px 1px 3px grey;
+}
+
+@media (max-width: 576px) {
+  .card-carousel {
+    bottom: 65px;
+  }
+  .card-details .card-details-bottom {
+    justify-content: space-between;
+  }
 }

@@ -32,6 +32,16 @@
   z-index: -2;
 }
 
-.mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right {
-  bottom : 140px !important;
+.mapboxgl-ctrl-bottom-left {
+  bottom : 150px !important;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  bottom : 160px !important;
+}
+
+@media (max-width: 576px) {
+  .mapboxgl-ctrl-bottom-right {
+    bottom : 150px !important;
+  }
 }

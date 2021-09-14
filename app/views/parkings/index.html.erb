@@ -20,10 +20,15 @@
             <%= cl_image_tag(parking.photos.first.key, width: 128, height: 144, crop: :fill) %>
           <% end %>
         </div>
-        <div class="card-details d-flex flex-column pl-3 py-2">
-          <p class="card-name mb-2 mr-3 font-weight-bold"><%= parking.name %></p>
-          <div class="d-flex justify-content-between">
-            <div class="d-flex flex-column">
+        <div class="card-details pl-3 pr-2 py-2">
+          <div class="card-details-top">
+            <p class="card-name font-weight-bold"><%= parking.name %></p>
+            <%= link_to toggle_favorite_parking_path(parking), remote: true, method: :post do %>
+              <%= render 'parkings/like_button', parking: parking %>
+            <% end %>
+          </div>
+          <div class="card-details-bottom">
+            <div class="d-flex flex-column mr-2">
               <div class="card-risk-score-container">
                 <%= render 'parkings/average_rating', parking: parking %>
                 <% if parking.average_risk_score == nil %>
@@ -40,18 +45,13 @@
             </div>
             <div class="card-action d-flex align-self-end">
               <%= link_to parking_path(parking) do %>
-                <p class="mb-0 mr-2"><i class="fas fa-info-circle"></i></p>
+                <p class="mb-0 mx-1"><i class="fas fa-info-circle"></i></p>
               <% end %>
               <%= link_to parkings_path(to_parking: parking.id) do %>
-                <p class="mb-0"><i class="fas fa-directions"></i></p>
+                <p class="mb-0 mx-1"><i class="fas fa-directions"></i></p>
               <% end %>
             </div>
           </div>
-        </div>
-        <div class="container-heart">
-          <%= link_to toggle_favorite_parking_path(parking), remote: true, method: :post do %>
-            <%= render 'parkings/like_button', parking: parking %>
-          <% end %>
         </div>
       </div>
     <% end %>
