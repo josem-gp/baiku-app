@@ -1,7 +1,5 @@
-<div class="container p-0" style="max-width: 800px">
-  <div>
-    <%= render 'shared/banner', img_path: cl_image_path(@parking.photos.first.key) %>
-  </div>
+<div class="container p-0 container-show-page">
+  <%= render 'shared/banner', img_path: cl_image_path(@parking.photos.first.key) %>
   <div class='container card border-0'>
     <div class="card-show-info">
       <h4><b><%= @parking.name %></b></h4>

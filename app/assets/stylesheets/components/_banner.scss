@@ -5,10 +5,12 @@
 }
 
 // Used for parking location show pages
-.banner-studio {
+.banner-show {
   display: flex;
   justify-content: end;
-  height: 240px;
+  min-height: 240px;
+  height: auto;
+  flex: 2;
 }
 
 // Used for homepage

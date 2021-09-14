@@ -18,12 +18,14 @@
 
 .like-icon {
   color: $dark-gray;
+  opacity: 0.9;
   font-size: 24px;
   transition: 0.2s;
 }
 
 .like-icon.red {
   color: $red;
+  opacity: 1;
   font-size: 24px;
   transition: 0.3s;
 }
